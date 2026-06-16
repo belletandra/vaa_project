@@ -1,0 +1,12 @@
+---
+title: "Embargo Breach: Tracing TenantThread’s AI Crisis"
+subtitle: "A Visual Analytics Investigation of the Project HarborCrest Disclosure Failure"
+format:
+  html:
+    toc: false
+    page-layout: full
+---
+
+This project investigates how embargoed merger information from TenantThread was released publicly before its scheduled announcement. Using internal communications, agent deliberations, public posts, and contextual crisis signals, the project develops a Shiny-based visual analytics application to reconstruct the breach and determine whether it was caused by deliberate leakage, abnormal agent behaviour, or a breakdown in coordination across automated communication systems.
+
+

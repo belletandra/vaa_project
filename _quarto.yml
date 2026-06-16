@@ -1,0 +1,54 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Embargo Breach: Tracing TenantThread’s AI Crisis"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: proposal.qmd
+        text: Proposal
+      - text: Methodology
+        menu:
+          - href: data-prep.qmd
+            text: Data Preparation
+            
+          - href: stats-analysis.qmd
+            text: Statistical Analysis
+            
+          - href: visualisation.qmd
+            text: Data Visualisation
+            
+      - href: findings.qmd
+        text: Findings
+        
+      - href: poster.qmd
+        text: Poster
+        
+      - text: Meeting Minutes
+        menu:
+          - href: meeting-minutes/mom1.qmd
+            text: Minute of Meeting 1
+
+    right:
+      - href: about.qmd
+        text: About Us
+        
+      - href: shiny.qmd
+        text: Shiny App
+        
+      - href: github.qmd
+        text: GitHub Repo
+        
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+editor: visual
+

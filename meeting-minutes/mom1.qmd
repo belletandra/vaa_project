@@ -1,0 +1,62 @@
+---
+title: "ISSS608 Visual Analytics & Applications Group Project Meeting 1"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+editor: visual
+---
+
+# Meeting Minutes
+
+**Date:** June 9, 2026
+
+## Opening
+
+The first meeting was conducted on June 9, 2026. The meeting focused on selecting the group project topic, identifying possible visual analytics directions, and assigning initial responsibilities for the project proposal and website preparation.
+
+## Present
+
+Kelvin Andikko\
+Anabelle Eveleen Tandra
+
+## Agenda for this meeting
+
+Finalisation of the group project mini challenge\
+Initial ideation of possible visualisations\
+Discussion on the overarching concept for the visual analytics system\
+Delegation of work\
+Confirmation of agenda for the next meeting
+
+## Ideation and Finalisation of Ideas
+
+1.  The group decided to work on **VAST Challenge 2026 Mini-Challenge 1**, which focuses on the TenantThread embargo breach and the multi-agent AI communications crisis.
+2.  The group agreed that the project should not be presented as a set of disconnected visualisations. Instead, all visualisations should be tied to a coherent investigative concept based on MC1.
+3.  The main project direction is to develop a visual analytics system that helps users understand whether the embargo breach was caused by deliberate leakage or by a breakdown in agent coordination, communication workflows, and compliance enforcement.
+4.  Possible visualisations discussed include:
+    a.  A causal chain diagram to show the sequence of decisions, actors, and system elements that contributed to the release.
+    b.  An event timeline to reconstruct the key events leading up to the embargo breach.
+    c.  An agent interaction or communication network to show how different agents exchanged information across channels.
+    d.  A behaviour comparison or anomaly view to compare typical behaviour with breach-period behaviour.
+5.  The group noted that further research is required to determine which visualisations will best support the investigation.
+6.  The group agreed that the final application should contain around three to four main visualisations that collectively tell the story of the breach.
+
+## Delegation of Work
+
+Kelvin will prepare the project website, study the MC1 dataset, and draft the project proposal. The dataset review is to be completed by Thursday night, 11:59 PM.
+
+Anabelle will start exploring the dataset and propose suitable visualisations. This is to be completed by Thursday night, 11:59 PM.
+
+## Agenda for Next Meeting
+
+The next meeting will be conducted on Thursday night. The group will decide on the final visualisations and refine the main concept that the application should communicate.
+
+## Adjournment
+
+The meeting was adjourned after confirming the selected mini challenge, initial visualisation directions, task delegation, and agenda for the next meeting.
+
+**Minutes submitted by:**\
+Kelvin Andikko
+
+**Approved by:**\
+Anabelle Eveleen Tandra

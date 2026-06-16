@@ -1,0 +1,156 @@
+[
+  {
+    "objectID": "proposal.html",
+    "href": "proposal.html",
+    "title": "Project Proposal",
+    "section": "",
+    "text": "As organisations increasingly rely on AI-enabled communication and compliance systems, sensitive corporate processes are now managed not only by humans but also by automated agents that draft messages, monitor sentiment, route approvals, and enforce disclosure rules. While these systems improve efficiency, they also create new risks when multiple agents, workflows, and decisions interact under pressure. This project is motivated by the case of TenantThread, a property technology company whose Retention Optimizer scores tenants using payment timing, maintenance requests, and message tone. Although the company publicly claimed its data was anonymised, internal communications suggest that tenants in smaller properties could still be re-identified through cross-referencing.\nAt the same time, TenantThread had entered a confidential merger agreement with CivicLoom Realty Partners under the codename Project HarborCrest, with a strict embargo until 6:00 PM on June 5th, 2046. Despite the presence of an automated compliance tool called The Judge, embargoed information about the merger appeared publicly on FleX around 5:00 PM. This makes the case important not only because a leak occurred, but because the cause is unclear: it may have resulted from deliberate human action, abnormal AI-agent behaviour, weak embargo enforcement, or a broader coordination failure. A Shiny-based visual analytics application is therefore well suited to support the investigation by helping users reconstruct the timeline of events, analyse agent interactions, compare normal and abnormal behaviour, and trace how embargo-sensitive information moved from internal communications to public release."
+  },
+  {
+    "objectID": "proposal.html#overall-structure",
+    "href": "proposal.html#overall-structure",
+    "title": "Project Proposal",
+    "section": "Overall structure",
+    "text": "Overall structure\nThe top-level structure contains a rounds array. Each round represents a chronological unit of activity and contains:\n\nhour\nenvironment_context\ncommunications\nparticipants\n\nThis structure is suitable for temporal reconstruction, communication analysis, behaviour comparison, and event-driven investigation. The dataset contains 23 rounds and 912 communication records, covering the period from May 17th, 2046 to June 5th, 2046. The crisis day, June 5th, 2046, contains the highest concentration of messages, which reflects the rapid escalation of the embargo breach and public response process."
+  },
+  {
+    "objectID": "proposal.html#derived-variables-for-analysis",
+    "href": "proposal.html#derived-variables-for-analysis",
+    "title": "Project Proposal",
+    "section": "Derived variables for analysis",
+    "text": "Derived variables for analysis\nTo support the visual analytics system, the raw JSON data will be transformed into several derived variables:\n\n\n\n\n\n\n\nDerived Variable\nPurpose\n\n\n\n\nEvent sequence order\nSupports chronological reconstruction\n\n\nPre-crisis, escalation, and breach-period flags\nEnables behaviour comparison across phases\n\n\nPublic versus internal communication category\nDistinguishes internal discussion from public release\n\n\nChannel risk category\nIdentifies higher-risk channels such as personal posts and anonymous posts\n\n\nEmbargo-sensitive keyword flag\nDetects references to CivicLoom, HarborCrest, merger terms, and related entities\n\n\nAgent interaction counts\nMeasures communication intensity between agents\n\n\nResponse chain depth\nTracks message pathways and decision cascades\n\n\nChannel-switch indicator\nIdentifies movement from private or internal channels into public channels\n\n\nAnomaly indicator\nFlags behaviour that differs from prior baseline behaviour\n\n\nEscalation level\nCaptures increasing crisis pressure based on media, market, and social signals\n\n\nExpected versus actual behaviour flag\nCompares role expectations with observed actions"
+  },
+  {
+    "objectID": "proposal.html#methodology-diagram",
+    "href": "proposal.html#methodology-diagram",
+    "title": "Project Proposal",
+    "section": "Methodology diagram",
+    "text": "Methodology diagram\n\n\nShow code\nlibrary(DiagrammeR)\n\ngrViz(\"\ndigraph methodology {\n  graph [layout = dot, rankdir = LR]\n\n  node [shape = box, style = filled, fillcolor = LightBlue, color = black]\n\n  raw_json [label='MC1 JSON Data']\n  parse [label='Parse and Unnest JSON']\n  clean [label='Clean and Standardise Fields']\n  comms_table [label='Communication Table']\n  rounds_table [label='Round Context Table']\n  participants_table [label='Participant Table']\n\n  feature_engineering [label='Feature Engineering', fillcolor = LightGoldenrod1]\n\n  timeline_data [label='Timeline Dataset']\n  network_data [label='Agent Network Dataset']\n  anomaly_data [label='Anomaly Dataset']\n  behaviour_data [label='Behaviour Baseline Dataset']\n  causal_data [label='Causal Pathway Dataset']\n\n  timeline_view [label='Crisis Timeline', fillcolor = Honeydew]\n  network_view [label='Agent Interaction Network', fillcolor = Honeydew]\n  anomaly_view [label='Anomaly Explorer', fillcolor = Honeydew]\n  baseline_view [label='Behaviour Baseline View', fillcolor = Honeydew]\n  pathway_view [label='Embargo Breach Pathway', fillcolor = Honeydew]\n\n  shiny_app [label='Shiny Visual Analytics Application', fillcolor = MistyRose]\n\n  raw_json -&gt; parse\n  parse -&gt; clean\n  clean -&gt; comms_table\n  clean -&gt; rounds_table\n  clean -&gt; participants_table\n\n  comms_table -&gt; feature_engineering\n  rounds_table -&gt; feature_engineering\n  participants_table -&gt; feature_engineering\n\n  feature_engineering -&gt; timeline_data\n  feature_engineering -&gt; network_data\n  feature_engineering -&gt; anomaly_data\n  feature_engineering -&gt; behaviour_data\n  feature_engineering -&gt; causal_data\n\n  timeline_data -&gt; timeline_view\n  network_data -&gt; network_view\n  anomaly_data -&gt; anomaly_view\n  behaviour_data -&gt; baseline_view\n  causal_data -&gt; pathway_view\n\n  timeline_view -&gt; shiny_app\n  network_view -&gt; shiny_app\n  anomaly_view -&gt; shiny_app\n  baseline_view -&gt; shiny_app\n  pathway_view -&gt; shiny_app\n}\n\")"
+  },
+  {
+    "objectID": "proposal.html#data-preparation",
+    "href": "proposal.html#data-preparation",
+    "title": "Project Proposal",
+    "section": "Data preparation",
+    "text": "Data preparation\nThe first stage involves reading and transforming the JSON dataset into tidy tabular structures suitable for analysis and visualisation. The main steps include:\n\nReading the JSON file using R.\n\nExtracting round-level information from the rounds array.\n\nUnnesting the communications array into a communication-level table.\n\nUnnesting the participants array into a participant-level table.\n\nConverting timestamps into standard date-time formats.\n\nStandardising agent names and labels to ensure consistency.\n\nStandardising channel categories and message types.\n\nJoining round-level context to communication-level records.\n\nCreating response-chain relationships using the responding_to field.\n\nPreparing the cleaned datasets for Shiny application use.\n\nSpecial attention will be given to agent-name consistency. For example, similar naming variants such as Social Manager, Social Media Agent, and social media-related agent identifiers will be standardised into consistent labels for analysis and visualisation."
+  },
+  {
+    "objectID": "proposal.html#feature-engineering",
+    "href": "proposal.html#feature-engineering",
+    "title": "Project Proposal",
+    "section": "Feature engineering",
+    "text": "Feature engineering\n\nTime Period Classification\nEach message will be classified into one of several investigation phases, such as:\n\nearly pre-crisis period\ngovernance tension period\nmedia and advocacy escalation period\nembargo-sensitive period\nbreach period\npost-breach response period\n\nThis will allow users to compare agent behaviour across different stages of the crisis\n\n\nChannel Risk Classification\nEach channel will be classified by communication risk level:\n\n\n\n\n\n\n\n\nChannel Type\nExample Channels\nRisk Interpretation\n\n\n\n\nFormal internal\ncomms_huddle\nLower release risk but important for decision formation\n\n\nSemi-private\nside_huddle\nHigher risk due to off-record coordination\n\n\nPrivate\none_on_one_chat\nImportant for hidden alignment and informal decisions\n\n\nOfficial public\nofficial_post\nDirect public release channel\n\n\nPersonal public\npersonal_post\nHigh reputational and compliance risk\n\n\nAnonymous public\nanonymous_post\nHigh risk due to reduced accountability\n\n\n\n\n\nEmbargo-Sensitive Keyword Detection\nMessages will be flagged if they contain sensitive terms related to the merger and breach context. Examples include: CivicLoom, Project HarborCrest, HarborCrest, merger, acquisition, embargo, announcement, ResidentIQ, SaltWind Journal, AlgorithmicEviction, Retention Optimizer, The Judge\nThese flags will help identify when sensitive topics appear, which agents mention them, and through which channels they are discussed.\n\n\nBehaviour Baseline Construction\nTo identify abnormal behaviour, the application will establish a baseline using pre-crisis communication patterns. Baseline metrics may include:\n\nnumber of messages per agent,\nnumber of public posts per agent,\nchannel usage distribution,\nresponse-chain depth,\nfrequency of sensitive keyword references,\nnumber of cross-channel transitions,\naverage message volume per round,\nand use of internal state reasoning before public action.\n\nCrisis-day behaviour will then be compared against this baseline to identify deviations.\n\n\nExpected Versus Actual Behaviour\nEach agent will be assigned an expected role based on their function. For example, Legal is expected to reduce compliance risk, PR is expected to manage public messaging, Social Media is expected to monitor and respond to public sentiment, and The Judge is expected to enforce embargo restrictions.\nActual behaviours will then be compared against these expectations. Examples of deviations may include:\n\npublic posting during embargo-sensitive periods,\nmovement of sensitive information from internal to public channels,\nbypassing or weakening Judge oversight,\njunior agents engaging with sensitive public communication,\nand use of personal or anonymous posting channels during a crisis."
+  },
+  {
+    "objectID": "proposal.html#main-application-tabs",
+    "href": "proposal.html#main-application-tabs",
+    "title": "Project Proposal",
+    "section": "Main Application Tabs",
+    "text": "Main Application Tabs\nThe application will begin with an overview dashboard that provides summary information before users enter the three tabs below. This page will include:\n\ntotal number of rounds,\ntotal number of communication records,\nnumber of agents,\nnumber of public posts,\nnumber of embargo-sensitive keyword mentions,\nand the identified breach window.\n\n\n\n\n\n\n\n\n\nTab\nPurpose\nMain Visual Outputs\n\n\n\n\nCrisis Timeline\nReconstruct the sequence of events leading to the breach\nInteractive timeline, round context panel, anomaly markers, linked event table\n\n\nAgent Network\nShow how agents interacted and how information moved across channels\nInteractive communication network, channel distribution summary, linked message table\n\n\nEmbargo Breach Pathway\nTrace how embargo-sensitive information moved toward public release and where controls weakened\nResponse-chain explorer, pathway diagram, risk-flagged message viewer, evidence table"
+  },
+  {
+    "objectID": "proposal.html#user-inputs",
+    "href": "proposal.html#user-inputs",
+    "title": "Project Proposal",
+    "section": "User Inputs",
+    "text": "User Inputs\nThe Shiny application will include interactive controls such as:\n\n\n\n\n\n\n\nInput\nPurpose\n\n\n\n\nDate and time range selector\nFilter messages by investigation period\n\n\nAgent selector\nFocus on one or more agents\n\n\nChannel selector\nCompare formal, private, public, and anonymous channels\n\n\nKeyword search\nSearch for sensitive terms and entities\n\n\nCrisis phase selector\nCompare behaviour across pre-crisis, escalation, and breach phases\n\n\nMessage type selector\nSeparate internal messages, public posts, and replies\n\n\nRisk flag selector\nFocus on anomaly indicators or embargo-sensitive content\n\n\nNetwork depth control\nAdjust how much of the communication network is displayed"
+  },
+  {
+    "objectID": "proposal.html#prototype-1-landing-page-overview",
+    "href": "proposal.html#prototype-1-landing-page-overview",
+    "title": "Project Proposal",
+    "section": "Prototype 1: Landing Page / Overview",
+    "text": "Prototype 1: Landing Page / Overview\nThe landing page provides a concise summary of the case and orients users before they begin the investigation. It includes key metrics, the identified breach window, and the main investigation phases."
+  },
+  {
+    "objectID": "proposal.html#prototype-2-crisis-timeline-tab",
+    "href": "proposal.html#prototype-2-crisis-timeline-tab",
+    "title": "Project Proposal",
+    "section": "Prototype 2: Crisis Timeline Tab",
+    "text": "Prototype 2: Crisis Timeline Tab\nThe Crisis Timeline tab allows users to reconstruct the chronological sequence of events leading to the breach. It combines event markers, anomaly highlights, round context, summary panels, and a linked event detail table."
+  },
+  {
+    "objectID": "proposal.html#prototype-3-agent-network-tab",
+    "href": "proposal.html#prototype-3-agent-network-tab",
+    "title": "Project Proposal",
+    "section": "Prototype 3: Agent Network Tab",
+    "text": "Prototype 3: Agent Network Tab\nThe Agent Network tab allows users to explore communication relationships among agents and examine how information moved across channels. It includes the interaction network, channel distribution summary, linked message table, and comparison panel."
+  },
+  {
+    "objectID": "proposal.html#prototype-4-embargo-breach-pathway-tab",
+    "href": "proposal.html#prototype-4-embargo-breach-pathway-tab",
+    "title": "Project Proposal",
+    "section": "Prototype 4: Embargo Breach Pathway Tab",
+    "text": "Prototype 4: Embargo Breach Pathway Tab\nThe Embargo Breach Pathway tab focuses on tracing the pathway through which embargo-sensitive information moved from internal communication into public release. It includes the response-chain view, embedded risk summary, behaviour comparison panel, and linked evidence viewer."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Embargo Breach: Tracing TenantThread’s AI Crisis",
+    "section": "",
+    "text": "This project investigates how embargoed merger information from TenantThread was released publicly before its scheduled announcement. Using internal communications, agent deliberations, public posts, and contextual crisis signals, the project develops a Shiny-based visual analytics application to reconstruct the breach and determine whether it was caused by deliberate leakage, abnormal agent behaviour, or a breakdown in coordination across automated communication systems."
+  },
+  {
+    "objectID": "meeting-minutes/mom1.html",
+    "href": "meeting-minutes/mom1.html",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
+    "section": "",
+    "text": "Date: June 9, 2026\n\n\nThe first meeting was conducted on June 9, 2026. The meeting focused on selecting the group project topic, identifying possible visual analytics directions, and assigning initial responsibilities for the project proposal and website preparation.\n\n\n\nKelvin Andikko\nAnabelle Eveleen Tandra\n\n\n\nFinalisation of the group project mini challenge\nInitial ideation of possible visualisations\nDiscussion on the overarching concept for the visual analytics system\nDelegation of work\nConfirmation of agenda for the next meeting\n\n\n\n\nThe group decided to work on VAST Challenge 2026 Mini-Challenge 1, which focuses on the TenantThread embargo breach and the multi-agent AI communications crisis.\nThe group agreed that the project should not be presented as a set of disconnected visualisations. Instead, all visualisations should be tied to a coherent investigative concept based on MC1.\nThe main project direction is to develop a visual analytics system that helps users understand whether the embargo breach was caused by deliberate leakage or by a breakdown in agent coordination, communication workflows, and compliance enforcement.\nPossible visualisations discussed include:\n\nA causal chain diagram to show the sequence of decisions, actors, and system elements that contributed to the release.\nAn event timeline to reconstruct the key events leading up to the embargo breach.\nAn agent interaction or communication network to show how different agents exchanged information across channels.\nA behaviour comparison or anomaly view to compare typical behaviour with breach-period behaviour.\n\nThe group noted that further research is required to determine which visualisations will best support the investigation.\nThe group agreed that the final application should contain around three to four main visualisations that collectively tell the story of the breach.\n\n\n\n\nKelvin will prepare the project website, study the MC1 dataset, and draft the project proposal. The dataset review is to be completed by Thursday night, 11:59 PM.\nAnabelle will start exploring the dataset and propose suitable visualisations. This is to be completed by Thursday night, 11:59 PM.\n\n\n\nThe next meeting will be conducted on Thursday night. The group will decide on the final visualisations and refine the main concept that the application should communicate.\n\n\n\nThe meeting was adjourned after confirming the selected mini challenge, initial visualisation directions, task delegation, and agenda for the next meeting.\nMinutes submitted by:\nKelvin Andikko\nApproved by:\nAnabelle Eveleen Tandra"
+  },
+  {
+    "objectID": "meeting-minutes/mom1.html#opening",
+    "href": "meeting-minutes/mom1.html#opening",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
+    "section": "",
+    "text": "The first meeting was conducted on June 9, 2026. The meeting focused on selecting the group project topic, identifying possible visual analytics directions, and assigning initial responsibilities for the project proposal and website preparation."
+  },
+  {
+    "objectID": "meeting-minutes/mom1.html#present",
+    "href": "meeting-minutes/mom1.html#present",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
+    "section": "",
+    "text": "Kelvin Andikko\nAnabelle Eveleen Tandra"
+  },
+  {
+    "objectID": "meeting-minutes/mom1.html#agenda-for-this-meeting",
+    "href": "meeting-minutes/mom1.html#agenda-for-this-meeting",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
+    "section": "",
+    "text": "Finalisation of the group project mini challenge\nInitial ideation of possible visualisations\nDiscussion on the overarching concept for the visual analytics system\nDelegation of work\nConfirmation of agenda for the next meeting"
+  },
+  {
+    "objectID": "meeting-minutes/mom1.html#ideation-and-finalisation-of-ideas",
+    "href": "meeting-minutes/mom1.html#ideation-and-finalisation-of-ideas",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
+    "section": "",
+    "text": "The group decided to work on VAST Challenge 2026 Mini-Challenge 1, which focuses on the TenantThread embargo breach and the multi-agent AI communications crisis.\nThe group agreed that the project should not be presented as a set of disconnected visualisations. Instead, all visualisations should be tied to a coherent investigative concept based on MC1.\nThe main project direction is to develop a visual analytics system that helps users understand whether the embargo breach was caused by deliberate leakage or by a breakdown in agent coordination, communication workflows, and compliance enforcement.\nPossible visualisations discussed include:\n\nA causal chain diagram to show the sequence of decisions, actors, and system elements that contributed to the release.\nAn event timeline to reconstruct the key events leading up to the embargo breach.\nAn agent interaction or communication network to show how different agents exchanged information across channels.\nA behaviour comparison or anomaly view to compare typical behaviour with breach-period behaviour.\n\nThe group noted that further research is required to determine which visualisations will best support the investigation.\nThe group agreed that the final application should contain around three to four main visualisations that collectively tell the story of the breach."
+  },
+  {
+    "objectID": "meeting-minutes/mom1.html#delegation-of-work",
+    "href": "meeting-minutes/mom1.html#delegation-of-work",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
+    "section": "",
+    "text": "Kelvin will prepare the project website, study the MC1 dataset, and draft the project proposal. The dataset review is to be completed by Thursday night, 11:59 PM.\nAnabelle will start exploring the dataset and propose suitable visualisations. This is to be completed by Thursday night, 11:59 PM."
+  },
+  {
+    "objectID": "meeting-minutes/mom1.html#agenda-for-next-meeting",
+    "href": "meeting-minutes/mom1.html#agenda-for-next-meeting",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
+    "section": "",
+    "text": "The next meeting will be conducted on Thursday night. The group will decide on the final visualisations and refine the main concept that the application should communicate."
+  },
+  {
+    "objectID": "meeting-minutes/mom1.html#adjournment",
+    "href": "meeting-minutes/mom1.html#adjournment",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
+    "section": "",
+    "text": "The meeting was adjourned after confirming the selected mini challenge, initial visualisation directions, task delegation, and agenda for the next meeting.\nMinutes submitted by:\nKelvin Andikko\nApproved by:\nAnabelle Eveleen Tandra"
+  }
+]
