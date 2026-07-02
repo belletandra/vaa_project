@@ -297,7 +297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 1, 2026</p>
+      <p class="date-modified">July 3, 2026</p>
     </div>
   </div>
     
@@ -310,13 +310,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="motivation" class="level1">
 <h1>Motivation</h1>
-<p>As organisations increasingly rely on AI-enabled communication and compliance systems, sensitive corporate processes are now managed not only by humans but also by automated agents that draft messages, monitor sentiment, route approvals, and enforce disclosure rules. While these systems improve efficiency, they also create new risks when multiple agents, workflows, and decisions interact under pressure. This project is motivated by the case of TenantThread, a property technology company whose Retention Optimizer scores tenants using payment timing, maintenance requests, and message tone. Although the company publicly claimed its data was anonymised, internal communications suggest that tenants in smaller properties could still be re-identified through cross-referencing.</p>
-<p>At the same time, TenantThread had entered a confidential merger agreement with CivicLoom Realty Partners under the codename Project HarborCrest, with a strict embargo until 6:00 PM on June 5th, 2046. Despite the presence of an automated compliance tool called The Judge, embargoed information about the merger appeared publicly on FleX around 5:00 PM. This makes the case important not only because a leak occurred, but because the cause is unclear: it may have resulted from deliberate human action, abnormal AI-agent behaviour, weak embargo enforcement, or a broader coordination failure. A Shiny-based visual analytics application is therefore well suited to support the investigation by helping users reconstruct the timeline of events, analyse agent interactions, compare normal and abnormal behaviour, and trace how embargo-sensitive information moved from internal communications to public release.</p>
+<p>As organisations increasingly rely on AI-enabled communication and compliance systems, sensitive corporate processes are now managed not only by humans but also by automated agents that draft messages, monitor sentiment, route approvals, and enforce disclosure rules. While these systems improve efficiency, they also create new risks when multiple agents, workflows, and decisions interact under pressure. This project examines the case of TenantThread, a property technology company whose Retention Optimizer scores tenants using payment timing, maintenance requests, and message tone. Although the company publicly claimed its data was anonymised, internal communications suggest that tenants in smaller properties could still be re-identified through cross-referencing.</p>
+<p>At the same time, TenantThread had entered a confidential merger agreement with CivicLoom Realty Partners under the codename Project HarborCrest, with a strict embargo until 6:00 PM on June 5th, 2046. Despite the presence of an automated compliance tool called The Judge, embargoed information about the merger appeared publicly on FleX around 5:00 PM. This makes the case important not only because a leak occurred, but because the cause is unclear: it may have resulted from deliberate human action, abnormal AI-agent behaviour, weak embargo enforcement, or a broader coordination failure. The completed Shiny-based visual analytics application supports this investigation by helping users reconstruct the timeline of events, analyse agent interactions, compare normal and abnormal behaviour, and trace how embargo-sensitive information moved from internal communications to public release.</p>
 </section>
 <section id="problem-statement" class="level1">
 <h1>Problem Statement</h1>
 <p>TenantThread’s internal communication and automated response systems released embargoed merger information before the official disclosure time, despite the presence of an embargo enforcement mechanism. The cause of this breach is unclear.</p>
-<p>The central problem addressed by this project is: <strong>Did TenantThread deliberately leak the merger information, or did the system break down under operational, reputational, and social media pressure?</strong></p>
+<p>The central problem addressed by this project is: <strong>Did TenantThread deliberately leak the merger, or did the system break down under pressure?</strong></p>
 <p>To answer this question, investigators must analyse internal communications from the two weeks leading up to the breach and understand:</p>
 <ul>
 <li>what key events occurred before the breach</li>
@@ -333,8 +333,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="objectives" class="level1">
 <h1>Objectives</h1>
-<p>The objective of this project is to develop a web-enabled visual analytics application using Shiny to support the investigation of the Project HarborCrest embargo breach.</p>
-<p>The application aims to:</p>
+<p>The objective of this project was to build a web-enabled visual analytics application using Shiny to support the investigation of the Project HarborCrest embargo breach.</p>
+<p>The application supports the following objectives:</p>
 <ol type="1">
 <li>Reconstruct the sequence of events leading to the inappropriate release of embargoed merger information.</li>
 <li>Identify the key actors, systems, channels, and decision points involved in the release process.</li>
@@ -364,7 +364,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="derived-variables-for-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="derived-variables-for-analysis">Derived variables for analysis</h2>
-<p>To support the visual analytics system, the raw JSON data will be transformed into several derived variables:</p>
+<p>To support the visual analytics system, the raw JSON data was transformed into several derived variables:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -427,7 +427,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="methodology" class="level1">
 <h1>Methodology</h1>
-<p>The methodology consists of five main stages: data preparation, feature engineering, analytical modelling, visual analytics design, and Shiny implementation.</p>
+<p>The methodology consists of five main stages: data preparation, feature engineering, analytical modelling, visual analytics design, and Shiny implementation. Together, these stages convert the raw case data into an interactive investigative workflow for reconstructing the breach, comparing behaviour across crisis phases, and evaluating whether the evidence points more strongly to intentional leakage or systemic breakdown.</p>
 <section id="methodology-diagram" class="level2">
 <h2 class="anchored" data-anchor-id="methodology-diagram">Methodology diagram</h2>
 <div class="cell">
@@ -458,8 +458,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="st">  timeline_view [label='Crisis Timeline', fillcolor = Honeydew]</span></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="st">  network_view [label='Agent Interaction Network', fillcolor = Honeydew]</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="st">  anomaly_view [label='Anomaly Explorer', fillcolor = Honeydew]</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="st">  baseline_view [label='Behaviour Baseline View', fillcolor = Honeydew]</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="st">  anomaly_view [label='Embedded Anomaly Flags', fillcolor = Honeydew]</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="st">  baseline_view [label='Embedded Behaviour Baseline', fillcolor = Honeydew]</span></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="st">  pathway_view [label='Embargo Breach Pathway', fillcolor = Honeydew]</span></span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="st">  shiny_app [label='Shiny Visual Analytics Application', fillcolor = MistyRose]</span></span>
@@ -495,14 +495,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-ed04b6bad9db76a43010" style="width:100%;height:390px;"></div>
-<script type="application/json" data-for="htmlwidget-ed04b6bad9db76a43010">{"x":{"diagram":"\ndigraph methodology {\n  graph [layout = dot, rankdir = LR]\n\n  node [shape = box, style = filled, fillcolor = LightBlue, color = black]\n\n  raw_json [label=\"MC1 JSON Data\"]\n  parse [label=\"Parse and Unnest JSON\"]\n  clean [label=\"Clean and Standardise Fields\"]\n  comms_table [label=\"Communication Table\"]\n  rounds_table [label=\"Round Context Table\"]\n  participants_table [label=\"Participant Table\"]\n\n  feature_engineering [label=\"Feature Engineering\", fillcolor = LightGoldenrod1]\n\n  timeline_data [label=\"Timeline Dataset\"]\n  network_data [label=\"Agent Network Dataset\"]\n  anomaly_data [label=\"Anomaly Dataset\"]\n  behaviour_data [label=\"Behaviour Baseline Dataset\"]\n  causal_data [label=\"Causal Pathway Dataset\"]\n\n  timeline_view [label=\"Crisis Timeline\", fillcolor = Honeydew]\n  network_view [label=\"Agent Interaction Network\", fillcolor = Honeydew]\n  anomaly_view [label=\"Anomaly Explorer\", fillcolor = Honeydew]\n  baseline_view [label=\"Behaviour Baseline View\", fillcolor = Honeydew]\n  pathway_view [label=\"Embargo Breach Pathway\", fillcolor = Honeydew]\n\n  shiny_app [label=\"Shiny Visual Analytics Application\", fillcolor = MistyRose]\n\n  raw_json -> parse\n  parse -> clean\n  clean -> comms_table\n  clean -> rounds_table\n  clean -> participants_table\n\n  comms_table -> feature_engineering\n  rounds_table -> feature_engineering\n  participants_table -> feature_engineering\n\n  feature_engineering -> timeline_data\n  feature_engineering -> network_data\n  feature_engineering -> anomaly_data\n  feature_engineering -> behaviour_data\n  feature_engineering -> causal_data\n\n  timeline_data -> timeline_view\n  network_data -> network_view\n  anomaly_data -> anomaly_view\n  behaviour_data -> baseline_view\n  causal_data -> pathway_view\n\n  timeline_view -> shiny_app\n  network_view -> shiny_app\n  anomaly_view -> shiny_app\n  baseline_view -> shiny_app\n  pathway_view -> shiny_app\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-9a2dcd3666d3ed56f206" style="width:100%;height:390px;"></div>
+<script type="application/json" data-for="htmlwidget-9a2dcd3666d3ed56f206">{"x":{"diagram":"\ndigraph methodology {\n  graph [layout = dot, rankdir = LR]\n\n  node [shape = box, style = filled, fillcolor = LightBlue, color = black]\n\n  raw_json [label=\"MC1 JSON Data\"]\n  parse [label=\"Parse and Unnest JSON\"]\n  clean [label=\"Clean and Standardise Fields\"]\n  comms_table [label=\"Communication Table\"]\n  rounds_table [label=\"Round Context Table\"]\n  participants_table [label=\"Participant Table\"]\n\n  feature_engineering [label=\"Feature Engineering\", fillcolor = LightGoldenrod1]\n\n  timeline_data [label=\"Timeline Dataset\"]\n  network_data [label=\"Agent Network Dataset\"]\n  anomaly_data [label=\"Anomaly Dataset\"]\n  behaviour_data [label=\"Behaviour Baseline Dataset\"]\n  causal_data [label=\"Causal Pathway Dataset\"]\n\n  timeline_view [label=\"Crisis Timeline\", fillcolor = Honeydew]\n  network_view [label=\"Agent Interaction Network\", fillcolor = Honeydew]\n  anomaly_view [label=\"Embedded Anomaly Flags\", fillcolor = Honeydew]\n  baseline_view [label=\"Embedded Behaviour Baseline\", fillcolor = Honeydew]\n  pathway_view [label=\"Embargo Breach Pathway\", fillcolor = Honeydew]\n\n  shiny_app [label=\"Shiny Visual Analytics Application\", fillcolor = MistyRose]\n\n  raw_json -> parse\n  parse -> clean\n  clean -> comms_table\n  clean -> rounds_table\n  clean -> participants_table\n\n  comms_table -> feature_engineering\n  rounds_table -> feature_engineering\n  participants_table -> feature_engineering\n\n  feature_engineering -> timeline_data\n  feature_engineering -> network_data\n  feature_engineering -> anomaly_data\n  feature_engineering -> behaviour_data\n  feature_engineering -> causal_data\n\n  timeline_data -> timeline_view\n  network_data -> network_view\n  anomaly_data -> anomaly_view\n  behaviour_data -> baseline_view\n  causal_data -> pathway_view\n\n  timeline_view -> shiny_app\n  network_view -> shiny_app\n  anomaly_view -> shiny_app\n  baseline_view -> shiny_app\n  pathway_view -> shiny_app\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
 <section id="data-preparation" class="level2">
 <h2 class="anchored" data-anchor-id="data-preparation">Data preparation</h2>
-<p>The first stage involves reading and transforming the JSON dataset into tidy tabular structures suitable for analysis and visualisation. The main steps include:</p>
+<p>The first stage involved reading and transforming the JSON dataset into tidy tabular structures suitable for analysis and visualisation. The main steps included:</p>
 <ol type="1">
 <li>Reading the JSON file using R.<br>
 </li>
@@ -524,13 +524,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
 <li>Preparing the cleaned datasets for Shiny application use.</li>
 </ol>
-<p>Special attention will be given to agent-name consistency. For example, similar naming variants such as Social Manager, Social Media Agent, and social media-related agent identifiers will be standardised into consistent labels for analysis and visualisation.</p>
+<p>Special attention was given to agent-name consistency. For example, similar naming variants such as Social Manager, Social Media Agent, and social media-related agent identifiers were standardised into consistent labels for analysis and visualisation.</p>
 </section>
 <section id="feature-engineering" class="level2">
 <h2 class="anchored" data-anchor-id="feature-engineering">Feature engineering</h2>
 <section id="time-period-classification" class="level3">
 <h3 class="anchored" data-anchor-id="time-period-classification">Time Period Classification</h3>
-<p>Each message will be classified into one of several investigation phases, such as:</p>
+<p>Each message was classified into one of several investigation phases, such as:</p>
 <ul>
 <li><p>early pre-crisis period</p></li>
 <li><p>governance tension period</p></li>
@@ -539,11 +539,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>breach period</p></li>
 <li><p>post-breach response period</p></li>
 </ul>
-<p>This will allow users to compare agent behaviour across different stages of the crisis</p>
+<p>This allows users to compare agent behaviour across different stages of the crisis.</p>
 </section>
 <section id="channel-risk-classification" class="level3">
 <h3 class="anchored" data-anchor-id="channel-risk-classification">Channel Risk Classification</h3>
-<p>Each channel will be classified by communication risk level:</p>
+<p>Each channel was classified by communication risk level:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -593,12 +593,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="embargo-sensitive-keyword-detection" class="level3">
 <h3 class="anchored" data-anchor-id="embargo-sensitive-keyword-detection">Embargo-Sensitive Keyword Detection</h3>
-<p>Messages will be flagged if they contain sensitive terms related to the merger and breach context. Examples include: CivicLoom, Project HarborCrest, HarborCrest, merger, acquisition, embargo, announcement, ResidentIQ, SaltWind Journal, AlgorithmicEviction, Retention Optimizer, The Judge</p>
-<p>These flags will help identify when sensitive topics appear, which agents mention them, and through which channels they are discussed.</p>
+<p>Messages were flagged when they contained sensitive terms related to the merger and breach context. Examples include: CivicLoom, Project HarborCrest, HarborCrest, merger, acquisition, embargo, announcement, ResidentIQ, SaltWind Journal, AlgorithmicEviction, Retention Optimizer, The Judge.</p>
+<p>These flags help identify when sensitive topics appeared, which agents mentioned them, and through which channels they were discussed.</p>
 </section>
 <section id="behaviour-baseline-construction" class="level3">
 <h3 class="anchored" data-anchor-id="behaviour-baseline-construction">Behaviour Baseline Construction</h3>
-<p>To identify abnormal behaviour, the application will establish a baseline using pre-crisis communication patterns. Baseline metrics may include:</p>
+<p>To identify abnormal behaviour, the application establishes a baseline using pre-crisis communication patterns. Baseline metrics include:</p>
 <ul>
 <li>number of messages per agent,</li>
 <li>number of public posts per agent,</li>
@@ -609,12 +609,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>average message volume per round,</li>
 <li>and use of internal state reasoning before public action.</li>
 </ul>
-<p>Crisis-day behaviour will then be compared against this baseline to identify deviations.</p>
+<p>Crisis-day behaviour is compared against this baseline to identify deviations. In the final application, these comparisons are embedded within the Crisis Timeline, Agent Network, and Embargo Breach Pathway views as supporting analytical components.</p>
 </section>
 <section id="expected-versus-actual-behaviour" class="level3">
 <h3 class="anchored" data-anchor-id="expected-versus-actual-behaviour">Expected Versus Actual Behaviour</h3>
-<p>Each agent will be assigned an expected role based on their function. For example, Legal is expected to reduce compliance risk, PR is expected to manage public messaging, Social Media is expected to monitor and respond to public sentiment, and The Judge is expected to enforce embargo restrictions.</p>
-<p>Actual behaviours will then be compared against these expectations. Examples of deviations may include:</p>
+<p>Each agent was assigned an expected role based on their function. For example, Legal is expected to reduce compliance risk, PR is expected to manage public messaging, Social Media is expected to monitor and respond to public sentiment, and The Judge is expected to enforce embargo restrictions.</p>
+<p>Actual behaviours are compared against these expectations. Examples of deviations include:</p>
 <ul>
 <li>public posting during embargo-sensitive periods,</li>
 <li>movement of sensitive information from internal to public channels,</li>
@@ -627,10 +627,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="proposed-shiny-application-design" class="level1">
 <h1>Proposed Shiny Application Design</h1>
-<p>The proposed application will be designed as an investigative visual analytics system. It will allow users to move from a high-level overview of the crisis into detailed inspection of specific agents, channels, messages, and decision pathways.</p>
+<p>The final Shiny application follows the proposed investigative visual analytics design. It allows users to move from a high-level overview of the crisis into detailed inspection of specific agents, channels, messages, and decision pathways. The interface is organised around the central question: <strong>Did TenantThread deliberately leak the merger, or did the system break down under pressure?</strong></p>
 <section id="main-application-tabs" class="level2">
 <h2 class="anchored" data-anchor-id="main-application-tabs">Main Application Tabs</h2>
-<p>The application will begin with an overview dashboard that provides summary information before users enter the three tabs below. This page will include:</p>
+<p>The application begins with a Landing Page / Overview dashboard that provides summary information before users enter the main investigative views. This page includes:</p>
 <ul>
 <li>total number of rounds,</li>
 <li>total number of communication records,</li>
@@ -654,26 +654,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>Crisis Timeline</td>
-<td>Reconstruct the sequence of events leading to the breach</td>
-<td>Interactive timeline, round context panel, anomaly markers, linked event table</td>
+<td>Landing Page / Overview</td>
+<td>Orient users to the case, breach window, investigation question, and core metrics</td>
+<td>Case summary, key indicators, breach window, and navigation entry points</td>
 </tr>
 <tr class="even">
-<td>Agent Network</td>
-<td>Show how agents interacted and how information moved across channels</td>
-<td>Interactive communication network, channel distribution summary, linked message table</td>
+<td>Crisis Timeline</td>
+<td>Reconstruct the sequence of events leading to the breach</td>
+<td>Interactive timeline, round context panel, anomaly markers, and linked event table</td>
 </tr>
 <tr class="odd">
+<td>Agent Network</td>
+<td>Show how agents interacted and how information moved across channels</td>
+<td>Interactive communication network, channel distribution summary, and linked message table</td>
+</tr>
+<tr class="even">
 <td>Embargo Breach Pathway</td>
 <td>Trace how embargo-sensitive information moved toward public release and where controls weakened</td>
-<td>Response-chain explorer, pathway diagram, risk-flagged message viewer, evidence table</td>
+<td>Response-chain explorer, pathway diagram, risk-flagged message viewer, and evidence table</td>
+</tr>
+<tr class="odd">
+<td>User Guide</td>
+<td>Explain how investigators can use the website and Shiny application</td>
+<td>Navigation guidance, interpretation notes, and usage instructions</td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="user-inputs" class="level2">
 <h2 class="anchored" data-anchor-id="user-inputs">User Inputs</h2>
-<p>The Shiny application will include interactive controls such as:</p>
+<p>The Shiny application includes interactive controls such as:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -712,7 +722,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td>Risk flag selector</td>
-<td>Focus on anomaly indicators or embargo-sensitive content</td>
+<td>Focus on embedded anomaly indicators or embargo-sensitive content</td>
 </tr>
 <tr class="even">
 <td>Network depth control</td>
@@ -724,10 +734,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="prototype-sketches-and-storyboard" class="level1">
 <h1>Prototype Sketches and Storyboard</h1>
-<p>The following prototype sketches illustrate the proposed interface structure of the Shiny application. These wireframes are intended to show the main layout, navigation flow, and analytical components of the system before full implementation.</p>
+<p>The following prototype sketches illustrate the design rationale behind the Shiny application. The wireframes show the main layout, navigation flow, and analytical components that informed the final implementation.</p>
 <section id="prototype-1-landing-page-overview" class="level2">
 <h2 class="anchored" data-anchor-id="prototype-1-landing-page-overview">Prototype 1: Landing Page / Overview</h2>
-<p>The landing page provides a concise summary of the case and orients users before they begin the investigation. It includes key metrics, the identified breach window, and the main investigation phases.</p>
+<p>The landing page provides a concise summary of the case and orients users before they begin the investigation. It includes key metrics, the identified breach window, the central investigation question, and the main investigation phases.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="01_landing_page.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
@@ -736,7 +746,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="prototype-2-crisis-timeline-tab" class="level2">
 <h2 class="anchored" data-anchor-id="prototype-2-crisis-timeline-tab">Prototype 2: Crisis Timeline Tab</h2>
-<p>The Crisis Timeline tab allows users to reconstruct the chronological sequence of events leading to the breach. It combines event markers, anomaly highlights, round context, summary panels, and a linked event detail table.</p>
+<p>The Crisis Timeline tab allows users to reconstruct the chronological sequence of events leading to the breach. It combines event markers, embedded anomaly highlights, round context, summary panels, and a linked event detail table.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="02_crisis_timeline_tab.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
@@ -745,7 +755,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="prototype-3-agent-network-tab" class="level2">
 <h2 class="anchored" data-anchor-id="prototype-3-agent-network-tab">Prototype 3: Agent Network Tab</h2>
-<p>The Agent Network tab allows users to explore communication relationships among agents and examine how information moved across channels. It includes the interaction network, channel distribution summary, linked message table, and comparison panel.</p>
+<p>The Agent Network tab allows users to explore communication relationships among agents and examine how information moved across channels. It includes the interaction network, channel distribution summary, linked message table, and embedded comparison panel.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="03_agent_network_tab.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
@@ -764,7 +774,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="r-packages" class="level1">
 <h1>R Packages</h1>
-<p>The project will use the following R packages.</p>
+<p>The project uses the following R packages.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -836,7 +846,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<p>These packages will support the full workflow from data parsing to interactive visual analytics deployment.</p>
+<p>These packages support the full workflow from data parsing to interactive visual analytics deployment.</p>
 </section>
 <section id="project-schedule" class="level1">
 <h1>Project Schedule</h1>
@@ -1406,15 +1416,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="fu"># Motivation</span></span>
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>As organisations increasingly rely on AI-enabled communication and compliance systems, sensitive corporate processes are now managed not only by humans but also by automated agents that draft messages, monitor sentiment, route approvals, and enforce disclosure rules. While these systems improve efficiency, they also create new risks when multiple agents, workflows, and decisions interact under pressure. This project is motivated by the case of TenantThread, a property technology company whose Retention Optimizer scores tenants using payment timing, maintenance requests, and message tone. Although the company publicly claimed its data was anonymised, internal communications suggest that tenants in smaller properties could still be re-identified through cross-referencing.</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>As organisations increasingly rely on AI-enabled communication and compliance systems, sensitive corporate processes are now managed not only by humans but also by automated agents that draft messages, monitor sentiment, route approvals, and enforce disclosure rules. While these systems improve efficiency, they also create new risks when multiple agents, workflows, and decisions interact under pressure. This project examines the case of TenantThread, a property technology company whose Retention Optimizer scores tenants using payment timing, maintenance requests, and message tone. Although the company publicly claimed its data was anonymised, internal communications suggest that tenants in smaller properties could still be re-identified through cross-referencing.</span>
 <span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>At the same time, TenantThread had entered a confidential merger agreement with CivicLoom Realty Partners under the codename Project HarborCrest, with a strict embargo until 6:00 PM on June 5th, 2046. Despite the presence of an automated compliance tool called The Judge, embargoed information about the merger appeared publicly on FleX around 5:00 PM. This makes the case important not only because a leak occurred, but because the cause is unclear: it may have resulted from deliberate human action, abnormal AI-agent behaviour, weak embargo enforcement, or a broader coordination failure. A Shiny-based visual analytics application is therefore well suited to support the investigation by helping users reconstruct the timeline of events, analyse agent interactions, compare normal and abnormal behaviour, and trace how embargo-sensitive information moved from internal communications to public release.</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>At the same time, TenantThread had entered a confidential merger agreement with CivicLoom Realty Partners under the codename Project HarborCrest, with a strict embargo until 6:00 PM on June 5th, 2046. Despite the presence of an automated compliance tool called The Judge, embargoed information about the merger appeared publicly on FleX around 5:00 PM. This makes the case important not only because a leak occurred, but because the cause is unclear: it may have resulted from deliberate human action, abnormal AI-agent behaviour, weak embargo enforcement, or a broader coordination failure. The completed Shiny-based visual analytics application supports this investigation by helping users reconstruct the timeline of events, analyse agent interactions, compare normal and abnormal behaviour, and trace how embargo-sensitive information moved from internal communications to public release.</span>
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="fu"># Problem Statement</span></span>
 <span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>TenantThread's internal communication and automated response systems released embargoed merger information before the official disclosure time, despite the presence of an embargo enforcement mechanism. The cause of this breach is unclear.</span>
 <span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>The central problem addressed by this project is: **Did TenantThread deliberately leak the merger information, or did the system break down under operational, reputational, and social media pressure?**</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>The central problem addressed by this project is: **Did TenantThread deliberately leak the merger, or did the system break down under pressure?**</span>
 <span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>To answer this question, investigators must analyse internal communications from the two weeks leading up to the breach and understand:</span>
 <span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a></span>
@@ -1432,9 +1442,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="fu"># Objectives</span></span>
 <span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>The objective of this project is to develop a web-enabled visual analytics application using Shiny to support the investigation of the Project HarborCrest embargo breach.</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>The objective of this project was to build a web-enabled visual analytics application using Shiny to support the investigation of the Project HarborCrest embargo breach.</span>
 <span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>The application aims to:</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>The application supports the following objectives:</span>
 <span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Reconstruct the sequence of events leading to the inappropriate release of embargoed merger information.</span>
 <span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Identify the key actors, systems, channels, and decision points involved in the release process.</span>
@@ -1465,7 +1475,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a><span class="fu">## Derived variables for analysis</span></span>
 <span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>To support the visual analytics system, the raw JSON data will be transformed into several derived variables:</span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>To support the visual analytics system, the raw JSON data was transformed into several derived variables:</span>
 <span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Derived Variable                                <span class="pp">|</span> Purpose                                                                          <span class="pp">|</span></span>
 <span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a><span class="pp">|------------------------------------|------------------------------------|</span></span>
@@ -1483,7 +1493,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a><span class="fu"># Methodology</span></span>
 <span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>The methodology consists of five main stages: data preparation, feature engineering, analytical modelling, visual analytics design, and Shiny implementation.</span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>The methodology consists of five main stages: data preparation, feature engineering, analytical modelling, visual analytics design, and Shiny implementation. Together, these stages convert the raw case data into an interactive investigative workflow for reconstructing the breach, comparing behaviour across crisis phases, and evaluating whether the evidence points more strongly to intentional leakage or systemic breakdown.</span>
 <span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a><span class="fu">## Methodology diagram</span></span>
 <span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a></span>
@@ -1513,8 +1523,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a><span class="st">  timeline_view [label='Crisis Timeline', fillcolor = Honeydew]</span></span>
 <span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a><span class="st">  network_view [label='Agent Interaction Network', fillcolor = Honeydew]</span></span>
-<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a><span class="st">  anomaly_view [label='Anomaly Explorer', fillcolor = Honeydew]</span></span>
-<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a><span class="st">  baseline_view [label='Behaviour Baseline View', fillcolor = Honeydew]</span></span>
+<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a><span class="st">  anomaly_view [label='Embedded Anomaly Flags', fillcolor = Honeydew]</span></span>
+<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a><span class="st">  baseline_view [label='Embedded Behaviour Baseline', fillcolor = Honeydew]</span></span>
 <span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a><span class="st">  pathway_view [label='Embargo Breach Pathway', fillcolor = Honeydew]</span></span>
 <span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a><span class="st">  shiny_app [label='Shiny Visual Analytics Application', fillcolor = MistyRose]</span></span>
@@ -1552,7 +1562,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-169"><a href="#cb3-169" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data preparation</span></span>
 <span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a>The first stage involves reading and transforming the JSON dataset into tidy tabular structures suitable for analysis and visualisation. The main steps include:</span>
+<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a>The first stage involved reading and transforming the JSON dataset into tidy tabular structures suitable for analysis and visualisation. The main steps included:</span>
 <span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Reading the JSON file using R.\</span>
 <span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Extracting round-level information from the <span class="in">`rounds`</span> array.\</span>
@@ -1565,13 +1575,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-182"><a href="#cb3-182" aria-hidden="true" tabindex="-1"></a><span class="ss">9.  </span>Creating response-chain relationships using the <span class="in">`responding_to`</span> field.\</span>
 <span id="cb3-183"><a href="#cb3-183" aria-hidden="true" tabindex="-1"></a><span class="ss">10. </span>Preparing the cleaned datasets for Shiny application use.</span>
 <span id="cb3-184"><a href="#cb3-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-185"><a href="#cb3-185" aria-hidden="true" tabindex="-1"></a>Special attention will be given to agent-name consistency. For example, similar naming variants such as Social Manager, Social Media Agent, and social media-related agent identifiers will be standardised into consistent labels for analysis and visualisation.</span>
+<span id="cb3-185"><a href="#cb3-185" aria-hidden="true" tabindex="-1"></a>Special attention was given to agent-name consistency. For example, similar naming variants such as Social Manager, Social Media Agent, and social media-related agent identifiers were standardised into consistent labels for analysis and visualisation.</span>
 <span id="cb3-186"><a href="#cb3-186" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-187"><a href="#cb3-187" aria-hidden="true" tabindex="-1"></a><span class="fu">## Feature engineering</span></span>
 <span id="cb3-188"><a href="#cb3-188" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-189"><a href="#cb3-189" aria-hidden="true" tabindex="-1"></a><span class="fu">### Time Period Classification</span></span>
 <span id="cb3-190"><a href="#cb3-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-191"><a href="#cb3-191" aria-hidden="true" tabindex="-1"></a>Each message will be classified into one of several investigation phases, such as:</span>
+<span id="cb3-191"><a href="#cb3-191" aria-hidden="true" tabindex="-1"></a>Each message was classified into one of several investigation phases, such as:</span>
 <span id="cb3-192"><a href="#cb3-192" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-193"><a href="#cb3-193" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>early pre-crisis period</span>
 <span id="cb3-194"><a href="#cb3-194" aria-hidden="true" tabindex="-1"></a></span>
@@ -1585,10 +1595,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-202"><a href="#cb3-202" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-203"><a href="#cb3-203" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>post-breach response period</span>
 <span id="cb3-204"><a href="#cb3-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-205"><a href="#cb3-205" aria-hidden="true" tabindex="-1"></a>This will allow users to compare agent behaviour across different stages of the crisis</span>
+<span id="cb3-205"><a href="#cb3-205" aria-hidden="true" tabindex="-1"></a>This allows users to compare agent behaviour across different stages of the crisis.</span>
 <span id="cb3-206"><a href="#cb3-206" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-207"><a href="#cb3-207" aria-hidden="true" tabindex="-1"></a><span class="fu">### Channel Risk Classification</span></span>
-<span id="cb3-208"><a href="#cb3-208" aria-hidden="true" tabindex="-1"></a>Each channel will be classified by communication risk level:</span>
+<span id="cb3-208"><a href="#cb3-208" aria-hidden="true" tabindex="-1"></a>Each channel was classified by communication risk level:</span>
 <span id="cb3-209"><a href="#cb3-209" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-210"><a href="#cb3-210" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Channel Type <span class="pp">|</span> Example Channels <span class="pp">|</span> Risk Interpretation <span class="pp">|</span></span>
 <span id="cb3-211"><a href="#cb3-211" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
@@ -1600,12 +1610,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-217"><a href="#cb3-217" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Anonymous public <span class="pp">|</span> <span class="in">`anonymous_post`</span> <span class="pp">|</span> High risk due to reduced accountability <span class="pp">|</span></span>
 <span id="cb3-218"><a href="#cb3-218" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-219"><a href="#cb3-219" aria-hidden="true" tabindex="-1"></a><span class="fu">### Embargo-Sensitive Keyword Detection</span></span>
-<span id="cb3-220"><a href="#cb3-220" aria-hidden="true" tabindex="-1"></a>Messages will be flagged if they contain sensitive terms related to the merger and breach context. Examples include: CivicLoom, Project HarborCrest, HarborCrest, merger, acquisition, embargo, announcement, ResidentIQ, SaltWind Journal, AlgorithmicEviction, Retention Optimizer, The Judge</span>
+<span id="cb3-220"><a href="#cb3-220" aria-hidden="true" tabindex="-1"></a>Messages were flagged when they contained sensitive terms related to the merger and breach context. Examples include: CivicLoom, Project HarborCrest, HarborCrest, merger, acquisition, embargo, announcement, ResidentIQ, SaltWind Journal, AlgorithmicEviction, Retention Optimizer, The Judge.</span>
 <span id="cb3-221"><a href="#cb3-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-222"><a href="#cb3-222" aria-hidden="true" tabindex="-1"></a>These flags will help identify when sensitive topics appear, which agents mention them, and through which channels they are discussed.</span>
+<span id="cb3-222"><a href="#cb3-222" aria-hidden="true" tabindex="-1"></a>These flags help identify when sensitive topics appeared, which agents mentioned them, and through which channels they were discussed.</span>
 <span id="cb3-223"><a href="#cb3-223" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-224"><a href="#cb3-224" aria-hidden="true" tabindex="-1"></a><span class="fu">### Behaviour Baseline Construction</span></span>
-<span id="cb3-225"><a href="#cb3-225" aria-hidden="true" tabindex="-1"></a>To identify abnormal behaviour, the application will establish a baseline using pre-crisis communication patterns. Baseline metrics may include:</span>
+<span id="cb3-225"><a href="#cb3-225" aria-hidden="true" tabindex="-1"></a>To identify abnormal behaviour, the application establishes a baseline using pre-crisis communication patterns. Baseline metrics include:</span>
 <span id="cb3-226"><a href="#cb3-226" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-227"><a href="#cb3-227" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>number of messages per agent,</span>
 <span id="cb3-228"><a href="#cb3-228" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>number of public posts per agent,</span>
@@ -1616,12 +1626,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-233"><a href="#cb3-233" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>average message volume per round,</span>
 <span id="cb3-234"><a href="#cb3-234" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>and use of internal state reasoning before public action.</span>
 <span id="cb3-235"><a href="#cb3-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-236"><a href="#cb3-236" aria-hidden="true" tabindex="-1"></a>Crisis-day behaviour will then be compared against this baseline to identify deviations.</span>
+<span id="cb3-236"><a href="#cb3-236" aria-hidden="true" tabindex="-1"></a>Crisis-day behaviour is compared against this baseline to identify deviations. In the final application, these comparisons are embedded within the Crisis Timeline, Agent Network, and Embargo Breach Pathway views as supporting analytical components.</span>
 <span id="cb3-237"><a href="#cb3-237" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-238"><a href="#cb3-238" aria-hidden="true" tabindex="-1"></a><span class="fu">### Expected Versus Actual Behaviour</span></span>
-<span id="cb3-239"><a href="#cb3-239" aria-hidden="true" tabindex="-1"></a>Each agent will be assigned an expected role based on their function. For example, Legal is expected to reduce compliance risk, PR is expected to manage public messaging, Social Media is expected to monitor and respond to public sentiment, and The Judge is expected to enforce embargo restrictions.</span>
+<span id="cb3-239"><a href="#cb3-239" aria-hidden="true" tabindex="-1"></a>Each agent was assigned an expected role based on their function. For example, Legal is expected to reduce compliance risk, PR is expected to manage public messaging, Social Media is expected to monitor and respond to public sentiment, and The Judge is expected to enforce embargo restrictions.</span>
 <span id="cb3-240"><a href="#cb3-240" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-241"><a href="#cb3-241" aria-hidden="true" tabindex="-1"></a>Actual behaviours will then be compared against these expectations. Examples of deviations may include:</span>
+<span id="cb3-241"><a href="#cb3-241" aria-hidden="true" tabindex="-1"></a>Actual behaviours are compared against these expectations. Examples of deviations include:</span>
 <span id="cb3-242"><a href="#cb3-242" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-243"><a href="#cb3-243" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>public posting during embargo-sensitive periods,</span>
 <span id="cb3-244"><a href="#cb3-244" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>movement of sensitive information from internal to public channels,</span>
@@ -1631,10 +1641,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-248"><a href="#cb3-248" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-249"><a href="#cb3-249" aria-hidden="true" tabindex="-1"></a><span class="fu"># Proposed Shiny Application Design</span></span>
 <span id="cb3-250"><a href="#cb3-250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-251"><a href="#cb3-251" aria-hidden="true" tabindex="-1"></a>The proposed application will be designed as an investigative visual analytics system. It will allow users to move from a high-level overview of the crisis into detailed inspection of specific agents, channels, messages, and decision pathways.</span>
+<span id="cb3-251"><a href="#cb3-251" aria-hidden="true" tabindex="-1"></a>The final Shiny application follows the proposed investigative visual analytics design. It allows users to move from a high-level overview of the crisis into detailed inspection of specific agents, channels, messages, and decision pathways. The interface is organised around the central question: **Did TenantThread deliberately leak the merger, or did the system break down under pressure?**</span>
 <span id="cb3-252"><a href="#cb3-252" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-253"><a href="#cb3-253" aria-hidden="true" tabindex="-1"></a><span class="fu">## Main Application Tabs</span></span>
-<span id="cb3-254"><a href="#cb3-254" aria-hidden="true" tabindex="-1"></a>The application will begin with an overview dashboard that provides summary information before users enter the three tabs below. This page will include:</span>
+<span id="cb3-254"><a href="#cb3-254" aria-hidden="true" tabindex="-1"></a>The application begins with a Landing Page / Overview dashboard that provides summary information before users enter the main investigative views. This page includes:</span>
 <span id="cb3-255"><a href="#cb3-255" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-256"><a href="#cb3-256" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>total number of rounds,</span>
 <span id="cb3-257"><a href="#cb3-257" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>total number of communication records,</span>
@@ -1645,146 +1655,148 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-262"><a href="#cb3-262" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-263"><a href="#cb3-263" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Tab <span class="pp">|</span> Purpose <span class="pp">|</span> Main Visual Outputs <span class="pp">|</span></span>
 <span id="cb3-264"><a href="#cb3-264" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
-<span id="cb3-265"><a href="#cb3-265" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Crisis Timeline <span class="pp">|</span> Reconstruct the sequence of events leading to the breach <span class="pp">|</span> Interactive timeline, round context panel, anomaly markers, linked event table <span class="pp">|</span></span>
-<span id="cb3-266"><a href="#cb3-266" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Agent Network <span class="pp">|</span> Show how agents interacted and how information moved across channels <span class="pp">|</span> Interactive communication network, channel distribution summary, linked message table <span class="pp">|</span></span>
-<span id="cb3-267"><a href="#cb3-267" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Embargo Breach Pathway <span class="pp">|</span> Trace how embargo-sensitive information moved toward public release and where controls weakened <span class="pp">|</span> Response-chain explorer, pathway diagram, risk-flagged message viewer, evidence table <span class="pp">|</span></span>
-<span id="cb3-268"><a href="#cb3-268" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-269"><a href="#cb3-269" aria-hidden="true" tabindex="-1"></a><span class="fu">## User Inputs</span></span>
-<span id="cb3-270"><a href="#cb3-270" aria-hidden="true" tabindex="-1"></a>The Shiny application will include interactive controls such as:</span>
-<span id="cb3-271"><a href="#cb3-271" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-272"><a href="#cb3-272" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Input <span class="pp">|</span> Purpose <span class="pp">|</span></span>
-<span id="cb3-273"><a href="#cb3-273" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb3-274"><a href="#cb3-274" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Date and time range selector <span class="pp">|</span> Filter messages by investigation period <span class="pp">|</span></span>
-<span id="cb3-275"><a href="#cb3-275" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Agent selector <span class="pp">|</span> Focus on one or more agents <span class="pp">|</span></span>
-<span id="cb3-276"><a href="#cb3-276" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Channel selector <span class="pp">|</span> Compare formal, private, public, and anonymous channels <span class="pp">|</span></span>
-<span id="cb3-277"><a href="#cb3-277" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Keyword search <span class="pp">|</span> Search for sensitive terms and entities <span class="pp">|</span></span>
-<span id="cb3-278"><a href="#cb3-278" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Crisis phase selector <span class="pp">|</span> Compare behaviour across pre-crisis, escalation, and breach phases <span class="pp">|</span></span>
-<span id="cb3-279"><a href="#cb3-279" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Message type selector <span class="pp">|</span> Separate internal messages, public posts, and replies <span class="pp">|</span></span>
-<span id="cb3-280"><a href="#cb3-280" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Risk flag selector <span class="pp">|</span> Focus on anomaly indicators or embargo-sensitive content <span class="pp">|</span></span>
-<span id="cb3-281"><a href="#cb3-281" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Network depth control <span class="pp">|</span> Adjust how much of the communication network is displayed <span class="pp">|</span></span>
-<span id="cb3-282"><a href="#cb3-282" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-283"><a href="#cb3-283" aria-hidden="true" tabindex="-1"></a><span class="fu"># Prototype Sketches and Storyboard</span></span>
-<span id="cb3-284"><a href="#cb3-284" aria-hidden="true" tabindex="-1"></a>The following prototype sketches illustrate the proposed interface structure of the Shiny application. These wireframes are intended to show the main layout, navigation flow, and analytical components of the system before full implementation.</span>
-<span id="cb3-285"><a href="#cb3-285" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-286"><a href="#cb3-286" aria-hidden="true" tabindex="-1"></a><span class="fu">## Prototype 1: Landing Page / Overview</span></span>
+<span id="cb3-265"><a href="#cb3-265" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Landing Page / Overview <span class="pp">|</span> Orient users to the case, breach window, investigation question, and core metrics <span class="pp">|</span> Case summary, key indicators, breach window, and navigation entry points <span class="pp">|</span></span>
+<span id="cb3-266"><a href="#cb3-266" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Crisis Timeline <span class="pp">|</span> Reconstruct the sequence of events leading to the breach <span class="pp">|</span> Interactive timeline, round context panel, anomaly markers, and linked event table <span class="pp">|</span></span>
+<span id="cb3-267"><a href="#cb3-267" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Agent Network <span class="pp">|</span> Show how agents interacted and how information moved across channels <span class="pp">|</span> Interactive communication network, channel distribution summary, and linked message table <span class="pp">|</span></span>
+<span id="cb3-268"><a href="#cb3-268" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Embargo Breach Pathway <span class="pp">|</span> Trace how embargo-sensitive information moved toward public release and where controls weakened <span class="pp">|</span> Response-chain explorer, pathway diagram, risk-flagged message viewer, and evidence table <span class="pp">|</span></span>
+<span id="cb3-269"><a href="#cb3-269" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> User Guide <span class="pp">|</span> Explain how investigators can use the website and Shiny application <span class="pp">|</span> Navigation guidance, interpretation notes, and usage instructions <span class="pp">|</span></span>
+<span id="cb3-270"><a href="#cb3-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-271"><a href="#cb3-271" aria-hidden="true" tabindex="-1"></a><span class="fu">## User Inputs</span></span>
+<span id="cb3-272"><a href="#cb3-272" aria-hidden="true" tabindex="-1"></a>The Shiny application includes interactive controls such as:</span>
+<span id="cb3-273"><a href="#cb3-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-274"><a href="#cb3-274" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Input <span class="pp">|</span> Purpose <span class="pp">|</span></span>
+<span id="cb3-275"><a href="#cb3-275" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb3-276"><a href="#cb3-276" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Date and time range selector <span class="pp">|</span> Filter messages by investigation period <span class="pp">|</span></span>
+<span id="cb3-277"><a href="#cb3-277" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Agent selector <span class="pp">|</span> Focus on one or more agents <span class="pp">|</span></span>
+<span id="cb3-278"><a href="#cb3-278" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Channel selector <span class="pp">|</span> Compare formal, private, public, and anonymous channels <span class="pp">|</span></span>
+<span id="cb3-279"><a href="#cb3-279" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Keyword search <span class="pp">|</span> Search for sensitive terms and entities <span class="pp">|</span></span>
+<span id="cb3-280"><a href="#cb3-280" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Crisis phase selector <span class="pp">|</span> Compare behaviour across pre-crisis, escalation, and breach phases <span class="pp">|</span></span>
+<span id="cb3-281"><a href="#cb3-281" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Message type selector <span class="pp">|</span> Separate internal messages, public posts, and replies <span class="pp">|</span></span>
+<span id="cb3-282"><a href="#cb3-282" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Risk flag selector <span class="pp">|</span> Focus on embedded anomaly indicators or embargo-sensitive content <span class="pp">|</span></span>
+<span id="cb3-283"><a href="#cb3-283" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Network depth control <span class="pp">|</span> Adjust how much of the communication network is displayed <span class="pp">|</span></span>
+<span id="cb3-284"><a href="#cb3-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-285"><a href="#cb3-285" aria-hidden="true" tabindex="-1"></a><span class="fu"># Prototype Sketches and Storyboard</span></span>
+<span id="cb3-286"><a href="#cb3-286" aria-hidden="true" tabindex="-1"></a>The following prototype sketches illustrate the design rationale behind the Shiny application. The wireframes show the main layout, navigation flow, and analytical components that informed the final implementation.</span>
 <span id="cb3-287"><a href="#cb3-287" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-288"><a href="#cb3-288" aria-hidden="true" tabindex="-1"></a>The landing page provides a concise summary of the case and orients users before they begin the investigation. It includes key metrics, the identified breach window, and the main investigation phases.</span>
+<span id="cb3-288"><a href="#cb3-288" aria-hidden="true" tabindex="-1"></a><span class="fu">## Prototype 1: Landing Page / Overview</span></span>
 <span id="cb3-289"><a href="#cb3-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-290"><a href="#cb3-290" aria-hidden="true" tabindex="-1"></a><span class="al">![](01_landing_page.png)</span>{fig-align="center" width="100%"}</span>
+<span id="cb3-290"><a href="#cb3-290" aria-hidden="true" tabindex="-1"></a>The landing page provides a concise summary of the case and orients users before they begin the investigation. It includes key metrics, the identified breach window, the central investigation question, and the main investigation phases.</span>
 <span id="cb3-291"><a href="#cb3-291" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-292"><a href="#cb3-292" aria-hidden="true" tabindex="-1"></a><span class="fu">## Prototype 2: Crisis Timeline Tab</span></span>
+<span id="cb3-292"><a href="#cb3-292" aria-hidden="true" tabindex="-1"></a><span class="al">![](01_landing_page.png)</span>{fig-align="center" width="100%"}</span>
 <span id="cb3-293"><a href="#cb3-293" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-294"><a href="#cb3-294" aria-hidden="true" tabindex="-1"></a>The Crisis Timeline tab allows users to reconstruct the chronological sequence of events leading to the breach. It combines event markers, anomaly highlights, round context, summary panels, and a linked event detail table.</span>
+<span id="cb3-294"><a href="#cb3-294" aria-hidden="true" tabindex="-1"></a><span class="fu">## Prototype 2: Crisis Timeline Tab</span></span>
 <span id="cb3-295"><a href="#cb3-295" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-296"><a href="#cb3-296" aria-hidden="true" tabindex="-1"></a><span class="al">![](02_crisis_timeline_tab.png)</span>{fig-align="center" width="100%"}</span>
+<span id="cb3-296"><a href="#cb3-296" aria-hidden="true" tabindex="-1"></a>The Crisis Timeline tab allows users to reconstruct the chronological sequence of events leading to the breach. It combines event markers, embedded anomaly highlights, round context, summary panels, and a linked event detail table.</span>
 <span id="cb3-297"><a href="#cb3-297" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-298"><a href="#cb3-298" aria-hidden="true" tabindex="-1"></a><span class="fu">## Prototype 3: Agent Network Tab</span></span>
+<span id="cb3-298"><a href="#cb3-298" aria-hidden="true" tabindex="-1"></a><span class="al">![](02_crisis_timeline_tab.png)</span>{fig-align="center" width="100%"}</span>
 <span id="cb3-299"><a href="#cb3-299" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-300"><a href="#cb3-300" aria-hidden="true" tabindex="-1"></a>The Agent Network tab allows users to explore communication relationships among agents and examine how information moved across channels. It includes the interaction network, channel distribution summary, linked message table, and comparison panel.</span>
+<span id="cb3-300"><a href="#cb3-300" aria-hidden="true" tabindex="-1"></a><span class="fu">## Prototype 3: Agent Network Tab</span></span>
 <span id="cb3-301"><a href="#cb3-301" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-302"><a href="#cb3-302" aria-hidden="true" tabindex="-1"></a><span class="al">![](03_agent_network_tab.png)</span>{fig-align="center" width="100%"}</span>
+<span id="cb3-302"><a href="#cb3-302" aria-hidden="true" tabindex="-1"></a>The Agent Network tab allows users to explore communication relationships among agents and examine how information moved across channels. It includes the interaction network, channel distribution summary, linked message table, and embedded comparison panel.</span>
 <span id="cb3-303"><a href="#cb3-303" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-304"><a href="#cb3-304" aria-hidden="true" tabindex="-1"></a><span class="fu">## Prototype 4: Embargo Breach Pathway Tab</span></span>
+<span id="cb3-304"><a href="#cb3-304" aria-hidden="true" tabindex="-1"></a><span class="al">![](03_agent_network_tab.png)</span>{fig-align="center" width="100%"}</span>
 <span id="cb3-305"><a href="#cb3-305" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-306"><a href="#cb3-306" aria-hidden="true" tabindex="-1"></a>The Embargo Breach Pathway tab focuses on tracing the pathway through which embargo-sensitive information moved from internal communication into public release. It includes the response-chain view, embedded risk summary, behaviour comparison panel, and linked evidence viewer.</span>
+<span id="cb3-306"><a href="#cb3-306" aria-hidden="true" tabindex="-1"></a><span class="fu">## Prototype 4: Embargo Breach Pathway Tab</span></span>
 <span id="cb3-307"><a href="#cb3-307" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-308"><a href="#cb3-308" aria-hidden="true" tabindex="-1"></a><span class="al">![](04_embargo_breach_pathway_tab.png)</span>{fig-align="center" width="100%"}</span>
+<span id="cb3-308"><a href="#cb3-308" aria-hidden="true" tabindex="-1"></a>The Embargo Breach Pathway tab focuses on tracing the pathway through which embargo-sensitive information moved from internal communication into public release. It includes the response-chain view, embedded risk summary, behaviour comparison panel, and linked evidence viewer.</span>
 <span id="cb3-309"><a href="#cb3-309" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-310"><a href="#cb3-310" aria-hidden="true" tabindex="-1"></a><span class="fu"># R Packages</span></span>
-<span id="cb3-311"><a href="#cb3-311" aria-hidden="true" tabindex="-1"></a>The project will use the following R packages.</span>
-<span id="cb3-312"><a href="#cb3-312" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-313"><a href="#cb3-313" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Category <span class="pp">|</span> Package <span class="pp">|</span> Purpose <span class="pp">|</span></span>
-<span id="cb3-314"><a href="#cb3-314" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
-<span id="cb3-315"><a href="#cb3-315" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> JSON parsing <span class="pp">|</span> <span class="in">`jsonlite`</span> <span class="pp">|</span> Reading and parsing the MC1 JSON data <span class="pp">|</span></span>
-<span id="cb3-316"><a href="#cb3-316" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Data wrangling <span class="pp">|</span> <span class="in">`tidyverse`</span> <span class="pp">|</span> Cleaning, transformation, joining, and summarising data <span class="pp">|</span></span>
-<span id="cb3-317"><a href="#cb3-317" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Date and time handling <span class="pp">|</span> <span class="in">`lubridate`</span> <span class="pp">|</span> Processing timestamps and crisis phases <span class="pp">|</span></span>
-<span id="cb3-318"><a href="#cb3-318" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Text processing <span class="pp">|</span> <span class="in">`stringr`</span>, <span class="in">`tidytext`</span>, <span class="in">`quanteda`</span> <span class="pp">|</span> Keyword extraction, text cleaning, and sensitive-term detection <span class="pp">|</span></span>
-<span id="cb3-319"><a href="#cb3-319" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Network analysis <span class="pp">|</span> <span class="in">`igraph`</span>, <span class="in">`tidygraph`</span> <span class="pp">|</span> Building and analysing agent communication networks <span class="pp">|</span></span>
-<span id="cb3-320"><a href="#cb3-320" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Network visualisation <span class="pp">|</span> <span class="in">`ggraph`</span>, <span class="in">`visNetwork`</span> <span class="pp">|</span> Creating static and interactive network graphs <span class="pp">|</span></span>
-<span id="cb3-321"><a href="#cb3-321" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Interactive visualisation <span class="pp">|</span> <span class="in">`plotly`</span>, <span class="in">`ggiraph`</span> <span class="pp">|</span> Creating interactive charts and timelines <span class="pp">|</span></span>
-<span id="cb3-322"><a href="#cb3-322" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Tables <span class="pp">|</span> <span class="in">`DT`</span> <span class="pp">|</span> Displaying searchable and filterable message tables <span class="pp">|</span></span>
-<span id="cb3-323"><a href="#cb3-323" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Shiny application <span class="pp">|</span> <span class="in">`shiny`</span>, <span class="in">`bslib`</span>, <span class="in">`shinyWidgets`</span>, <span class="in">`shinyjs`</span> <span class="pp">|</span> Building the web-enabled interactive application <span class="pp">|</span></span>
-<span id="cb3-324"><a href="#cb3-324" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Formatting <span class="pp">|</span> <span class="in">`scales`</span>, <span class="in">`ggtext`</span> <span class="pp">|</span> Improving chart labels, annotations, and visual design <span class="pp">|</span></span>
-<span id="cb3-325"><a href="#cb3-325" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project website <span class="pp">|</span> <span class="in">`quarto`</span> <span class="pp">|</span> Developing and publishing the project website <span class="pp">|</span></span>
-<span id="cb3-326"><a href="#cb3-326" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-327"><a href="#cb3-327" aria-hidden="true" tabindex="-1"></a>These packages will support the full workflow from data parsing to interactive visual analytics deployment.</span>
+<span id="cb3-310"><a href="#cb3-310" aria-hidden="true" tabindex="-1"></a><span class="al">![](04_embargo_breach_pathway_tab.png)</span>{fig-align="center" width="100%"}</span>
+<span id="cb3-311"><a href="#cb3-311" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-312"><a href="#cb3-312" aria-hidden="true" tabindex="-1"></a><span class="fu"># R Packages</span></span>
+<span id="cb3-313"><a href="#cb3-313" aria-hidden="true" tabindex="-1"></a>The project uses the following R packages.</span>
+<span id="cb3-314"><a href="#cb3-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-315"><a href="#cb3-315" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Category <span class="pp">|</span> Package <span class="pp">|</span> Purpose <span class="pp">|</span></span>
+<span id="cb3-316"><a href="#cb3-316" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
+<span id="cb3-317"><a href="#cb3-317" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> JSON parsing <span class="pp">|</span> <span class="in">`jsonlite`</span> <span class="pp">|</span> Reading and parsing the MC1 JSON data <span class="pp">|</span></span>
+<span id="cb3-318"><a href="#cb3-318" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Data wrangling <span class="pp">|</span> <span class="in">`tidyverse`</span> <span class="pp">|</span> Cleaning, transformation, joining, and summarising data <span class="pp">|</span></span>
+<span id="cb3-319"><a href="#cb3-319" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Date and time handling <span class="pp">|</span> <span class="in">`lubridate`</span> <span class="pp">|</span> Processing timestamps and crisis phases <span class="pp">|</span></span>
+<span id="cb3-320"><a href="#cb3-320" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Text processing <span class="pp">|</span> <span class="in">`stringr`</span>, <span class="in">`tidytext`</span>, <span class="in">`quanteda`</span> <span class="pp">|</span> Keyword extraction, text cleaning, and sensitive-term detection <span class="pp">|</span></span>
+<span id="cb3-321"><a href="#cb3-321" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Network analysis <span class="pp">|</span> <span class="in">`igraph`</span>, <span class="in">`tidygraph`</span> <span class="pp">|</span> Building and analysing agent communication networks <span class="pp">|</span></span>
+<span id="cb3-322"><a href="#cb3-322" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Network visualisation <span class="pp">|</span> <span class="in">`ggraph`</span>, <span class="in">`visNetwork`</span> <span class="pp">|</span> Creating static and interactive network graphs <span class="pp">|</span></span>
+<span id="cb3-323"><a href="#cb3-323" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Interactive visualisation <span class="pp">|</span> <span class="in">`plotly`</span>, <span class="in">`ggiraph`</span> <span class="pp">|</span> Creating interactive charts and timelines <span class="pp">|</span></span>
+<span id="cb3-324"><a href="#cb3-324" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Tables <span class="pp">|</span> <span class="in">`DT`</span> <span class="pp">|</span> Displaying searchable and filterable message tables <span class="pp">|</span></span>
+<span id="cb3-325"><a href="#cb3-325" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Shiny application <span class="pp">|</span> <span class="in">`shiny`</span>, <span class="in">`bslib`</span>, <span class="in">`shinyWidgets`</span>, <span class="in">`shinyjs`</span> <span class="pp">|</span> Building the web-enabled interactive application <span class="pp">|</span></span>
+<span id="cb3-326"><a href="#cb3-326" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Formatting <span class="pp">|</span> <span class="in">`scales`</span>, <span class="in">`ggtext`</span> <span class="pp">|</span> Improving chart labels, annotations, and visual design <span class="pp">|</span></span>
+<span id="cb3-327"><a href="#cb3-327" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project website <span class="pp">|</span> <span class="in">`quarto`</span> <span class="pp">|</span> Developing and publishing the project website <span class="pp">|</span></span>
 <span id="cb3-328"><a href="#cb3-328" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-329"><a href="#cb3-329" aria-hidden="true" tabindex="-1"></a><span class="fu"># Project Schedule</span></span>
-<span id="cb3-332"><a href="#cb3-332" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb3-333"><a href="#cb3-333" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-334"><a href="#cb3-334" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
-<span id="cb3-335"><a href="#cb3-335" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-336"><a href="#cb3-336" aria-hidden="true" tabindex="-1"></a>schedule <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb3-337"><a href="#cb3-337" aria-hidden="true" tabindex="-1"></a>  <span class="at">task =</span> <span class="fu">c</span>(</span>
-<span id="cb3-338"><a href="#cb3-338" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Finalise proposal and project scope"</span>,</span>
-<span id="cb3-339"><a href="#cb3-339" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Data parsing and exploratory data analysis"</span>,</span>
-<span id="cb3-340"><a href="#cb3-340" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Feature engineering and anomaly flag design"</span>,</span>
-<span id="cb3-341"><a href="#cb3-341" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Develop core visualisations"</span>,</span>
-<span id="cb3-342"><a href="#cb3-342" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Build Shiny application interface"</span>,</span>
-<span id="cb3-343"><a href="#cb3-343" aria-hidden="true" tabindex="-1"></a>    <span class="st">"User testing and refinement"</span>,</span>
-<span id="cb3-344"><a href="#cb3-344" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Prepare poster and website updates"</span>,</span>
-<span id="cb3-345"><a href="#cb3-345" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Finalise poster presentation and user guide"</span>,</span>
-<span id="cb3-346"><a href="#cb3-346" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Final submission preparation"</span></span>
-<span id="cb3-347"><a href="#cb3-347" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb3-348"><a href="#cb3-348" aria-hidden="true" tabindex="-1"></a>  <span class="at">start =</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(</span>
-<span id="cb3-349"><a href="#cb3-349" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2026-06-10"</span>, <span class="st">"2026-06-13"</span>, <span class="st">"2026-06-17"</span>,</span>
-<span id="cb3-350"><a href="#cb3-350" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2026-06-21"</span>, <span class="st">"2026-06-25"</span>, <span class="st">"2026-06-28"</span>,</span>
-<span id="cb3-351"><a href="#cb3-351" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2026-06-30"</span>, <span class="st">"2026-07-01"</span>, <span class="st">"2026-07-04"</span></span>
-<span id="cb3-352"><a href="#cb3-352" aria-hidden="true" tabindex="-1"></a>  )),</span>
-<span id="cb3-353"><a href="#cb3-353" aria-hidden="true" tabindex="-1"></a>  <span class="at">end =</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(</span>
-<span id="cb3-354"><a href="#cb3-354" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2026-06-13"</span>, <span class="st">"2026-06-17"</span>, <span class="st">"2026-06-21"</span>,</span>
-<span id="cb3-355"><a href="#cb3-355" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2026-06-25"</span>, <span class="st">"2026-06-28"</span>, <span class="st">"2026-06-30"</span>,</span>
-<span id="cb3-356"><a href="#cb3-356" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2026-07-01"</span>, <span class="st">"2026-07-04"</span>, <span class="st">"2026-07-05"</span></span>
-<span id="cb3-357"><a href="#cb3-357" aria-hidden="true" tabindex="-1"></a>  )),</span>
-<span id="cb3-358"><a href="#cb3-358" aria-hidden="true" tabindex="-1"></a>  <span class="at">output =</span> <span class="fu">c</span>(</span>
-<span id="cb3-359"><a href="#cb3-359" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Completed project proposal and refined analytical direction"</span>,</span>
-<span id="cb3-360"><a href="#cb3-360" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Cleaned communication, round, and participant datasets"</span>,</span>
-<span id="cb3-361"><a href="#cb3-361" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Derived variables, risk flags, keyword flags, and phase labels"</span>,</span>
-<span id="cb3-362"><a href="#cb3-362" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Timeline, network, behaviour baseline, and anomaly views"</span>,</span>
-<span id="cb3-363"><a href="#cb3-363" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Integrated Shiny prototype with interactive filters"</span>,</span>
-<span id="cb3-364"><a href="#cb3-364" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Improved usability, layout, and interpretation flow"</span>,</span>
-<span id="cb3-365"><a href="#cb3-365" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Poster draft, website proposal page, and app screenshots"</span>,</span>
-<span id="cb3-366"><a href="#cb3-366" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Poster, user guide, and presentation talking points"</span>,</span>
-<span id="cb3-367"><a href="#cb3-367" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Final Shiny app, GitHub repository, website, minutes, peer evaluation, and zipped submission"</span></span>
-<span id="cb3-368"><a href="#cb3-368" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb3-369"><a href="#cb3-369" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-370"><a href="#cb3-370" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-371"><a href="#cb3-371" aria-hidden="true" tabindex="-1"></a>schedule <span class="ot">&lt;-</span> schedule <span class="sc">%&gt;%</span></span>
-<span id="cb3-372"><a href="#cb3-372" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">task =</span> <span class="fu">factor</span>(task, <span class="at">levels =</span> <span class="fu">rev</span>(task)))</span>
-<span id="cb3-373"><a href="#cb3-373" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-374"><a href="#cb3-374" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(schedule) <span class="sc">+</span></span>
-<span id="cb3-375"><a href="#cb3-375" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(</span>
-<span id="cb3-376"><a href="#cb3-376" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> start, <span class="at">xend =</span> end, <span class="at">y =</span> task, <span class="at">yend =</span> task),</span>
-<span id="cb3-377"><a href="#cb3-377" aria-hidden="true" tabindex="-1"></a>    <span class="at">linewidth =</span> <span class="dv">8</span>,</span>
-<span id="cb3-378"><a href="#cb3-378" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">"#4F81BD"</span></span>
-<span id="cb3-379"><a href="#cb3-379" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb3-380"><a href="#cb3-380" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb3-381"><a href="#cb3-381" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> start, <span class="at">y =</span> task),</span>
-<span id="cb3-382"><a href="#cb3-382" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">3</span>,</span>
-<span id="cb3-383"><a href="#cb3-383" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">"#2F5597"</span></span>
-<span id="cb3-384"><a href="#cb3-384" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb3-385"><a href="#cb3-385" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb3-386"><a href="#cb3-386" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> end, <span class="at">y =</span> task),</span>
-<span id="cb3-387"><a href="#cb3-387" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">3</span>,</span>
-<span id="cb3-388"><a href="#cb3-388" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">"#2F5597"</span></span>
-<span id="cb3-389"><a href="#cb3-389" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb3-390"><a href="#cb3-390" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(</span>
-<span id="cb3-391"><a href="#cb3-391" aria-hidden="true" tabindex="-1"></a>    <span class="at">date_breaks =</span> <span class="st">"3 days"</span>,</span>
-<span id="cb3-392"><a href="#cb3-392" aria-hidden="true" tabindex="-1"></a>    <span class="at">date_labels =</span> <span class="st">"%d %b"</span></span>
-<span id="cb3-393"><a href="#cb3-393" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb3-394"><a href="#cb3-394" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb3-395"><a href="#cb3-395" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Project Schedule Gantt Chart"</span>,</span>
-<span id="cb3-396"><a href="#cb3-396" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Period"</span>,</span>
-<span id="cb3-397"><a href="#cb3-397" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="cn">NULL</span></span>
-<span id="cb3-398"><a href="#cb3-398" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb3-399"><a href="#cb3-399" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
-<span id="cb3-400"><a href="#cb3-400" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb3-401"><a href="#cb3-401" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">16</span>),</span>
-<span id="cb3-402"><a href="#cb3-402" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
-<span id="cb3-403"><a href="#cb3-403" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb3-404"><a href="#cb3-404" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb3-405"><a href="#cb3-405" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb3-406"><a href="#cb3-406" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-329"><a href="#cb3-329" aria-hidden="true" tabindex="-1"></a>These packages support the full workflow from data parsing to interactive visual analytics deployment.</span>
+<span id="cb3-330"><a href="#cb3-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-331"><a href="#cb3-331" aria-hidden="true" tabindex="-1"></a><span class="fu"># Project Schedule</span></span>
+<span id="cb3-334"><a href="#cb3-334" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-335"><a href="#cb3-335" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-336"><a href="#cb3-336" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb3-337"><a href="#cb3-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-338"><a href="#cb3-338" aria-hidden="true" tabindex="-1"></a>schedule <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb3-339"><a href="#cb3-339" aria-hidden="true" tabindex="-1"></a>  <span class="at">task =</span> <span class="fu">c</span>(</span>
+<span id="cb3-340"><a href="#cb3-340" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Finalise proposal and project scope"</span>,</span>
+<span id="cb3-341"><a href="#cb3-341" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Data parsing and exploratory data analysis"</span>,</span>
+<span id="cb3-342"><a href="#cb3-342" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Feature engineering and anomaly flag design"</span>,</span>
+<span id="cb3-343"><a href="#cb3-343" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Develop core visualisations"</span>,</span>
+<span id="cb3-344"><a href="#cb3-344" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Build Shiny application interface"</span>,</span>
+<span id="cb3-345"><a href="#cb3-345" aria-hidden="true" tabindex="-1"></a>    <span class="st">"User testing and refinement"</span>,</span>
+<span id="cb3-346"><a href="#cb3-346" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Prepare poster and website updates"</span>,</span>
+<span id="cb3-347"><a href="#cb3-347" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Finalise poster presentation and user guide"</span>,</span>
+<span id="cb3-348"><a href="#cb3-348" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Final submission preparation"</span></span>
+<span id="cb3-349"><a href="#cb3-349" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb3-350"><a href="#cb3-350" aria-hidden="true" tabindex="-1"></a>  <span class="at">start =</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(</span>
+<span id="cb3-351"><a href="#cb3-351" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2026-06-10"</span>, <span class="st">"2026-06-13"</span>, <span class="st">"2026-06-17"</span>,</span>
+<span id="cb3-352"><a href="#cb3-352" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2026-06-21"</span>, <span class="st">"2026-06-25"</span>, <span class="st">"2026-06-28"</span>,</span>
+<span id="cb3-353"><a href="#cb3-353" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2026-06-30"</span>, <span class="st">"2026-07-01"</span>, <span class="st">"2026-07-04"</span></span>
+<span id="cb3-354"><a href="#cb3-354" aria-hidden="true" tabindex="-1"></a>  )),</span>
+<span id="cb3-355"><a href="#cb3-355" aria-hidden="true" tabindex="-1"></a>  <span class="at">end =</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(</span>
+<span id="cb3-356"><a href="#cb3-356" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2026-06-13"</span>, <span class="st">"2026-06-17"</span>, <span class="st">"2026-06-21"</span>,</span>
+<span id="cb3-357"><a href="#cb3-357" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2026-06-25"</span>, <span class="st">"2026-06-28"</span>, <span class="st">"2026-06-30"</span>,</span>
+<span id="cb3-358"><a href="#cb3-358" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2026-07-01"</span>, <span class="st">"2026-07-04"</span>, <span class="st">"2026-07-05"</span></span>
+<span id="cb3-359"><a href="#cb3-359" aria-hidden="true" tabindex="-1"></a>  )),</span>
+<span id="cb3-360"><a href="#cb3-360" aria-hidden="true" tabindex="-1"></a>  <span class="at">output =</span> <span class="fu">c</span>(</span>
+<span id="cb3-361"><a href="#cb3-361" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Completed project proposal and refined analytical direction"</span>,</span>
+<span id="cb3-362"><a href="#cb3-362" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Cleaned communication, round, and participant datasets"</span>,</span>
+<span id="cb3-363"><a href="#cb3-363" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Derived variables, risk flags, keyword flags, and phase labels"</span>,</span>
+<span id="cb3-364"><a href="#cb3-364" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Timeline, network, behaviour baseline, and anomaly views"</span>,</span>
+<span id="cb3-365"><a href="#cb3-365" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Integrated Shiny prototype with interactive filters"</span>,</span>
+<span id="cb3-366"><a href="#cb3-366" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Improved usability, layout, and interpretation flow"</span>,</span>
+<span id="cb3-367"><a href="#cb3-367" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Poster draft, website proposal page, and app screenshots"</span>,</span>
+<span id="cb3-368"><a href="#cb3-368" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Poster, user guide, and presentation talking points"</span>,</span>
+<span id="cb3-369"><a href="#cb3-369" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Final Shiny app, GitHub repository, website, minutes, peer evaluation, and zipped submission"</span></span>
+<span id="cb3-370"><a href="#cb3-370" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-371"><a href="#cb3-371" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-372"><a href="#cb3-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-373"><a href="#cb3-373" aria-hidden="true" tabindex="-1"></a>schedule <span class="ot">&lt;-</span> schedule <span class="sc">%&gt;%</span></span>
+<span id="cb3-374"><a href="#cb3-374" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">task =</span> <span class="fu">factor</span>(task, <span class="at">levels =</span> <span class="fu">rev</span>(task)))</span>
+<span id="cb3-375"><a href="#cb3-375" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-376"><a href="#cb3-376" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(schedule) <span class="sc">+</span></span>
+<span id="cb3-377"><a href="#cb3-377" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(</span>
+<span id="cb3-378"><a href="#cb3-378" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> start, <span class="at">xend =</span> end, <span class="at">y =</span> task, <span class="at">yend =</span> task),</span>
+<span id="cb3-379"><a href="#cb3-379" aria-hidden="true" tabindex="-1"></a>    <span class="at">linewidth =</span> <span class="dv">8</span>,</span>
+<span id="cb3-380"><a href="#cb3-380" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">"#4F81BD"</span></span>
+<span id="cb3-381"><a href="#cb3-381" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-382"><a href="#cb3-382" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb3-383"><a href="#cb3-383" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> start, <span class="at">y =</span> task),</span>
+<span id="cb3-384"><a href="#cb3-384" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb3-385"><a href="#cb3-385" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">"#2F5597"</span></span>
+<span id="cb3-386"><a href="#cb3-386" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-387"><a href="#cb3-387" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb3-388"><a href="#cb3-388" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> end, <span class="at">y =</span> task),</span>
+<span id="cb3-389"><a href="#cb3-389" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb3-390"><a href="#cb3-390" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">"#2F5597"</span></span>
+<span id="cb3-391"><a href="#cb3-391" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-392"><a href="#cb3-392" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(</span>
+<span id="cb3-393"><a href="#cb3-393" aria-hidden="true" tabindex="-1"></a>    <span class="at">date_breaks =</span> <span class="st">"3 days"</span>,</span>
+<span id="cb3-394"><a href="#cb3-394" aria-hidden="true" tabindex="-1"></a>    <span class="at">date_labels =</span> <span class="st">"%d %b"</span></span>
+<span id="cb3-395"><a href="#cb3-395" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-396"><a href="#cb3-396" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-397"><a href="#cb3-397" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Project Schedule Gantt Chart"</span>,</span>
+<span id="cb3-398"><a href="#cb3-398" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Period"</span>,</span>
+<span id="cb3-399"><a href="#cb3-399" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="cn">NULL</span></span>
+<span id="cb3-400"><a href="#cb3-400" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-401"><a href="#cb3-401" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb3-402"><a href="#cb3-402" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb3-403"><a href="#cb3-403" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb3-404"><a href="#cb3-404" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb3-405"><a href="#cb3-405" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-406"><a href="#cb3-406" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb3-407"><a href="#cb3-407" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-408"><a href="#cb3-408" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -70,6 +70,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -185,8 +188,17 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#source-structure" id="toc-source-structure" class="nav-link active" data-scroll-target="#source-structure">Source Structure</a></li>
+  <li><a href="#cleaned-outputs" id="toc-cleaned-outputs" class="nav-link" data-scroll-target="#cleaned-outputs">Cleaned Outputs</a></li>
+  <li><a href="#cleaning-steps" id="toc-cleaning-steps" class="nav-link" data-scroll-target="#cleaning-steps">Cleaning Steps</a></li>
+  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -210,9 +222,52 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Placeholder content for the final data preparation write-up.</p>
+<p>The raw Mini-Challenge 1 (MC1) JSON data was transformed into tidy analytical tables for use in the TenantThread visual analytics workflow. The preparation process focused on converting the nested source format into structured records that could support temporal analysis, communication network analysis, and response-chain tracing.</p>
+<section id="source-structure" class="level2">
+<h2 class="anchored" data-anchor-id="source-structure">Source Structure</h2>
+<p>The original JSON files were organised around four main components:</p>
+<ul>
+<li><code>rounds</code>: simulation rounds and their associated activity records.</li>
+<li><code>environment_context</code>: contextual information describing the state of the environment during each round.</li>
+<li><code>communications</code>: nested message records exchanged between agents.</li>
+<li><code>participants</code>: metadata about agents involved in the scenario.</li>
+</ul>
+</section>
+<section id="cleaned-outputs" class="level2">
+<h2 class="anchored" data-anchor-id="cleaned-outputs">Cleaned Outputs</h2>
+<p>The preparation process produced three main cleaned datasets:</p>
+<ul>
+<li><code>rounds_context</code>: round-level records combined with relevant environmental context.</li>
+<li><code>comms_flat</code>: a tidy communication table with one row per message.</li>
+<li><code>participants</code>: a standardised participant reference table for joining agent metadata to communication records.</li>
+</ul>
+</section>
+<section id="cleaning-steps" class="level2">
+<h2 class="anchored" data-anchor-id="cleaning-steps">Cleaning Steps</h2>
+<p>Nested JSON objects were parsed and converted into tabular structures. Communication records were unnested so that each message could be analysed independently while preserving links to its source round and context. Timestamps were standardised to support chronological ordering and time-based filtering. Agent names were standardised to reduce duplication caused by inconsistent labels. Communication channels were grouped into broader channel categories for comparison across message types. Response-chain relationships were also prepared so that message replies and related exchanges could be traced in the Shiny application.</p>
+</section>
+<section id="workflow" class="level2">
+<h2 class="anchored" data-anchor-id="workflow">Workflow</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A[Raw JSON] --&gt; B[Parsed rounds]
+  B --&gt; C[Communication table]
+  C --&gt; D[Feature engineering]
+  D --&gt; E[Shiny app]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>This data preparation step created the structured foundation required for subsequent feature engineering and interactive visual analytics.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

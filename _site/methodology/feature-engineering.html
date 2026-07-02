@@ -185,8 +185,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#feature-groups" id="toc-feature-groups" class="nav-link active" data-scroll-target="#feature-groups">Feature Groups</a></li>
+  <li><a href="#feature-summary" id="toc-feature-summary" class="nav-link" data-scroll-target="#feature-summary">Feature Summary</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -210,9 +217,90 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Placeholder content for the final feature engineering write-up.</p>
+<p>Feature engineering converted the cleaned communication and participant tables into investigation-ready variables for the TenantThread Shiny application. These derived variables support filtering, timeline exploration, network analysis, and evidence tracing across the MC1 scenario.</p>
+<p>The features were designed to help assess the central MC1 question: whether the embargo breach reflects deliberate leakage or a wider systemic breakdown in communication controls.</p>
+<section id="feature-groups" class="level2">
+<h2 class="anchored" data-anchor-id="feature-groups">Feature Groups</h2>
+<p>The following feature groups were prepared for the application:</p>
+<ul>
+<li><code>crisis_phase</code>: classifies messages by stage of the crisis timeline so that communication patterns can be compared before, during, and after key events.</li>
+<li><code>channel_group</code>: groups detailed communication channels into broader categories for clearer comparison across message types.</li>
+<li><code>channel_risk</code>: assigns a risk level to each channel based on its suitability for sensitive or embargo-related communication.</li>
+<li><code>embargo_sensitive</code> keyword flag: identifies messages containing terms related to embargoed information, restricted releases, or premature disclosure.</li>
+<li><code>crisis_sensitive</code> keyword flag: identifies messages containing terms associated with crisis response, escalation, public reaction, or operational disruption.</li>
+<li><code>anomaly_flag</code> and <code>anomaly_reason</code>: highlight unusual records and provide interpretable reasons, such as risky channel use, sensitive keywords, or suspicious timing.</li>
+<li><code>judge_monitored_status</code>: indicates whether communications involved monitored or judge-relevant participants.</li>
+<li><code>network_edges</code> and <code>network_nodes</code>: represent communication relationships between agents for network visualisation and influence analysis.</li>
+<li><code>pathway_evidence</code>: captures response-chain and message-link evidence used to trace possible breach pathways.</li>
+</ul>
+</section>
+<section id="feature-summary" class="level2">
+<h2 class="anchored" data-anchor-id="feature-summary">Feature Summary</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Purpose</th>
+<th>App usage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>crisis_phase</code></td>
+<td>Places communication activity in crisis context</td>
+<td>Timeline filtering and phase comparison</td>
+</tr>
+<tr class="even">
+<td><code>channel_group</code></td>
+<td>Simplifies detailed channels into interpretable groups</td>
+<td>Channel distribution charts and filters</td>
+</tr>
+<tr class="odd">
+<td><code>channel_risk</code></td>
+<td>Indicates potential exposure risk by channel</td>
+<td>Risk-focused filtering and anomaly review</td>
+</tr>
+<tr class="even">
+<td><code>embargo_sensitive</code></td>
+<td>Flags possible embargo-related content</td>
+<td>Keyword evidence screening</td>
+</tr>
+<tr class="odd">
+<td><code>crisis_sensitive</code></td>
+<td>Flags crisis-related content</td>
+<td>Crisis response analysis</td>
+</tr>
+<tr class="even">
+<td><code>anomaly_flag</code>, <code>anomaly_reason</code></td>
+<td>Identifies unusual or suspicious records</td>
+<td>Anomaly table and evidence review</td>
+</tr>
+<tr class="odd">
+<td><code>judge_monitored_status</code></td>
+<td>Marks communications relevant to monitored actors</td>
+<td>Participant filtering and oversight analysis</td>
+</tr>
+<tr class="even">
+<td><code>network_edges</code>, <code>network_nodes</code></td>
+<td>Structures agent-to-agent communication links</td>
+<td>Network graph and centrality exploration</td>
+</tr>
+<tr class="odd">
+<td><code>pathway_evidence</code></td>
+<td>Preserves traceable links across related messages</td>
+<td>Breach pathway reconstruction</td>
+</tr>
+</tbody>
+</table>
+<p>Together, these variables allow the Shiny app to move beyond descriptive summaries and support evidence-based investigation. They make it possible to examine who communicated, through which channels, at what stage of the crisis, and whether sensitive information followed patterns consistent with intentional leakage or organisational failure.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
