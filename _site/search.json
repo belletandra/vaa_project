@@ -7,6 +7,314 @@
     "text": "This guide explains how to use the Shiny app to investigate whether TenantThread’s embargo breach was caused by deliberate leakage or systemic breakdown.\nLaunch the deployed Shiny app"
   },
   {
+    "objectID": "user-guide.html#recommended-workflow",
+    "href": "user-guide.html#recommended-workflow",
+    "title": "User Guide",
+    "section": "Recommended Workflow",
+    "text": "Recommended Workflow\n\nStart with Landing Page / Overview.\nUse Crisis Timeline to reconstruct when events happened.\nUse Agent Network to identify who was involved.\nUse Embargo Breach Pathway to trace sensitive information movement.\nUse evidence tables to support conclusions."
+  },
+  {
+    "objectID": "user-guide.html#landing-page-overview",
+    "href": "user-guide.html#landing-page-overview",
+    "title": "User Guide",
+    "section": "Landing Page / Overview",
+    "text": "Landing Page / Overview\nPurpose:\nUse this tab to understand the case context, the main investigation question, and the overall structure of the app.\nKey controls:\nThis page is mainly for orientation. Start here before moving into the detailed analytical tabs.\nWhat to look for:\nLook for the main crisis themes, the suspected breach context, and the app sections that will help you move from general overview to specific evidence.\nHow the output contributes evidence:\nThe overview helps frame the investigation. It explains what the app is trying to test, so later findings from the timeline, network, and pathway views can be interpreted against the same investigation question."
+  },
+  {
+    "objectID": "user-guide.html#crisis-timeline",
+    "href": "user-guide.html#crisis-timeline",
+    "title": "User Guide",
+    "section": "Crisis Timeline",
+    "text": "Crisis Timeline\nPurpose:\nUse this tab to reconstruct when key crisis events happened and how the situation developed over time.\nKey controls:\nUse the date range filters to focus on a specific period. Use keyword search to find messages, events, or actors linked to a topic. Use the crisis phase filter to compare activity across different stages of the crisis. Use the range slider to zoom into a narrower part of the timeline when the full period is too broad.\nWhat to look for:\nLook for sudden increases in activity, repeated references to sensitive information, and event clusters around the embargo breach. Pay attention to whether key events happen before or after public disclosure.\nHow the output contributes evidence:\nThe timeline supports evidence about sequence and timing. It helps users decide whether the breach followed a clear chain of events or whether the crisis emerged from broader communication breakdowns."
+  },
+  {
+    "objectID": "user-guide.html#agent-network",
+    "href": "user-guide.html#agent-network",
+    "title": "User Guide",
+    "section": "Agent Network",
+    "text": "Agent Network\nPurpose:\nUse this tab to identify who was involved, how agents were connected, and whether specific people or groups appear central to the crisis.\nKey controls:\nUse the focal agent filter to inspect connections around one selected person or entity. Use keyword search to narrow the network to relevant topics. Use the crisis phase filter to compare how relationships change across the investigation period.\nWhat to look for:\nLook for highly connected agents, unusual bridges between groups, repeated contact with high-risk channels, and agents who appear close to sensitive information flows.\nHow the output contributes evidence:\nThe network view supports evidence about involvement and communication structure. It can help show whether the breach depends on one central actor, a small group of connected actors, or a wider systemic pattern."
+  },
+  {
+    "objectID": "user-guide.html#embargo-breach-pathway",
+    "href": "user-guide.html#embargo-breach-pathway",
+    "title": "User Guide",
+    "section": "Embargo Breach Pathway",
+    "text": "Embargo Breach Pathway\nPurpose:\nUse this tab to trace how sensitive information may have moved across agents, channels, and crisis events.\nKey controls:\nUse the channel risk filter to focus on higher-risk communication channels. Use the anomaly-only filter to show unusual or suspicious records. Use the date range filters and range slider to focus on the likely breach window. Use keyword search to isolate messages or evidence linked to embargoed content. Hide and show evidence tables when you need more space for the pathway diagram or when you need to inspect the supporting records.\nWhat to look for:\nLook for paths where sensitive information moves from internal sources to external or public-facing channels. Pay attention to anomalies, high-risk channels, and repeated links between the same agents or events.\nHow the output contributes evidence:\nThe pathway view supports evidence about possible information movement. It helps connect agents, channels, and events into an investigative summary that can be checked against the underlying records."
+  },
+  {
+    "objectID": "user-guide.html#evidence-tables",
+    "href": "user-guide.html#evidence-tables",
+    "title": "User Guide",
+    "section": "Evidence Tables",
+    "text": "Evidence Tables\nEvidence tables should be used throughout the investigation. They provide the detailed records behind the visual outputs and help users verify claims before drawing conclusions.\nUse the hide and show evidence table controls depending on the task. Hide the tables when you need to focus on the visual pattern. Show the tables when you need to inspect message details, timestamps, agents, channels, crisis phases, or anomaly flags."
+  },
+  {
+    "objectID": "user-guide.html#interpretation-note",
+    "href": "user-guide.html#interpretation-note",
+    "title": "User Guide",
+    "section": "Interpretation Note",
+    "text": "Interpretation Note\nThe causal chain and pathway diagrams are investigative summaries and should be read together with the linked evidence tables."
+  },
+  {
+    "objectID": "poster.html",
+    "href": "poster.html",
+    "title": "Poster",
+    "section": "",
+    "text": "The poster summarises the project problem, approach, Shiny application overview, investigation workflow, conclusion, and future work.\n\nDownload the poster"
+  },
+  {
+    "objectID": "methodology/feature-engineering.html",
+    "href": "methodology/feature-engineering.html",
+    "title": "Feature Engineering",
+    "section": "",
+    "text": "Feature engineering converted the cleaned communication and participant tables into investigation-ready variables for the TenantThread Shiny application. These derived variables support filtering, timeline exploration, network analysis, and evidence tracing across the MC1 scenario.\nThe features were designed to help assess the central MC1 question: whether the embargo breach reflects deliberate leakage or a wider systemic breakdown in communication controls."
+  },
+  {
+    "objectID": "methodology/feature-engineering.html#feature-groups",
+    "href": "methodology/feature-engineering.html#feature-groups",
+    "title": "Feature Engineering",
+    "section": "Feature Groups",
+    "text": "Feature Groups\nThe following feature groups were prepared for the application:\n\ncrisis_phase: classifies messages by stage of the crisis timeline so that communication patterns can be compared before, during, and after key events.\nchannel_group: groups detailed communication channels into broader categories for clearer comparison across message types.\nchannel_risk: assigns a risk level to each channel based on its suitability for sensitive or embargo-related communication.\nembargo_sensitive keyword flag: identifies messages containing terms related to embargoed information, restricted releases, or premature disclosure.\ncrisis_sensitive keyword flag: identifies messages containing terms associated with crisis response, escalation, public reaction, or operational disruption.\nanomaly_flag and anomaly_reason: highlight unusual records and provide interpretable reasons, such as risky channel use, sensitive keywords, or suspicious timing.\njudge_monitored_status: indicates whether communications involved monitored or judge-relevant participants.\nnetwork_edges and network_nodes: represent communication relationships between agents for network visualisation and influence analysis.\npathway_evidence: captures response-chain and message-link evidence used to trace possible breach pathways."
+  },
+  {
+    "objectID": "methodology/feature-engineering.html#feature-summary",
+    "href": "methodology/feature-engineering.html#feature-summary",
+    "title": "Feature Engineering",
+    "section": "Feature Summary",
+    "text": "Feature Summary\n\n\n\n\n\n\n\n\nFeature\nPurpose\nApp usage\n\n\n\n\ncrisis_phase\nPlaces communication activity in crisis context\nTimeline filtering and phase comparison\n\n\nchannel_group\nSimplifies detailed channels into interpretable groups\nChannel distribution charts and filters\n\n\nchannel_risk\nIndicates potential exposure risk by channel\nRisk-focused filtering and anomaly review\n\n\nembargo_sensitive\nFlags possible embargo-related content\nKeyword evidence screening\n\n\ncrisis_sensitive\nFlags crisis-related content\nCrisis response analysis\n\n\nanomaly_flag, anomaly_reason\nIdentifies unusual or suspicious records\nAnomaly table and evidence review\n\n\njudge_monitored_status\nMarks communications relevant to monitored actors\nParticipant filtering and oversight analysis\n\n\nnetwork_edges, network_nodes\nStructures agent-to-agent communication links\nNetwork graph and centrality exploration\n\n\npathway_evidence\nPreserves traceable links across related messages\nBreach pathway reconstruction\n\n\n\nTogether, these variables allow the Shiny app to move beyond descriptive summaries and support evidence-based investigation. They make it possible to examine who communicated, through which channels, at what stage of the crisis, and whether sensitive information followed patterns consistent with intentional leakage or organisational failure."
+  },
+  {
+    "objectID": "meeting-minutes/mom1.html",
+    "href": "meeting-minutes/mom1.html",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
+    "section": "",
+    "text": "Date: June 9, 2026\n\n\nThe first meeting was conducted on June 9, 2026. The meeting focused on selecting the group project topic, identifying possible visual analytics directions, and assigning initial responsibilities for the project proposal and website preparation.\n\n\n\nKelvin Andikko\nAnabelle Eveleen Tandra\n\n\n\nFinalisation of the group project mini challenge\nInitial ideation of possible visualisations\nDiscussion on the overarching concept for the visual analytics system\nDelegation of work\nConfirmation of agenda for the next meeting\n\n\n\n\nThe group decided to work on VAST Challenge 2026 Mini-Challenge 1, which focuses on the TenantThread embargo breach and the multi-agent AI communications crisis.\nThe group agreed that the project should not be presented as a set of disconnected visualisations. Instead, all visualisations should be tied to a coherent investigative concept based on MC1.\nThe main project direction is to develop a visual analytics system that helps users understand whether the embargo breach was caused by deliberate leakage or by a breakdown in agent coordination, communication workflows, and compliance enforcement.\nPossible visualisations discussed include:\n\nA causal chain diagram to show the sequence of decisions, actors, and system elements that contributed to the release.\nAn event timeline to reconstruct the key events leading up to the embargo breach.\nAn agent interaction or communication network to show how different agents exchanged information across channels.\nA behaviour comparison or anomaly view to compare typical behaviour with breach-period behaviour.\n\nThe group noted that further research is required to determine which visualisations will best support the investigation.\nThe group agreed that the final application should contain around three to four main visualisations that collectively tell the story of the breach.\n\n\n\n\nKelvin will prepare the project website, study the MC1 dataset, and draft the project proposal. The dataset review is to be completed by Thursday night, 11:59 PM.\nAnabelle will start exploring the dataset and propose suitable visualisations. This is to be completed by Thursday night, 11:59 PM.\n\n\n\nThe next meeting will be conducted on Thursday night. The group will decide on the final visualisations and refine the main concept that the application should communicate.\n\n\n\nThe meeting was adjourned after confirming the selected mini challenge, initial visualisation directions, task delegation, and agenda for the next meeting.\nMinutes submitted by:\nKelvin Andikko\nApproved by:\nAnabelle Eveleen Tandra"
+  },
+  {
+    "objectID": "meeting-minutes/mom1.html#opening",
+    "href": "meeting-minutes/mom1.html#opening",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
+    "section": "",
+    "text": "The first meeting was conducted on June 9, 2026. The meeting focused on selecting the group project topic, identifying possible visual analytics directions, and assigning initial responsibilities for the project proposal and website preparation."
+  },
+  {
+    "objectID": "meeting-minutes/mom1.html#present",
+    "href": "meeting-minutes/mom1.html#present",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
+    "section": "",
+    "text": "Kelvin Andikko\nAnabelle Eveleen Tandra"
+  },
+  {
+    "objectID": "meeting-minutes/mom1.html#agenda-for-this-meeting",
+    "href": "meeting-minutes/mom1.html#agenda-for-this-meeting",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
+    "section": "",
+    "text": "Finalisation of the group project mini challenge\nInitial ideation of possible visualisations\nDiscussion on the overarching concept for the visual analytics system\nDelegation of work\nConfirmation of agenda for the next meeting"
+  },
+  {
+    "objectID": "meeting-minutes/mom1.html#ideation-and-finalisation-of-ideas",
+    "href": "meeting-minutes/mom1.html#ideation-and-finalisation-of-ideas",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
+    "section": "",
+    "text": "The group decided to work on VAST Challenge 2026 Mini-Challenge 1, which focuses on the TenantThread embargo breach and the multi-agent AI communications crisis.\nThe group agreed that the project should not be presented as a set of disconnected visualisations. Instead, all visualisations should be tied to a coherent investigative concept based on MC1.\nThe main project direction is to develop a visual analytics system that helps users understand whether the embargo breach was caused by deliberate leakage or by a breakdown in agent coordination, communication workflows, and compliance enforcement.\nPossible visualisations discussed include:\n\nA causal chain diagram to show the sequence of decisions, actors, and system elements that contributed to the release.\nAn event timeline to reconstruct the key events leading up to the embargo breach.\nAn agent interaction or communication network to show how different agents exchanged information across channels.\nA behaviour comparison or anomaly view to compare typical behaviour with breach-period behaviour.\n\nThe group noted that further research is required to determine which visualisations will best support the investigation.\nThe group agreed that the final application should contain around three to four main visualisations that collectively tell the story of the breach."
+  },
+  {
+    "objectID": "meeting-minutes/mom1.html#delegation-of-work",
+    "href": "meeting-minutes/mom1.html#delegation-of-work",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
+    "section": "",
+    "text": "Kelvin will prepare the project website, study the MC1 dataset, and draft the project proposal. The dataset review is to be completed by Thursday night, 11:59 PM.\nAnabelle will start exploring the dataset and propose suitable visualisations. This is to be completed by Thursday night, 11:59 PM."
+  },
+  {
+    "objectID": "meeting-minutes/mom1.html#agenda-for-next-meeting",
+    "href": "meeting-minutes/mom1.html#agenda-for-next-meeting",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
+    "section": "",
+    "text": "The next meeting will be conducted on Thursday night. The group will decide on the final visualisations and refine the main concept that the application should communicate."
+  },
+  {
+    "objectID": "meeting-minutes/mom1.html#adjournment",
+    "href": "meeting-minutes/mom1.html#adjournment",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
+    "section": "",
+    "text": "The meeting was adjourned after confirming the selected mini challenge, initial visualisation directions, task delegation, and agenda for the next meeting.\nMinutes submitted by:\nKelvin Andikko\nApproved by:\nAnabelle Eveleen Tandra"
+  },
+  {
+    "objectID": "findings.html",
+    "href": "findings.html",
+    "title": "Findings",
+    "section": "",
+    "text": "The findings presented here are based on the analytical workflow developed in the TenantThread Shiny application. The interpretation draws primarily from the Crisis Timeline, Agent Network, and Embargo Breach Pathway tabs. Together, these views show how pressure, communication behaviour, and network structure interacted before the MC1 embargo breach.\nOverall, the evidence suggests that TenantThread’s embargo breach was more likely caused by systemic breakdown under pressure than by a clearly deliberate leak by a single actor."
+  },
+  {
+    "objectID": "findings.html#finding-1-crisis-pressure-escalated-before-the-breach",
+    "href": "findings.html#finding-1-crisis-pressure-escalated-before-the-breach",
+    "title": "Findings",
+    "section": "Finding 1: Crisis pressure escalated before the breach",
+    "text": "Finding 1: Crisis pressure escalated before the breach\nThe Crisis Timeline indicates that the breach did not occur in isolation. It emerged after a period of rising external and internal pressure. Media pressure increased as public scrutiny around TenantThread intensified, while ResidentIQ rumours added uncertainty and reputational risk. SaltWind coverage further amplified the crisis by moving the issue into a broader public-facing information environment.\nThe timeline also shows that Judge-related events occurred during this period, suggesting that enforcement and oversight were already active before the breach. However, anomaly clustering and increased breach-period activity indicate that the communication environment became more unstable as the crisis developed. This pattern suggests that the organisation was operating under heightened stress before embargo-sensitive information became public."
+  },
+  {
+    "objectID": "findings.html#finding-2-communication-risk-increased-across-internal-semi-private-and-public-facing-channels",
+    "href": "findings.html#finding-2-communication-risk-increased-across-internal-semi-private-and-public-facing-channels",
+    "title": "Findings",
+    "section": "Finding 2: Communication risk increased across internal, semi-private, and public-facing channels",
+    "text": "Finding 2: Communication risk increased across internal, semi-private, and public-facing channels\nCommunication risk rose because sensitive discussion was not confined to a single protected space. The application shows increased activity across internal channels, semi-private coordination spaces, and public-facing communication surfaces. This matters because risk increases when the same issue is discussed across channels with different levels of visibility, control, and audience exposure.\nMessage volume also appears to increase around the breach period. Higher volume can reduce the effectiveness of review, moderation, and policy enforcement because more information moves through the system in less time. The presence of keyword-sensitive communication further indicates that participants were discussing topics connected to the embargo, reputational exposure, leaks, rumours, and public response. These patterns show that the breach risk was distributed across the communication system rather than isolated to one message or one platform."
+  },
+  {
+    "objectID": "findings.html#finding-3-the-communication-network-involved-multiple-agents-rather-than-a-single-isolated-actor",
+    "href": "findings.html#finding-3-the-communication-network-involved-multiple-agents-rather-than-a-single-isolated-actor",
+    "title": "Findings",
+    "section": "Finding 3: The communication network involved multiple agents rather than a single isolated actor",
+    "text": "Finding 3: The communication network involved multiple agents rather than a single isolated actor\nThe Agent Network view shows that the breach environment involved several connected roles. Legal, PR, Platform Trust, Social Manager, PR Intern, Intern, and Judge were all visible in the communication structure. This weakens a simple explanation in which one isolated actor independently caused the breach.\nInstead, the network suggests that embargo-sensitive information circulated through a broader organisational setting. Legal and Platform Trust were linked to governance and enforcement responsibilities, while PR and Social Manager roles were connected to public-facing response. The PR Intern and Intern appear important because junior or peripheral agents can become transmission points when guidance is unclear, pressure is high, or review processes are stretched. The Judge’s presence shows that oversight existed, but the overall network still allowed risky information movement."
+  },
+  {
+    "objectID": "findings.html#finding-4-the-judge-was-present-but-not-sufficiently-central-to-contain-the-breach",
+    "href": "findings.html#finding-4-the-judge-was-present-but-not-sufficiently-central-to-contain-the-breach",
+    "title": "Findings",
+    "section": "Finding 4: The Judge was present but not sufficiently central to contain the breach",
+    "text": "Finding 4: The Judge was present but not sufficiently central to contain the breach\nThe evidence does not support the view that enforcement was entirely absent. Judge-related activity appears in the timeline and network, which suggests that the enforcement role was embedded in the response structure. However, the Judge does not appear sufficiently central or timely to prevent escalation.\nThis finding is important because it points to weak or late enforcement rather than a complete lack of rules. If enforcement is present but not positioned to interrupt risky pathways, it may create the appearance of control without actually containing information flow. In the TenantThread case, oversight appears to have been part of the system, but it did not stop sensitive information from moving toward public release."
+  },
+  {
+    "objectID": "findings.html#finding-5-embargo-sensitive-information-moved-through-multiple-pathway-stages-before-public-release",
+    "href": "findings.html#finding-5-embargo-sensitive-information-moved-through-multiple-pathway-stages-before-public-release",
+    "title": "Findings",
+    "section": "Finding 5: Embargo-sensitive information moved through multiple pathway stages before public release",
+    "text": "Finding 5: Embargo-sensitive information moved through multiple pathway stages before public release\nThe Embargo Breach Pathway view suggests a staged movement of information. The pathway begins with sensitive internal discussion, where embargo-related content was known within the organisation. It then moves into side or private coordination, where information may have been discussed with reduced visibility and weaker institutional control.\nThe next stage is weak enforcement, where governance mechanisms were present but did not successfully halt the risky flow. From there, the information reached a public-facing post or communication surface. The final stage was the breach, where embargo-sensitive information became exposed beyond its intended audience.\nThis staged pathway supports the interpretation that the breach resulted from accumulated process failure. The issue was not only that sensitive information existed, but that it passed through several points where containment could have occurred and did not."
+  },
+  {
+    "objectID": "findings.html#final-interpretation",
+    "href": "findings.html#final-interpretation",
+    "title": "Findings",
+    "section": "Final interpretation",
+    "text": "Final interpretation\nThe combined evidence supports a systemic breakdown interpretation. Crisis pressure increased before the breach, communication risk spread across multiple channel types, the agent network involved several roles, enforcement was present but insufficiently central, and embargo-sensitive information moved through multiple stages before public exposure.\nThis does not rule out suspicious individual behaviour. Some actions, especially around side coordination and public-facing communication, still require message-level review to determine intent. However, based on the visual analytics evidence, the stronger conclusion is that TenantThread’s embargo breach was more likely produced by organisational breakdown under pressure than by a clearly deliberate leak by a single actor."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "The Team",
+    "section": "",
+    "text": "Our team would like to acknowledge and give our sincere thanks to this module’s professor, Dr. Kam Tin Seong for his steadfast, insightful inputs during the course of our project.\nThis website, along with the Shiny application, was created as part of the module requirements for ISSS608 - Visual Analytics & Applications, where we present our group project’s findings.\nThe team members that are part of this project are listed as below, along with their respective LinkedIn & personal website for Visual Analytics.\nAnabelle Eveleen Tandra LinkedIn Personal Website\nKelvin Andikko LinkedIn Personal Website\nOur team developed the Shiny application and project website to present the visual analytics work clearly, support interactive exploration, and communicate the project findings in a concise, accessible format."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Embargo Breach",
+    "section": "",
+    "text": "This project investigates whether TenantThread deliberately leaked embargo-sensitive CivicLoom merger information, or whether its agent-human communication system broke down under pressure.\n\nShiny App User Guide Findings Poster"
+  },
+  {
+    "objectID": "index.html#embargo-breach-tracing-tenantthreads-ai-crisis",
+    "href": "index.html#embargo-breach-tracing-tenantthreads-ai-crisis",
+    "title": "Embargo Breach",
+    "section": "",
+    "text": "This project investigates whether TenantThread deliberately leaked embargo-sensitive CivicLoom merger information, or whether its agent-human communication system broke down under pressure.\n\nShiny App User Guide Findings Poster"
+  },
+  {
+    "objectID": "index.html#case-overview",
+    "href": "index.html#case-overview",
+    "title": "Embargo Breach",
+    "section": "Case Overview",
+    "text": "Case Overview\nTenantThread was preparing Project HarborCrest, a confidential merger with CivicLoom Realty Partners, while The Judge monitored the public information environment. The merger announcement was under embargo until 6:00 PM on June 5, 2046, but evidence suggests an inappropriate release occurred around 5:00 PM."
+  },
+  {
+    "objectID": "index.html#central-question",
+    "href": "index.html#central-question",
+    "title": "Embargo Breach",
+    "section": "Central Question",
+    "text": "Central Question\nDid TenantThread’s team deliberately leak the merger, or did the system break down under pressure?"
+  },
+  {
+    "objectID": "index.html#our-solution",
+    "href": "index.html#our-solution",
+    "title": "Embargo Breach",
+    "section": "Our Solution",
+    "text": "Our Solution\nOur group built a Shiny visual analytics application to reconstruct the crisis, examine communication patterns, and trace how sensitive information moved across agents, people, and public channels."
+  },
+  {
+    "objectID": "index.html#investigation-workflow",
+    "href": "index.html#investigation-workflow",
+    "title": "Embargo Breach",
+    "section": "Investigation Workflow",
+    "text": "Investigation Workflow\n\nLanding Page\nCrisis Timeline\nAgent Network\nEmbargo Breach Pathway"
+  },
+  {
+    "objectID": "index.html#final-finding",
+    "href": "index.html#final-finding",
+    "title": "Embargo Breach",
+    "section": "Final Finding",
+    "text": "Final Finding\nThe evidence points more strongly toward systemic breakdown under pressure than a clearly deliberate leak by a single actor."
+  },
+  {
+    "objectID": "methodology/data-preparation.html",
+    "href": "methodology/data-preparation.html",
+    "title": "Data Preparation",
+    "section": "",
+    "text": "The raw Mini-Challenge 1 (MC1) JSON data was transformed into tidy analytical tables for use in the TenantThread visual analytics workflow. The preparation process focused on converting the nested source format into structured records that could support temporal analysis, communication network analysis, and response-chain tracing."
+  },
+  {
+    "objectID": "methodology/data-preparation.html#source-structure",
+    "href": "methodology/data-preparation.html#source-structure",
+    "title": "Data Preparation",
+    "section": "Source Structure",
+    "text": "Source Structure\nThe original JSON files were organised around four main components:\n\nrounds: simulation rounds and their associated activity records.\nenvironment_context: contextual information describing the state of the environment during each round.\ncommunications: nested message records exchanged between agents.\nparticipants: metadata about agents involved in the scenario."
+  },
+  {
+    "objectID": "methodology/data-preparation.html#cleaned-outputs",
+    "href": "methodology/data-preparation.html#cleaned-outputs",
+    "title": "Data Preparation",
+    "section": "Cleaned Outputs",
+    "text": "Cleaned Outputs\nThe preparation process produced three main cleaned datasets:\n\nrounds_context: round-level records combined with relevant environmental context.\ncomms_flat: a tidy communication table with one row per message.\nparticipants: a standardised participant reference table for joining agent metadata to communication records."
+  },
+  {
+    "objectID": "methodology/data-preparation.html#cleaning-steps",
+    "href": "methodology/data-preparation.html#cleaning-steps",
+    "title": "Data Preparation",
+    "section": "Cleaning Steps",
+    "text": "Cleaning Steps\nNested JSON objects were parsed and converted into tabular structures. Communication records were unnested so that each message could be analysed independently while preserving links to its source round and context. Timestamps were standardised to support chronological ordering and time-based filtering. Agent names were standardised to reduce duplication caused by inconsistent labels. Communication channels were grouped into broader channel categories for comparison across message types. Response-chain relationships were also prepared so that message replies and related exchanges could be traced in the Shiny application."
+  },
+  {
+    "objectID": "methodology/data-preparation.html#workflow",
+    "href": "methodology/data-preparation.html#workflow",
+    "title": "Data Preparation",
+    "section": "Workflow",
+    "text": "Workflow\n\n\n\n\n\nflowchart LR\n  A[Raw JSON] --&gt; B[Parsed rounds]\n  B --&gt; C[Communication table]\n  C --&gt; D[Feature engineering]\n  D --&gt; E[Shiny app]\n\n\n\n\n\n\nThis data preparation step created the structured foundation required for subsequent feature engineering and interactive visual analytics."
+  },
+  {
+    "objectID": "methodology/visual-analytics-design.html",
+    "href": "methodology/visual-analytics-design.html",
+    "title": "Visual Analytics Design",
+    "section": "",
+    "text": "The TenantThread Shiny application is designed as an investigation workflow. It guides users from case orientation to temporal reconstruction, communication network exploration, breach pathway tracing, and message-level evidence validation."
+  },
+  {
+    "objectID": "methodology/visual-analytics-design.html#visual-analytics-components",
+    "href": "methodology/visual-analytics-design.html#visual-analytics-components",
+    "title": "Visual Analytics Design",
+    "section": "Visual Analytics Components",
+    "text": "Visual Analytics Components\nThe application combines several coordinated views:\n\nLanding Page / Overview: introduces the case context and provides orientation for the investigation.\nCrisis Timeline: reconstructs events over time and shows how communication activity changes across crisis phases.\nAgent Network: visualises communication relationships between agents, allowing investigators to identify central actors, clusters, and unusual connections.\nEmbargo Breach Pathway: traces the movement of sensitive information across messages, agents, and channels.\nEvidence tables: provide message-level records for validating patterns observed in the visual views."
+  },
+  {
+    "objectID": "methodology/visual-analytics-design.html#integrated-analytical-workflow",
+    "href": "methodology/visual-analytics-design.html#integrated-analytical-workflow",
+    "title": "Visual Analytics Design",
+    "section": "Integrated Analytical Workflow",
+    "text": "Integrated Analytical Workflow\nThe app combines timeline, network, pathway, and linked table views because no single chart can fully explain the embargo breach. The timeline shows when activity occurred, the network shows who was connected, the pathway view shows how sensitive information may have moved, and the evidence tables allow users to inspect the underlying messages. Together, these components support both exploratory analysis and defensible evidence review."
+  },
+  {
+    "objectID": "methodology/visual-analytics-design.html#interactivity",
+    "href": "methodology/visual-analytics-design.html#interactivity",
+    "title": "Visual Analytics Design",
+    "section": "Interactivity",
+    "text": "Interactivity\nInteractive controls allow investigators to refine the analysis without leaving the workflow:\n\nFilters support focused analysis by crisis phase, channel, agent, and other derived attributes.\nKeyword search helps locate messages containing embargo-sensitive or crisis-sensitive terms.\nRange slider supports temporal narrowing within the crisis timeline.\nFocal agent selection allows the network and pathway views to centre on selected participants.\nChannel risk selection helps isolate communications that used higher-risk channels.\nHide and show evidence tables lets users move between visual exploration and detailed message validation as needed."
+  },
+  {
+    "objectID": "methodology/visual-analytics-design.html#design-rationale",
+    "href": "methodology/visual-analytics-design.html#design-rationale",
+    "title": "Visual Analytics Design",
+    "section": "Design Rationale",
+    "text": "Design Rationale\nThe design supports legal and compliance investigators by structuring the analysis from overview to detailed evidence. Users can begin with the case context, identify suspicious time periods or communication patterns, trace possible information pathways, and then validate findings using the underlying message records. This workflow helps assess whether the breach reflects deliberate leakage or a systemic breakdown in communication governance."
+  },
+  {
     "objectID": "proposal.html",
     "href": "proposal.html",
     "title": "Project Proposal",
@@ -89,327 +397,5 @@
     "title": "Project Proposal",
     "section": "Prototype 4: Embargo Breach Pathway Tab",
     "text": "Prototype 4: Embargo Breach Pathway Tab\nThe Embargo Breach Pathway tab focuses on tracing the pathway through which embargo-sensitive information moved from internal communication into public release. It includes the response-chain view, embedded risk summary, behaviour comparison panel, and linked evidence viewer."
-  },
-  {
-    "objectID": "methodology/visual-analytics-design.html",
-    "href": "methodology/visual-analytics-design.html",
-    "title": "Visual Analytics Design",
-    "section": "",
-    "text": "The TenantThread Shiny application is designed as an investigation workflow. It guides users from case orientation to temporal reconstruction, communication network exploration, breach pathway tracing, and message-level evidence validation."
-  },
-  {
-    "objectID": "methodology/data-preparation.html",
-    "href": "methodology/data-preparation.html",
-    "title": "Data Preparation",
-    "section": "",
-    "text": "The raw Mini-Challenge 1 (MC1) JSON data was transformed into tidy analytical tables for use in the TenantThread visual analytics workflow. The preparation process focused on converting the nested source format into structured records that could support temporal analysis, communication network analysis, and response-chain tracing."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Embargo Breach",
-    "section": "",
-    "text": "This project investigates whether TenantThread deliberately leaked embargo-sensitive CivicLoom merger information, or whether its agent-human communication system broke down under pressure.\n\nShiny App User Guide Findings Poster"
-  },
-  {
-    "objectID": "findings.html",
-    "href": "findings.html",
-    "title": "Findings",
-    "section": "",
-    "text": "The findings presented here are based on the analytical workflow developed in the TenantThread Shiny application. The interpretation draws primarily from the Crisis Timeline, Agent Network, and Embargo Breach Pathway tabs. Together, these views show how pressure, communication behaviour, and network structure interacted before the MC1 embargo breach.\nOverall, the evidence suggests that TenantThread’s embargo breach was more likely caused by systemic breakdown under pressure than by a clearly deliberate leak by a single actor."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "The Team",
-    "section": "",
-    "text": "Placeholder content for the project team profile."
-  },
-  {
-    "objectID": "github.html",
-    "href": "github.html",
-    "title": "GitHub",
-    "section": "",
-    "text": "Project Website Repository\nPlaceholder content for the project website repository link.\n\n\nShiny App Repository\nPlaceholder content for the Shiny application repository link."
-  },
-  {
-    "objectID": "meeting-minutes/mom1.html",
-    "href": "meeting-minutes/mom1.html",
-    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
-    "section": "",
-    "text": "Date: June 9, 2026\n\n\nThe first meeting was conducted on June 9, 2026. The meeting focused on selecting the group project topic, identifying possible visual analytics directions, and assigning initial responsibilities for the project proposal and website preparation.\n\n\n\nKelvin Andikko\nAnabelle Eveleen Tandra\n\n\n\nFinalisation of the group project mini challenge\nInitial ideation of possible visualisations\nDiscussion on the overarching concept for the visual analytics system\nDelegation of work\nConfirmation of agenda for the next meeting\n\n\n\n\nThe group decided to work on VAST Challenge 2026 Mini-Challenge 1, which focuses on the TenantThread embargo breach and the multi-agent AI communications crisis.\nThe group agreed that the project should not be presented as a set of disconnected visualisations. Instead, all visualisations should be tied to a coherent investigative concept based on MC1.\nThe main project direction is to develop a visual analytics system that helps users understand whether the embargo breach was caused by deliberate leakage or by a breakdown in agent coordination, communication workflows, and compliance enforcement.\nPossible visualisations discussed include:\n\nA causal chain diagram to show the sequence of decisions, actors, and system elements that contributed to the release.\nAn event timeline to reconstruct the key events leading up to the embargo breach.\nAn agent interaction or communication network to show how different agents exchanged information across channels.\nA behaviour comparison or anomaly view to compare typical behaviour with breach-period behaviour.\n\nThe group noted that further research is required to determine which visualisations will best support the investigation.\nThe group agreed that the final application should contain around three to four main visualisations that collectively tell the story of the breach.\n\n\n\n\nKelvin will prepare the project website, study the MC1 dataset, and draft the project proposal. The dataset review is to be completed by Thursday night, 11:59 PM.\nAnabelle will start exploring the dataset and propose suitable visualisations. This is to be completed by Thursday night, 11:59 PM.\n\n\n\nThe next meeting will be conducted on Thursday night. The group will decide on the final visualisations and refine the main concept that the application should communicate.\n\n\n\nThe meeting was adjourned after confirming the selected mini challenge, initial visualisation directions, task delegation, and agenda for the next meeting.\nMinutes submitted by:\nKelvin Andikko\nApproved by:\nAnabelle Eveleen Tandra"
-  },
-  {
-    "objectID": "meeting-minutes/mom1.html#opening",
-    "href": "meeting-minutes/mom1.html#opening",
-    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
-    "section": "",
-    "text": "The first meeting was conducted on June 9, 2026. The meeting focused on selecting the group project topic, identifying possible visual analytics directions, and assigning initial responsibilities for the project proposal and website preparation."
-  },
-  {
-    "objectID": "meeting-minutes/mom1.html#present",
-    "href": "meeting-minutes/mom1.html#present",
-    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
-    "section": "",
-    "text": "Kelvin Andikko\nAnabelle Eveleen Tandra"
-  },
-  {
-    "objectID": "meeting-minutes/mom1.html#agenda-for-this-meeting",
-    "href": "meeting-minutes/mom1.html#agenda-for-this-meeting",
-    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
-    "section": "",
-    "text": "Finalisation of the group project mini challenge\nInitial ideation of possible visualisations\nDiscussion on the overarching concept for the visual analytics system\nDelegation of work\nConfirmation of agenda for the next meeting"
-  },
-  {
-    "objectID": "meeting-minutes/mom1.html#ideation-and-finalisation-of-ideas",
-    "href": "meeting-minutes/mom1.html#ideation-and-finalisation-of-ideas",
-    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
-    "section": "",
-    "text": "The group decided to work on VAST Challenge 2026 Mini-Challenge 1, which focuses on the TenantThread embargo breach and the multi-agent AI communications crisis.\nThe group agreed that the project should not be presented as a set of disconnected visualisations. Instead, all visualisations should be tied to a coherent investigative concept based on MC1.\nThe main project direction is to develop a visual analytics system that helps users understand whether the embargo breach was caused by deliberate leakage or by a breakdown in agent coordination, communication workflows, and compliance enforcement.\nPossible visualisations discussed include:\n\nA causal chain diagram to show the sequence of decisions, actors, and system elements that contributed to the release.\nAn event timeline to reconstruct the key events leading up to the embargo breach.\nAn agent interaction or communication network to show how different agents exchanged information across channels.\nA behaviour comparison or anomaly view to compare typical behaviour with breach-period behaviour.\n\nThe group noted that further research is required to determine which visualisations will best support the investigation.\nThe group agreed that the final application should contain around three to four main visualisations that collectively tell the story of the breach."
-  },
-  {
-    "objectID": "meeting-minutes/mom1.html#delegation-of-work",
-    "href": "meeting-minutes/mom1.html#delegation-of-work",
-    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
-    "section": "",
-    "text": "Kelvin will prepare the project website, study the MC1 dataset, and draft the project proposal. The dataset review is to be completed by Thursday night, 11:59 PM.\nAnabelle will start exploring the dataset and propose suitable visualisations. This is to be completed by Thursday night, 11:59 PM."
-  },
-  {
-    "objectID": "meeting-minutes/mom1.html#agenda-for-next-meeting",
-    "href": "meeting-minutes/mom1.html#agenda-for-next-meeting",
-    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
-    "section": "",
-    "text": "The next meeting will be conducted on Thursday night. The group will decide on the final visualisations and refine the main concept that the application should communicate."
-  },
-  {
-    "objectID": "meeting-minutes/mom1.html#adjournment",
-    "href": "meeting-minutes/mom1.html#adjournment",
-    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
-    "section": "",
-    "text": "The meeting was adjourned after confirming the selected mini challenge, initial visualisation directions, task delegation, and agenda for the next meeting.\nMinutes submitted by:\nKelvin Andikko\nApproved by:\nAnabelle Eveleen Tandra"
-  },
-  {
-    "objectID": "methodology/feature-engineering.html",
-    "href": "methodology/feature-engineering.html",
-    "title": "Feature Engineering",
-    "section": "",
-    "text": "Feature engineering converted the cleaned communication and participant tables into investigation-ready variables for the TenantThread Shiny application. These derived variables support filtering, timeline exploration, network analysis, and evidence tracing across the MC1 scenario.\nThe features were designed to help assess the central MC1 question: whether the embargo breach reflects deliberate leakage or a wider systemic breakdown in communication controls."
-  },
-  {
-    "objectID": "poster.html",
-    "href": "poster.html",
-    "title": "Poster",
-    "section": "",
-    "text": "Placeholder content for the final project poster."
-  },
-  {
-    "objectID": "shiny.html",
-    "href": "shiny.html",
-    "title": "Launch Shiny App",
-    "section": "",
-    "text": "Placeholder content for the deployed Shiny application link."
-  },
-  {
-    "objectID": "index.html#embargo-breach-tracing-tenantthreads-ai-crisis",
-    "href": "index.html#embargo-breach-tracing-tenantthreads-ai-crisis",
-    "title": "Embargo Breach",
-    "section": "",
-    "text": "This project investigates whether TenantThread deliberately leaked embargo-sensitive CivicLoom merger information, or whether its agent-human communication system broke down under pressure.\n\nShiny App User Guide Findings Poster"
-  },
-  {
-    "objectID": "index.html#case-overview",
-    "href": "index.html#case-overview",
-    "title": "Embargo Breach",
-    "section": "Case Overview",
-    "text": "Case Overview\nTenantThread was preparing Project HarborCrest, a confidential merger with CivicLoom Realty Partners, while The Judge monitored the public information environment. The merger announcement was under embargo until 6:00 PM on June 5, 2046, but evidence suggests an inappropriate release occurred around 5:00 PM."
-  },
-  {
-    "objectID": "index.html#central-question",
-    "href": "index.html#central-question",
-    "title": "Embargo Breach",
-    "section": "Central Question",
-    "text": "Central Question\nDid TenantThread’s team deliberately leak the merger, or did the system break down under pressure?"
-  },
-  {
-    "objectID": "index.html#our-solution",
-    "href": "index.html#our-solution",
-    "title": "Embargo Breach",
-    "section": "Our Solution",
-    "text": "Our Solution\nOur group built a Shiny visual analytics application to reconstruct the crisis, examine communication patterns, and trace how sensitive information moved across agents, people, and public channels."
-  },
-  {
-    "objectID": "index.html#investigation-workflow",
-    "href": "index.html#investigation-workflow",
-    "title": "Embargo Breach",
-    "section": "Investigation Workflow",
-    "text": "Investigation Workflow\n\nLanding Page\nCrisis Timeline\nAgent Network\nEmbargo Breach Pathway"
-  },
-  {
-    "objectID": "index.html#final-finding",
-    "href": "index.html#final-finding",
-    "title": "Embargo Breach",
-    "section": "Final Finding",
-    "text": "Final Finding\nThe evidence points more strongly toward systemic breakdown under pressure than a clearly deliberate leak by a single actor."
-  },
-  {
-    "objectID": "methodology/data-preparation.html#source-structure",
-    "href": "methodology/data-preparation.html#source-structure",
-    "title": "Data Preparation",
-    "section": "Source Structure",
-    "text": "Source Structure\nThe original JSON files were organised around four main components:\n\nrounds: simulation rounds and their associated activity records.\nenvironment_context: contextual information describing the state of the environment during each round.\ncommunications: nested message records exchanged between agents.\nparticipants: metadata about agents involved in the scenario."
-  },
-  {
-    "objectID": "methodology/data-preparation.html#cleaned-outputs",
-    "href": "methodology/data-preparation.html#cleaned-outputs",
-    "title": "Data Preparation",
-    "section": "Cleaned Outputs",
-    "text": "Cleaned Outputs\nThe preparation process produced three main cleaned datasets:\n\nrounds_context: round-level records combined with relevant environmental context.\ncomms_flat: a tidy communication table with one row per message.\nparticipants: a standardised participant reference table for joining agent metadata to communication records."
-  },
-  {
-    "objectID": "methodology/data-preparation.html#cleaning-steps",
-    "href": "methodology/data-preparation.html#cleaning-steps",
-    "title": "Data Preparation",
-    "section": "Cleaning Steps",
-    "text": "Cleaning Steps\nNested JSON objects were parsed and converted into tabular structures. Communication records were unnested so that each message could be analysed independently while preserving links to its source round and context. Timestamps were standardised to support chronological ordering and time-based filtering. Agent names were standardised to reduce duplication caused by inconsistent labels. Communication channels were grouped into broader channel categories for comparison across message types. Response-chain relationships were also prepared so that message replies and related exchanges could be traced in the Shiny application."
-  },
-  {
-    "objectID": "methodology/data-preparation.html#workflow",
-    "href": "methodology/data-preparation.html#workflow",
-    "title": "Data Preparation",
-    "section": "Workflow",
-    "text": "Workflow\n\n\n\n\n\nflowchart LR\n  A[Raw JSON] --&gt; B[Parsed rounds]\n  B --&gt; C[Communication table]\n  C --&gt; D[Feature engineering]\n  D --&gt; E[Shiny app]\n\n\n\n\n\n\nThis data preparation step created the structured foundation required for subsequent feature engineering and interactive visual analytics."
-  },
-  {
-    "objectID": "methodology/feature-engineering.html#feature-groups",
-    "href": "methodology/feature-engineering.html#feature-groups",
-    "title": "Feature Engineering",
-    "section": "Feature Groups",
-    "text": "Feature Groups\nThe following feature groups were prepared for the application:\n\ncrisis_phase: classifies messages by stage of the crisis timeline so that communication patterns can be compared before, during, and after key events.\nchannel_group: groups detailed communication channels into broader categories for clearer comparison across message types.\nchannel_risk: assigns a risk level to each channel based on its suitability for sensitive or embargo-related communication.\nembargo_sensitive keyword flag: identifies messages containing terms related to embargoed information, restricted releases, or premature disclosure.\ncrisis_sensitive keyword flag: identifies messages containing terms associated with crisis response, escalation, public reaction, or operational disruption.\nanomaly_flag and anomaly_reason: highlight unusual records and provide interpretable reasons, such as risky channel use, sensitive keywords, or suspicious timing.\njudge_monitored_status: indicates whether communications involved monitored or judge-relevant participants.\nnetwork_edges and network_nodes: represent communication relationships between agents for network visualisation and influence analysis.\npathway_evidence: captures response-chain and message-link evidence used to trace possible breach pathways."
-  },
-  {
-    "objectID": "methodology/feature-engineering.html#feature-summary",
-    "href": "methodology/feature-engineering.html#feature-summary",
-    "title": "Feature Engineering",
-    "section": "Feature Summary",
-    "text": "Feature Summary\n\n\n\n\n\n\n\n\nFeature\nPurpose\nApp usage\n\n\n\n\ncrisis_phase\nPlaces communication activity in crisis context\nTimeline filtering and phase comparison\n\n\nchannel_group\nSimplifies detailed channels into interpretable groups\nChannel distribution charts and filters\n\n\nchannel_risk\nIndicates potential exposure risk by channel\nRisk-focused filtering and anomaly review\n\n\nembargo_sensitive\nFlags possible embargo-related content\nKeyword evidence screening\n\n\ncrisis_sensitive\nFlags crisis-related content\nCrisis response analysis\n\n\nanomaly_flag, anomaly_reason\nIdentifies unusual or suspicious records\nAnomaly table and evidence review\n\n\njudge_monitored_status\nMarks communications relevant to monitored actors\nParticipant filtering and oversight analysis\n\n\nnetwork_edges, network_nodes\nStructures agent-to-agent communication links\nNetwork graph and centrality exploration\n\n\npathway_evidence\nPreserves traceable links across related messages\nBreach pathway reconstruction\n\n\n\nTogether, these variables allow the Shiny app to move beyond descriptive summaries and support evidence-based investigation. They make it possible to examine who communicated, through which channels, at what stage of the crisis, and whether sensitive information followed patterns consistent with intentional leakage or organisational failure."
-  },
-  {
-    "objectID": "methodology/visual-analytics-design.html#visual-analytics-components",
-    "href": "methodology/visual-analytics-design.html#visual-analytics-components",
-    "title": "Visual Analytics Design",
-    "section": "Visual Analytics Components",
-    "text": "Visual Analytics Components\nThe application combines several coordinated views:\n\nLanding Page / Overview: introduces the case context and provides orientation for the investigation.\nCrisis Timeline: reconstructs events over time and shows how communication activity changes across crisis phases.\nAgent Network: visualises communication relationships between agents, allowing investigators to identify central actors, clusters, and unusual connections.\nEmbargo Breach Pathway: traces the movement of sensitive information across messages, agents, and channels.\nEvidence tables: provide message-level records for validating patterns observed in the visual views."
-  },
-  {
-    "objectID": "methodology/visual-analytics-design.html#integrated-analytical-workflow",
-    "href": "methodology/visual-analytics-design.html#integrated-analytical-workflow",
-    "title": "Visual Analytics Design",
-    "section": "Integrated Analytical Workflow",
-    "text": "Integrated Analytical Workflow\nThe app combines timeline, network, pathway, and linked table views because no single chart can fully explain the embargo breach. The timeline shows when activity occurred, the network shows who was connected, the pathway view shows how sensitive information may have moved, and the evidence tables allow users to inspect the underlying messages. Together, these components support both exploratory analysis and defensible evidence review."
-  },
-  {
-    "objectID": "methodology/visual-analytics-design.html#interactivity",
-    "href": "methodology/visual-analytics-design.html#interactivity",
-    "title": "Visual Analytics Design",
-    "section": "Interactivity",
-    "text": "Interactivity\nInteractive controls allow investigators to refine the analysis without leaving the workflow:\n\nFilters support focused analysis by crisis phase, channel, agent, and other derived attributes.\nKeyword search helps locate messages containing embargo-sensitive or crisis-sensitive terms.\nRange slider supports temporal narrowing within the crisis timeline.\nFocal agent selection allows the network and pathway views to centre on selected participants.\nChannel risk selection helps isolate communications that used higher-risk channels.\nHide and show evidence tables lets users move between visual exploration and detailed message validation as needed."
-  },
-  {
-    "objectID": "methodology/visual-analytics-design.html#design-rationale",
-    "href": "methodology/visual-analytics-design.html#design-rationale",
-    "title": "Visual Analytics Design",
-    "section": "Design Rationale",
-    "text": "Design Rationale\nThe design supports legal and compliance investigators by structuring the analysis from overview to detailed evidence. Users can begin with the case context, identify suspicious time periods or communication patterns, trace possible information pathways, and then validate findings using the underlying message records. This workflow helps assess whether the breach reflects deliberate leakage or a systemic breakdown in communication governance."
-  },
-  {
-    "objectID": "findings.html#finding-1-crisis-pressure-escalated-before-the-breach",
-    "href": "findings.html#finding-1-crisis-pressure-escalated-before-the-breach",
-    "title": "Findings",
-    "section": "Finding 1: Crisis pressure escalated before the breach",
-    "text": "Finding 1: Crisis pressure escalated before the breach\nThe Crisis Timeline indicates that the breach did not occur in isolation. It emerged after a period of rising external and internal pressure. Media pressure increased as public scrutiny around TenantThread intensified, while ResidentIQ rumours added uncertainty and reputational risk. SaltWind coverage further amplified the crisis by moving the issue into a broader public-facing information environment.\nThe timeline also shows that Judge-related events occurred during this period, suggesting that enforcement and oversight were already active before the breach. However, anomaly clustering and increased breach-period activity indicate that the communication environment became more unstable as the crisis developed. This pattern suggests that the organisation was operating under heightened stress before embargo-sensitive information became public."
-  },
-  {
-    "objectID": "findings.html#finding-2-communication-risk-increased-across-internal-semi-private-and-public-facing-channels",
-    "href": "findings.html#finding-2-communication-risk-increased-across-internal-semi-private-and-public-facing-channels",
-    "title": "Findings",
-    "section": "Finding 2: Communication risk increased across internal, semi-private, and public-facing channels",
-    "text": "Finding 2: Communication risk increased across internal, semi-private, and public-facing channels\nCommunication risk rose because sensitive discussion was not confined to a single protected space. The application shows increased activity across internal channels, semi-private coordination spaces, and public-facing communication surfaces. This matters because risk increases when the same issue is discussed across channels with different levels of visibility, control, and audience exposure.\nMessage volume also appears to increase around the breach period. Higher volume can reduce the effectiveness of review, moderation, and policy enforcement because more information moves through the system in less time. The presence of keyword-sensitive communication further indicates that participants were discussing topics connected to the embargo, reputational exposure, leaks, rumours, and public response. These patterns show that the breach risk was distributed across the communication system rather than isolated to one message or one platform."
-  },
-  {
-    "objectID": "findings.html#finding-3-the-communication-network-involved-multiple-agents-rather-than-a-single-isolated-actor",
-    "href": "findings.html#finding-3-the-communication-network-involved-multiple-agents-rather-than-a-single-isolated-actor",
-    "title": "Findings",
-    "section": "Finding 3: The communication network involved multiple agents rather than a single isolated actor",
-    "text": "Finding 3: The communication network involved multiple agents rather than a single isolated actor\nThe Agent Network view shows that the breach environment involved several connected roles. Legal, PR, Platform Trust, Social Manager, PR Intern, Intern, and Judge were all visible in the communication structure. This weakens a simple explanation in which one isolated actor independently caused the breach.\nInstead, the network suggests that embargo-sensitive information circulated through a broader organisational setting. Legal and Platform Trust were linked to governance and enforcement responsibilities, while PR and Social Manager roles were connected to public-facing response. The PR Intern and Intern appear important because junior or peripheral agents can become transmission points when guidance is unclear, pressure is high, or review processes are stretched. The Judge’s presence shows that oversight existed, but the overall network still allowed risky information movement."
-  },
-  {
-    "objectID": "findings.html#finding-4-the-judge-was-present-but-not-sufficiently-central-to-contain-the-breach",
-    "href": "findings.html#finding-4-the-judge-was-present-but-not-sufficiently-central-to-contain-the-breach",
-    "title": "Findings",
-    "section": "Finding 4: The Judge was present but not sufficiently central to contain the breach",
-    "text": "Finding 4: The Judge was present but not sufficiently central to contain the breach\nThe evidence does not support the view that enforcement was entirely absent. Judge-related activity appears in the timeline and network, which suggests that the enforcement role was embedded in the response structure. However, the Judge does not appear sufficiently central or timely to prevent escalation.\nThis finding is important because it points to weak or late enforcement rather than a complete lack of rules. If enforcement is present but not positioned to interrupt risky pathways, it may create the appearance of control without actually containing information flow. In the TenantThread case, oversight appears to have been part of the system, but it did not stop sensitive information from moving toward public release."
-  },
-  {
-    "objectID": "findings.html#finding-5-embargo-sensitive-information-moved-through-multiple-pathway-stages-before-public-release",
-    "href": "findings.html#finding-5-embargo-sensitive-information-moved-through-multiple-pathway-stages-before-public-release",
-    "title": "Findings",
-    "section": "Finding 5: Embargo-sensitive information moved through multiple pathway stages before public release",
-    "text": "Finding 5: Embargo-sensitive information moved through multiple pathway stages before public release\nThe Embargo Breach Pathway view suggests a staged movement of information. The pathway begins with sensitive internal discussion, where embargo-related content was known within the organisation. It then moves into side or private coordination, where information may have been discussed with reduced visibility and weaker institutional control.\nThe next stage is weak enforcement, where governance mechanisms were present but did not successfully halt the risky flow. From there, the information reached a public-facing post or communication surface. The final stage was the breach, where embargo-sensitive information became exposed beyond its intended audience.\nThis staged pathway supports the interpretation that the breach resulted from accumulated process failure. The issue was not only that sensitive information existed, but that it passed through several points where containment could have occurred and did not."
-  },
-  {
-    "objectID": "findings.html#final-interpretation",
-    "href": "findings.html#final-interpretation",
-    "title": "Findings",
-    "section": "Final interpretation",
-    "text": "Final interpretation\nThe combined evidence supports a systemic breakdown interpretation. Crisis pressure increased before the breach, communication risk spread across multiple channel types, the agent network involved several roles, enforcement was present but insufficiently central, and embargo-sensitive information moved through multiple stages before public exposure.\nThis does not rule out suspicious individual behaviour. Some actions, especially around side coordination and public-facing communication, still require message-level review to determine intent. However, based on the visual analytics evidence, the stronger conclusion is that TenantThread’s embargo breach was more likely produced by organisational breakdown under pressure than by a clearly deliberate leak by a single actor."
-  },
-  {
-    "objectID": "user-guide.html#recommended-workflow",
-    "href": "user-guide.html#recommended-workflow",
-    "title": "User Guide",
-    "section": "Recommended Workflow",
-    "text": "Recommended Workflow\n\nStart with Landing Page / Overview.\nUse Crisis Timeline to reconstruct when events happened.\nUse Agent Network to identify who was involved.\nUse Embargo Breach Pathway to trace sensitive information movement.\nUse evidence tables to support conclusions."
-  },
-  {
-    "objectID": "user-guide.html#landing-page-overview",
-    "href": "user-guide.html#landing-page-overview",
-    "title": "User Guide",
-    "section": "Landing Page / Overview",
-    "text": "Landing Page / Overview\nPurpose:\nUse this tab to understand the case context, the main investigation question, and the overall structure of the app.\nKey controls:\nThis page is mainly for orientation. Start here before moving into the detailed analytical tabs.\nWhat to look for:\nLook for the main crisis themes, the suspected breach context, and the app sections that will help you move from general overview to specific evidence.\nHow the output contributes evidence:\nThe overview helps frame the investigation. It explains what the app is trying to test, so later findings from the timeline, network, and pathway views can be interpreted against the same investigation question."
-  },
-  {
-    "objectID": "user-guide.html#crisis-timeline",
-    "href": "user-guide.html#crisis-timeline",
-    "title": "User Guide",
-    "section": "Crisis Timeline",
-    "text": "Crisis Timeline\nPurpose:\nUse this tab to reconstruct when key crisis events happened and how the situation developed over time.\nKey controls:\nUse the date range filters to focus on a specific period. Use keyword search to find messages, events, or actors linked to a topic. Use the crisis phase filter to compare activity across different stages of the crisis. Use the range slider to zoom into a narrower part of the timeline when the full period is too broad.\nWhat to look for:\nLook for sudden increases in activity, repeated references to sensitive information, and event clusters around the embargo breach. Pay attention to whether key events happen before or after public disclosure.\nHow the output contributes evidence:\nThe timeline supports evidence about sequence and timing. It helps users decide whether the breach followed a clear chain of events or whether the crisis emerged from broader communication breakdowns."
-  },
-  {
-    "objectID": "user-guide.html#agent-network",
-    "href": "user-guide.html#agent-network",
-    "title": "User Guide",
-    "section": "Agent Network",
-    "text": "Agent Network\nPurpose:\nUse this tab to identify who was involved, how agents were connected, and whether specific people or groups appear central to the crisis.\nKey controls:\nUse the focal agent filter to inspect connections around one selected person or entity. Use keyword search to narrow the network to relevant topics. Use the crisis phase filter to compare how relationships change across the investigation period.\nWhat to look for:\nLook for highly connected agents, unusual bridges between groups, repeated contact with high-risk channels, and agents who appear close to sensitive information flows.\nHow the output contributes evidence:\nThe network view supports evidence about involvement and communication structure. It can help show whether the breach depends on one central actor, a small group of connected actors, or a wider systemic pattern."
-  },
-  {
-    "objectID": "user-guide.html#embargo-breach-pathway",
-    "href": "user-guide.html#embargo-breach-pathway",
-    "title": "User Guide",
-    "section": "Embargo Breach Pathway",
-    "text": "Embargo Breach Pathway\nPurpose:\nUse this tab to trace how sensitive information may have moved across agents, channels, and crisis events.\nKey controls:\nUse the channel risk filter to focus on higher-risk communication channels. Use the anomaly-only filter to show unusual or suspicious records. Use the date range filters and range slider to focus on the likely breach window. Use keyword search to isolate messages or evidence linked to embargoed content. Hide and show evidence tables when you need more space for the pathway diagram or when you need to inspect the supporting records.\nWhat to look for:\nLook for paths where sensitive information moves from internal sources to external or public-facing channels. Pay attention to anomalies, high-risk channels, and repeated links between the same agents or events.\nHow the output contributes evidence:\nThe pathway view supports evidence about possible information movement. It helps connect agents, channels, and events into an investigative summary that can be checked against the underlying records."
-  },
-  {
-    "objectID": "user-guide.html#evidence-tables",
-    "href": "user-guide.html#evidence-tables",
-    "title": "User Guide",
-    "section": "Evidence Tables",
-    "text": "Evidence Tables\nEvidence tables should be used throughout the investigation. They provide the detailed records behind the visual outputs and help users verify claims before drawing conclusions.\nUse the hide and show evidence table controls depending on the task. Hide the tables when you need to focus on the visual pattern. Show the tables when you need to inspect message details, timestamps, agents, channels, crisis phases, or anomaly flags."
-  },
-  {
-    "objectID": "user-guide.html#interpretation-note",
-    "href": "user-guide.html#interpretation-note",
-    "title": "User Guide",
-    "section": "Interpretation Note",
-    "text": "Interpretation Note\nThe causal chain and pathway diagrams are investigative summaries and should be read together with the linked evidence tables."
   }
 ]

@@ -1,5 +1,0 @@
----
-title: "Launch Shiny App"
----
-
-Placeholder content for the deployed Shiny application link.

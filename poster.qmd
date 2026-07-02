@@ -2,13 +2,8 @@
 title: "Poster"
 ---
 
-The poster summarises the problem, approach, Shiny application overview, investigation workflow, conclusion, and future work.
+The poster summarises the project problem, approach, Shiny application overview, investigation workflow, conclusion, and future work.
 
-<!--
-Place the final poster image or PDF in the project root, for example poster.png or poster.pdf.
-Then replace this comment with:
+![](poster.png){fig-alt='TenantThread Embargo Breach project poster' width='100%'}
 
-![](poster.png){fig-align="center" width="100%"}
-
-[Download poster](poster.png)
--->
+[Download the poster](poster.png)

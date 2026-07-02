@@ -41,15 +41,15 @@ website:
           - href: user-guide.qmd
             text: User Guide
             
-          - href: shiny.qmd
+          - href: https://visual-analytics-project-apr26.shinyapps.io/tenantthread-embargo-breach/
             text: Launch Shiny App
         
       - text: GitHub
         menu:
-          - href: github.qmd#project-website-repository
+          - href: https://github.com/belletandra/vaa_project
             text: Project Website Repository
             
-          - href: github.qmd#shiny-app-repository
+          - href: https://github.com/kellieklarks0n/shinyvaa
             text: Shiny App Repository
         
 format:

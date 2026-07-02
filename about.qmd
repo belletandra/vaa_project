@@ -2,13 +2,16 @@
 title: "The Team"
 ---
 
-## Team Members
+Our team would like to acknowledge and give our sincere thanks to this module's professor, **Dr. Kam Tin Seong** for his steadfast, insightful inputs during the course of our project.
 
-- Anabelle Eveleen T
-- Kelvin Andikko
+This website, along with the Shiny application, was created as part of the module requirements for **ISSS608 - Visual Analytics & Applications**, where we present our group project's findings.
 
-## Lecturer
+The team members that are part of this project are listed as below, along with their respective LinkedIn & personal website for Visual Analytics.
 
-Dr Kam Tin Seong
+Anabelle Eveleen Tandra
+[LinkedIn](https://www.linkedin.com/in/anabelleeveleen/){.btn .btn-primary} [Personal Website](https://isss608-fumg.vercel.app/){.btn .btn-secondary}
+
+Kelvin Andikko
+[LinkedIn](https://www.linkedin.com/in/kelvinandikko/){.btn .btn-primary} [Personal Website](https://visual-analytics-and-applications.vercel.app){.btn .btn-secondary}
 
 Our team developed the Shiny application and project website to present the visual analytics work clearly, support interactive exploration, and communicate the project findings in a concise, accessible format.

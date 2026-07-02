@@ -7,18 +7,15 @@ format:
     page-layout: full
 ---
 
-::: {.home-hero}
+:::: home-hero
 ## Embargo Breach: Tracing TenantThread's AI Crisis
 
 This project investigates whether TenantThread deliberately leaked embargo-sensitive CivicLoom merger information, or whether its agent-human communication system broke down under pressure.
 
-::: {.home-actions}
-[Shiny App](shiny.qmd){.btn .btn-primary}
-[User Guide](user-guide.qmd){.btn .btn-secondary}
-[Findings](findings.qmd){.btn .btn-secondary}
-[Poster](poster.qmd){.btn .btn-secondary}
+::: home-actions
+[Shiny App](https://visual-analytics-project-apr26.shinyapps.io/tenantthread-embargo-breach/){.btn .btn-primary} [User Guide](user-guide.qmd){.btn .btn-secondary} [Findings](findings.qmd){.btn .btn-secondary} [Poster](poster.qmd){.btn .btn-secondary}
 :::
-:::
+::::
 
 ## Case Overview
 
@@ -34,7 +31,7 @@ Our group built a Shiny visual analytics application to reconstruct the crisis, 
 
 ## Investigation Workflow
 
-::: {.workflow}
+::: workflow
 Landing Page
 
 Crisis Timeline
@@ -47,5 +44,3 @@ Embargo Breach Pathway
 ## Final Finding
 
 The evidence points more strongly toward systemic breakdown under pressure than a clearly deliberate leak by a single actor.
-
-
