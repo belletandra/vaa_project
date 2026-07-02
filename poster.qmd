@@ -2,4 +2,13 @@
 title: "Poster"
 ---
 
-Placeholder content for the final project poster.
+The poster summarises the problem, approach, Shiny application overview, investigation workflow, conclusion, and future work.
+
+<!--
+Place the final poster image or PDF in the project root, for example poster.png or poster.pdf.
+Then replace this comment with:
+
+![](poster.png){fig-align="center" width="100%"}
+
+[Download poster](poster.png)
+-->
