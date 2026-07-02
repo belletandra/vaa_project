@@ -185,8 +185,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#recommended-workflow" id="toc-recommended-workflow" class="nav-link active" data-scroll-target="#recommended-workflow">Recommended Workflow</a></li>
+  <li><a href="#landing-page-overview" id="toc-landing-page-overview" class="nav-link" data-scroll-target="#landing-page-overview">Landing Page / Overview</a></li>
+  <li><a href="#crisis-timeline" id="toc-crisis-timeline" class="nav-link" data-scroll-target="#crisis-timeline">Crisis Timeline</a></li>
+  <li><a href="#agent-network" id="toc-agent-network" class="nav-link" data-scroll-target="#agent-network">Agent Network</a></li>
+  <li><a href="#embargo-breach-pathway" id="toc-embargo-breach-pathway" class="nav-link" data-scroll-target="#embargo-breach-pathway">Embargo Breach Pathway</a></li>
+  <li><a href="#evidence-tables" id="toc-evidence-tables" class="nav-link" data-scroll-target="#evidence-tables">Evidence Tables</a></li>
+  <li><a href="#interpretation-note" id="toc-interpretation-note" class="nav-link" data-scroll-target="#interpretation-note">Interpretation Note</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -210,9 +222,73 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Placeholder content for the Shiny application user guide.</p>
+<p>This guide explains how to use the Shiny app to investigate whether TenantThread’s embargo breach was caused by deliberate leakage or systemic breakdown.</p>
+<p><a href="./shiny.html" class="btn btn-primary">Launch the deployed Shiny app</a></p>
+<section id="recommended-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-workflow">Recommended Workflow</h2>
+<ol type="1">
+<li>Start with <strong>Landing Page / Overview</strong>.</li>
+<li>Use <strong>Crisis Timeline</strong> to reconstruct when events happened.</li>
+<li>Use <strong>Agent Network</strong> to identify who was involved.</li>
+<li>Use <strong>Embargo Breach Pathway</strong> to trace sensitive information movement.</li>
+<li>Use evidence tables to support conclusions.</li>
+</ol>
+</section>
+<section id="landing-page-overview" class="level2">
+<h2 class="anchored" data-anchor-id="landing-page-overview">Landing Page / Overview</h2>
+<p><strong>Purpose:</strong><br>
+Use this tab to understand the case context, the main investigation question, and the overall structure of the app.</p>
+<p><strong>Key controls:</strong><br>
+This page is mainly for orientation. Start here before moving into the detailed analytical tabs.</p>
+<p><strong>What to look for:</strong><br>
+Look for the main crisis themes, the suspected breach context, and the app sections that will help you move from general overview to specific evidence.</p>
+<p><strong>How the output contributes evidence:</strong><br>
+The overview helps frame the investigation. It explains what the app is trying to test, so later findings from the timeline, network, and pathway views can be interpreted against the same investigation question.</p>
+</section>
+<section id="crisis-timeline" class="level2">
+<h2 class="anchored" data-anchor-id="crisis-timeline">Crisis Timeline</h2>
+<p><strong>Purpose:</strong><br>
+Use this tab to reconstruct when key crisis events happened and how the situation developed over time.</p>
+<p><strong>Key controls:</strong><br>
+Use the date range filters to focus on a specific period. Use keyword search to find messages, events, or actors linked to a topic. Use the crisis phase filter to compare activity across different stages of the crisis. Use the range slider to zoom into a narrower part of the timeline when the full period is too broad.</p>
+<p><strong>What to look for:</strong><br>
+Look for sudden increases in activity, repeated references to sensitive information, and event clusters around the embargo breach. Pay attention to whether key events happen before or after public disclosure.</p>
+<p><strong>How the output contributes evidence:</strong><br>
+The timeline supports evidence about sequence and timing. It helps users decide whether the breach followed a clear chain of events or whether the crisis emerged from broader communication breakdowns.</p>
+</section>
+<section id="agent-network" class="level2">
+<h2 class="anchored" data-anchor-id="agent-network">Agent Network</h2>
+<p><strong>Purpose:</strong><br>
+Use this tab to identify who was involved, how agents were connected, and whether specific people or groups appear central to the crisis.</p>
+<p><strong>Key controls:</strong><br>
+Use the focal agent filter to inspect connections around one selected person or entity. Use keyword search to narrow the network to relevant topics. Use the crisis phase filter to compare how relationships change across the investigation period.</p>
+<p><strong>What to look for:</strong><br>
+Look for highly connected agents, unusual bridges between groups, repeated contact with high-risk channels, and agents who appear close to sensitive information flows.</p>
+<p><strong>How the output contributes evidence:</strong><br>
+The network view supports evidence about involvement and communication structure. It can help show whether the breach depends on one central actor, a small group of connected actors, or a wider systemic pattern.</p>
+</section>
+<section id="embargo-breach-pathway" class="level2">
+<h2 class="anchored" data-anchor-id="embargo-breach-pathway">Embargo Breach Pathway</h2>
+<p><strong>Purpose:</strong><br>
+Use this tab to trace how sensitive information may have moved across agents, channels, and crisis events.</p>
+<p><strong>Key controls:</strong><br>
+Use the channel risk filter to focus on higher-risk communication channels. Use the anomaly-only filter to show unusual or suspicious records. Use the date range filters and range slider to focus on the likely breach window. Use keyword search to isolate messages or evidence linked to embargoed content. Hide and show evidence tables when you need more space for the pathway diagram or when you need to inspect the supporting records.</p>
+<p><strong>What to look for:</strong><br>
+Look for paths where sensitive information moves from internal sources to external or public-facing channels. Pay attention to anomalies, high-risk channels, and repeated links between the same agents or events.</p>
+<p><strong>How the output contributes evidence:</strong><br>
+The pathway view supports evidence about possible information movement. It helps connect agents, channels, and events into an investigative summary that can be checked against the underlying records.</p>
+</section>
+<section id="evidence-tables" class="level2">
+<h2 class="anchored" data-anchor-id="evidence-tables">Evidence Tables</h2>
+<p>Evidence tables should be used throughout the investigation. They provide the detailed records behind the visual outputs and help users verify claims before drawing conclusions.</p>
+<p>Use the hide and show evidence table controls depending on the task. Hide the tables when you need to focus on the visual pattern. Show the tables when you need to inspect message details, timestamps, agents, channels, crisis phases, or anomaly flags.</p>
+</section>
+<section id="interpretation-note" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation-note">Interpretation Note</h2>
+<p>The causal chain and pathway diagrams are investigative summaries and should be read together with the linked evidence tables.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

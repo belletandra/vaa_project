@@ -4,7 +4,7 @@
     "href": "user-guide.html",
     "title": "User Guide",
     "section": "",
-    "text": "Placeholder content for the Shiny application user guide."
+    "text": "This guide explains how to use the Shiny app to investigate whether TenantThread’s embargo breach was caused by deliberate leakage or systemic breakdown.\nLaunch the deployed Shiny app"
   },
   {
     "objectID": "proposal.html",
@@ -95,7 +95,7 @@
     "href": "methodology/visual-analytics-design.html",
     "title": "Visual Analytics Design",
     "section": "",
-    "text": "Placeholder content for the final visual analytics design write-up."
+    "text": "The TenantThread Shiny application is designed as an investigation workflow. It guides users from case orientation to temporal reconstruction, communication network exploration, breach pathway tracing, and message-level evidence validation."
   },
   {
     "objectID": "methodology/data-preparation.html",
@@ -116,7 +116,7 @@
     "href": "findings.html",
     "title": "Findings",
     "section": "",
-    "text": "Placeholder content for the final project findings."
+    "text": "The findings presented here are based on the analytical workflow developed in the TenantThread Shiny application. The interpretation draws primarily from the Crisis Timeline, Agent Network, and Embargo Breach Pathway tabs. Together, these views show how pressure, communication behaviour, and network structure interacted before the MC1 embargo breach.\nOverall, the evidence suggests that TenantThread’s embargo breach was more likely caused by systemic breakdown under pressure than by a clearly deliberate leak by a single actor."
   },
   {
     "objectID": "about.html",
@@ -320,5 +320,96 @@
     "title": "Visual Analytics Design",
     "section": "Design Rationale",
     "text": "Design Rationale\nThe design supports legal and compliance investigators by structuring the analysis from overview to detailed evidence. Users can begin with the case context, identify suspicious time periods or communication patterns, trace possible information pathways, and then validate findings using the underlying message records. This workflow helps assess whether the breach reflects deliberate leakage or a systemic breakdown in communication governance."
+  },
+  {
+    "objectID": "findings.html#finding-1-crisis-pressure-escalated-before-the-breach",
+    "href": "findings.html#finding-1-crisis-pressure-escalated-before-the-breach",
+    "title": "Findings",
+    "section": "Finding 1: Crisis pressure escalated before the breach",
+    "text": "Finding 1: Crisis pressure escalated before the breach\nThe Crisis Timeline indicates that the breach did not occur in isolation. It emerged after a period of rising external and internal pressure. Media pressure increased as public scrutiny around TenantThread intensified, while ResidentIQ rumours added uncertainty and reputational risk. SaltWind coverage further amplified the crisis by moving the issue into a broader public-facing information environment.\nThe timeline also shows that Judge-related events occurred during this period, suggesting that enforcement and oversight were already active before the breach. However, anomaly clustering and increased breach-period activity indicate that the communication environment became more unstable as the crisis developed. This pattern suggests that the organisation was operating under heightened stress before embargo-sensitive information became public."
+  },
+  {
+    "objectID": "findings.html#finding-2-communication-risk-increased-across-internal-semi-private-and-public-facing-channels",
+    "href": "findings.html#finding-2-communication-risk-increased-across-internal-semi-private-and-public-facing-channels",
+    "title": "Findings",
+    "section": "Finding 2: Communication risk increased across internal, semi-private, and public-facing channels",
+    "text": "Finding 2: Communication risk increased across internal, semi-private, and public-facing channels\nCommunication risk rose because sensitive discussion was not confined to a single protected space. The application shows increased activity across internal channels, semi-private coordination spaces, and public-facing communication surfaces. This matters because risk increases when the same issue is discussed across channels with different levels of visibility, control, and audience exposure.\nMessage volume also appears to increase around the breach period. Higher volume can reduce the effectiveness of review, moderation, and policy enforcement because more information moves through the system in less time. The presence of keyword-sensitive communication further indicates that participants were discussing topics connected to the embargo, reputational exposure, leaks, rumours, and public response. These patterns show that the breach risk was distributed across the communication system rather than isolated to one message or one platform."
+  },
+  {
+    "objectID": "findings.html#finding-3-the-communication-network-involved-multiple-agents-rather-than-a-single-isolated-actor",
+    "href": "findings.html#finding-3-the-communication-network-involved-multiple-agents-rather-than-a-single-isolated-actor",
+    "title": "Findings",
+    "section": "Finding 3: The communication network involved multiple agents rather than a single isolated actor",
+    "text": "Finding 3: The communication network involved multiple agents rather than a single isolated actor\nThe Agent Network view shows that the breach environment involved several connected roles. Legal, PR, Platform Trust, Social Manager, PR Intern, Intern, and Judge were all visible in the communication structure. This weakens a simple explanation in which one isolated actor independently caused the breach.\nInstead, the network suggests that embargo-sensitive information circulated through a broader organisational setting. Legal and Platform Trust were linked to governance and enforcement responsibilities, while PR and Social Manager roles were connected to public-facing response. The PR Intern and Intern appear important because junior or peripheral agents can become transmission points when guidance is unclear, pressure is high, or review processes are stretched. The Judge’s presence shows that oversight existed, but the overall network still allowed risky information movement."
+  },
+  {
+    "objectID": "findings.html#finding-4-the-judge-was-present-but-not-sufficiently-central-to-contain-the-breach",
+    "href": "findings.html#finding-4-the-judge-was-present-but-not-sufficiently-central-to-contain-the-breach",
+    "title": "Findings",
+    "section": "Finding 4: The Judge was present but not sufficiently central to contain the breach",
+    "text": "Finding 4: The Judge was present but not sufficiently central to contain the breach\nThe evidence does not support the view that enforcement was entirely absent. Judge-related activity appears in the timeline and network, which suggests that the enforcement role was embedded in the response structure. However, the Judge does not appear sufficiently central or timely to prevent escalation.\nThis finding is important because it points to weak or late enforcement rather than a complete lack of rules. If enforcement is present but not positioned to interrupt risky pathways, it may create the appearance of control without actually containing information flow. In the TenantThread case, oversight appears to have been part of the system, but it did not stop sensitive information from moving toward public release."
+  },
+  {
+    "objectID": "findings.html#finding-5-embargo-sensitive-information-moved-through-multiple-pathway-stages-before-public-release",
+    "href": "findings.html#finding-5-embargo-sensitive-information-moved-through-multiple-pathway-stages-before-public-release",
+    "title": "Findings",
+    "section": "Finding 5: Embargo-sensitive information moved through multiple pathway stages before public release",
+    "text": "Finding 5: Embargo-sensitive information moved through multiple pathway stages before public release\nThe Embargo Breach Pathway view suggests a staged movement of information. The pathway begins with sensitive internal discussion, where embargo-related content was known within the organisation. It then moves into side or private coordination, where information may have been discussed with reduced visibility and weaker institutional control.\nThe next stage is weak enforcement, where governance mechanisms were present but did not successfully halt the risky flow. From there, the information reached a public-facing post or communication surface. The final stage was the breach, where embargo-sensitive information became exposed beyond its intended audience.\nThis staged pathway supports the interpretation that the breach resulted from accumulated process failure. The issue was not only that sensitive information existed, but that it passed through several points where containment could have occurred and did not."
+  },
+  {
+    "objectID": "findings.html#final-interpretation",
+    "href": "findings.html#final-interpretation",
+    "title": "Findings",
+    "section": "Final interpretation",
+    "text": "Final interpretation\nThe combined evidence supports a systemic breakdown interpretation. Crisis pressure increased before the breach, communication risk spread across multiple channel types, the agent network involved several roles, enforcement was present but insufficiently central, and embargo-sensitive information moved through multiple stages before public exposure.\nThis does not rule out suspicious individual behaviour. Some actions, especially around side coordination and public-facing communication, still require message-level review to determine intent. However, based on the visual analytics evidence, the stronger conclusion is that TenantThread’s embargo breach was more likely produced by organisational breakdown under pressure than by a clearly deliberate leak by a single actor."
+  },
+  {
+    "objectID": "user-guide.html#recommended-workflow",
+    "href": "user-guide.html#recommended-workflow",
+    "title": "User Guide",
+    "section": "Recommended Workflow",
+    "text": "Recommended Workflow\n\nStart with Landing Page / Overview.\nUse Crisis Timeline to reconstruct when events happened.\nUse Agent Network to identify who was involved.\nUse Embargo Breach Pathway to trace sensitive information movement.\nUse evidence tables to support conclusions."
+  },
+  {
+    "objectID": "user-guide.html#landing-page-overview",
+    "href": "user-guide.html#landing-page-overview",
+    "title": "User Guide",
+    "section": "Landing Page / Overview",
+    "text": "Landing Page / Overview\nPurpose:\nUse this tab to understand the case context, the main investigation question, and the overall structure of the app.\nKey controls:\nThis page is mainly for orientation. Start here before moving into the detailed analytical tabs.\nWhat to look for:\nLook for the main crisis themes, the suspected breach context, and the app sections that will help you move from general overview to specific evidence.\nHow the output contributes evidence:\nThe overview helps frame the investigation. It explains what the app is trying to test, so later findings from the timeline, network, and pathway views can be interpreted against the same investigation question."
+  },
+  {
+    "objectID": "user-guide.html#crisis-timeline",
+    "href": "user-guide.html#crisis-timeline",
+    "title": "User Guide",
+    "section": "Crisis Timeline",
+    "text": "Crisis Timeline\nPurpose:\nUse this tab to reconstruct when key crisis events happened and how the situation developed over time.\nKey controls:\nUse the date range filters to focus on a specific period. Use keyword search to find messages, events, or actors linked to a topic. Use the crisis phase filter to compare activity across different stages of the crisis. Use the range slider to zoom into a narrower part of the timeline when the full period is too broad.\nWhat to look for:\nLook for sudden increases in activity, repeated references to sensitive information, and event clusters around the embargo breach. Pay attention to whether key events happen before or after public disclosure.\nHow the output contributes evidence:\nThe timeline supports evidence about sequence and timing. It helps users decide whether the breach followed a clear chain of events or whether the crisis emerged from broader communication breakdowns."
+  },
+  {
+    "objectID": "user-guide.html#agent-network",
+    "href": "user-guide.html#agent-network",
+    "title": "User Guide",
+    "section": "Agent Network",
+    "text": "Agent Network\nPurpose:\nUse this tab to identify who was involved, how agents were connected, and whether specific people or groups appear central to the crisis.\nKey controls:\nUse the focal agent filter to inspect connections around one selected person or entity. Use keyword search to narrow the network to relevant topics. Use the crisis phase filter to compare how relationships change across the investigation period.\nWhat to look for:\nLook for highly connected agents, unusual bridges between groups, repeated contact with high-risk channels, and agents who appear close to sensitive information flows.\nHow the output contributes evidence:\nThe network view supports evidence about involvement and communication structure. It can help show whether the breach depends on one central actor, a small group of connected actors, or a wider systemic pattern."
+  },
+  {
+    "objectID": "user-guide.html#embargo-breach-pathway",
+    "href": "user-guide.html#embargo-breach-pathway",
+    "title": "User Guide",
+    "section": "Embargo Breach Pathway",
+    "text": "Embargo Breach Pathway\nPurpose:\nUse this tab to trace how sensitive information may have moved across agents, channels, and crisis events.\nKey controls:\nUse the channel risk filter to focus on higher-risk communication channels. Use the anomaly-only filter to show unusual or suspicious records. Use the date range filters and range slider to focus on the likely breach window. Use keyword search to isolate messages or evidence linked to embargoed content. Hide and show evidence tables when you need more space for the pathway diagram or when you need to inspect the supporting records.\nWhat to look for:\nLook for paths where sensitive information moves from internal sources to external or public-facing channels. Pay attention to anomalies, high-risk channels, and repeated links between the same agents or events.\nHow the output contributes evidence:\nThe pathway view supports evidence about possible information movement. It helps connect agents, channels, and events into an investigative summary that can be checked against the underlying records."
+  },
+  {
+    "objectID": "user-guide.html#evidence-tables",
+    "href": "user-guide.html#evidence-tables",
+    "title": "User Guide",
+    "section": "Evidence Tables",
+    "text": "Evidence Tables\nEvidence tables should be used throughout the investigation. They provide the detailed records behind the visual outputs and help users verify claims before drawing conclusions.\nUse the hide and show evidence table controls depending on the task. Hide the tables when you need to focus on the visual pattern. Show the tables when you need to inspect message details, timestamps, agents, channels, crisis phases, or anomaly flags."
+  },
+  {
+    "objectID": "user-guide.html#interpretation-note",
+    "href": "user-guide.html#interpretation-note",
+    "title": "User Guide",
+    "section": "Interpretation Note",
+    "text": "Interpretation Note\nThe causal chain and pathway diagrams are investigative summaries and should be read together with the linked evidence tables."
   }
 ]

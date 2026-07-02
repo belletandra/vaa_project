@@ -185,8 +185,17 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#visual-analytics-components" id="toc-visual-analytics-components" class="nav-link active" data-scroll-target="#visual-analytics-components">Visual Analytics Components</a></li>
+  <li><a href="#integrated-analytical-workflow" id="toc-integrated-analytical-workflow" class="nav-link" data-scroll-target="#integrated-analytical-workflow">Integrated Analytical Workflow</a></li>
+  <li><a href="#interactivity" id="toc-interactivity" class="nav-link" data-scroll-target="#interactivity">Interactivity</a></li>
+  <li><a href="#design-rationale" id="toc-design-rationale" class="nav-link" data-scroll-target="#design-rationale">Design Rationale</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -210,9 +219,40 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Placeholder content for the final visual analytics design write-up.</p>
+<p>The TenantThread Shiny application is designed as an investigation workflow. It guides users from case orientation to temporal reconstruction, communication network exploration, breach pathway tracing, and message-level evidence validation.</p>
+<section id="visual-analytics-components" class="level2">
+<h2 class="anchored" data-anchor-id="visual-analytics-components">Visual Analytics Components</h2>
+<p>The application combines several coordinated views:</p>
+<ul>
+<li><strong>Landing Page / Overview</strong>: introduces the case context and provides orientation for the investigation.</li>
+<li><strong>Crisis Timeline</strong>: reconstructs events over time and shows how communication activity changes across crisis phases.</li>
+<li><strong>Agent Network</strong>: visualises communication relationships between agents, allowing investigators to identify central actors, clusters, and unusual connections.</li>
+<li><strong>Embargo Breach Pathway</strong>: traces the movement of sensitive information across messages, agents, and channels.</li>
+<li><strong>Evidence tables</strong>: provide message-level records for validating patterns observed in the visual views.</li>
+</ul>
+</section>
+<section id="integrated-analytical-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="integrated-analytical-workflow">Integrated Analytical Workflow</h2>
+<p>The app combines timeline, network, pathway, and linked table views because no single chart can fully explain the embargo breach. The timeline shows when activity occurred, the network shows who was connected, the pathway view shows how sensitive information may have moved, and the evidence tables allow users to inspect the underlying messages. Together, these components support both exploratory analysis and defensible evidence review.</p>
+</section>
+<section id="interactivity" class="level2">
+<h2 class="anchored" data-anchor-id="interactivity">Interactivity</h2>
+<p>Interactive controls allow investigators to refine the analysis without leaving the workflow:</p>
+<ul>
+<li><strong>Filters</strong> support focused analysis by crisis phase, channel, agent, and other derived attributes.</li>
+<li><strong>Keyword search</strong> helps locate messages containing embargo-sensitive or crisis-sensitive terms.</li>
+<li><strong>Range slider</strong> supports temporal narrowing within the crisis timeline.</li>
+<li><strong>Focal agent selection</strong> allows the network and pathway views to centre on selected participants.</li>
+<li><strong>Channel risk selection</strong> helps isolate communications that used higher-risk channels.</li>
+<li><strong>Hide and show evidence tables</strong> lets users move between visual exploration and detailed message validation as needed.</li>
+</ul>
+</section>
+<section id="design-rationale" class="level2">
+<h2 class="anchored" data-anchor-id="design-rationale">Design Rationale</h2>
+<p>The design supports legal and compliance investigators by structuring the analysis from overview to detailed evidence. Users can begin with the case context, identify suspicious time periods or communication patterns, trace possible information pathways, and then validate findings using the underlying message records. This workflow helps assess whether the breach reflects deliberate leakage or a systemic breakdown in communication governance.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

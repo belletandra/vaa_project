@@ -2,4 +2,80 @@
 title: "User Guide"
 ---
 
-Placeholder content for the Shiny application user guide.
+This guide explains how to use the Shiny app to investigate whether TenantThread's embargo breach was caused by deliberate leakage or systemic breakdown.
+
+[Launch the deployed Shiny app](shiny.qmd){.btn .btn-primary}
+
+## Recommended Workflow
+
+1. Start with **Landing Page / Overview**.
+2. Use **Crisis Timeline** to reconstruct when events happened.
+3. Use **Agent Network** to identify who was involved.
+4. Use **Embargo Breach Pathway** to trace sensitive information movement.
+5. Use evidence tables to support conclusions.
+
+## Landing Page / Overview
+
+**Purpose:**  
+Use this tab to understand the case context, the main investigation question, and the overall structure of the app.
+
+**Key controls:**  
+This page is mainly for orientation. Start here before moving into the detailed analytical tabs.
+
+**What to look for:**  
+Look for the main crisis themes, the suspected breach context, and the app sections that will help you move from general overview to specific evidence.
+
+**How the output contributes evidence:**  
+The overview helps frame the investigation. It explains what the app is trying to test, so later findings from the timeline, network, and pathway views can be interpreted against the same investigation question.
+
+## Crisis Timeline
+
+**Purpose:**  
+Use this tab to reconstruct when key crisis events happened and how the situation developed over time.
+
+**Key controls:**  
+Use the date range filters to focus on a specific period. Use keyword search to find messages, events, or actors linked to a topic. Use the crisis phase filter to compare activity across different stages of the crisis. Use the range slider to zoom into a narrower part of the timeline when the full period is too broad.
+
+**What to look for:**  
+Look for sudden increases in activity, repeated references to sensitive information, and event clusters around the embargo breach. Pay attention to whether key events happen before or after public disclosure.
+
+**How the output contributes evidence:**  
+The timeline supports evidence about sequence and timing. It helps users decide whether the breach followed a clear chain of events or whether the crisis emerged from broader communication breakdowns.
+
+## Agent Network
+
+**Purpose:**  
+Use this tab to identify who was involved, how agents were connected, and whether specific people or groups appear central to the crisis.
+
+**Key controls:**  
+Use the focal agent filter to inspect connections around one selected person or entity. Use keyword search to narrow the network to relevant topics. Use the crisis phase filter to compare how relationships change across the investigation period.
+
+**What to look for:**  
+Look for highly connected agents, unusual bridges between groups, repeated contact with high-risk channels, and agents who appear close to sensitive information flows.
+
+**How the output contributes evidence:**  
+The network view supports evidence about involvement and communication structure. It can help show whether the breach depends on one central actor, a small group of connected actors, or a wider systemic pattern.
+
+## Embargo Breach Pathway
+
+**Purpose:**  
+Use this tab to trace how sensitive information may have moved across agents, channels, and crisis events.
+
+**Key controls:**  
+Use the channel risk filter to focus on higher-risk communication channels. Use the anomaly-only filter to show unusual or suspicious records. Use the date range filters and range slider to focus on the likely breach window. Use keyword search to isolate messages or evidence linked to embargoed content. Hide and show evidence tables when you need more space for the pathway diagram or when you need to inspect the supporting records.
+
+**What to look for:**  
+Look for paths where sensitive information moves from internal sources to external or public-facing channels. Pay attention to anomalies, high-risk channels, and repeated links between the same agents or events.
+
+**How the output contributes evidence:**  
+The pathway view supports evidence about possible information movement. It helps connect agents, channels, and events into an investigative summary that can be checked against the underlying records.
+
+## Evidence Tables
+
+Evidence tables should be used throughout the investigation. They provide the detailed records behind the visual outputs and help users verify claims before drawing conclusions.
+
+Use the hide and show evidence table controls depending on the task. Hide the tables when you need to focus on the visual pattern. Show the tables when you need to inspect message details, timestamps, agents, channels, crisis phases, or anomaly flags.
+
+## Interpretation Note
+
+The causal chain and pathway diagrams are investigative summaries and should be read together with the linked evidence tables.
