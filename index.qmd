@@ -1,12 +1,51 @@
 ---
-title: "Embargo Breach: Tracing TenantThread’s AI Crisis"
-subtitle: "A Visual Analytics Investigation of the Project HarborCrest Disclosure Failure"
+title: "Embargo Breach"
+subtitle: "Tracing TenantThread's AI Crisis in VAST Challenge 2026 Mini-Challenge 1"
 format:
   html:
     toc: false
     page-layout: full
 ---
 
-This project investigates how embargoed merger information from TenantThread was released publicly before its scheduled announcement. Using internal communications, agent deliberations, public posts, and contextual crisis signals, the project develops a Shiny-based visual analytics application to reconstruct the breach and determine whether it was caused by deliberate leakage, abnormal agent behaviour, or a breakdown in coordination across automated communication systems.
+::: {.home-hero}
+## Embargo Breach: Tracing TenantThread's AI Crisis
+
+This project investigates whether TenantThread deliberately leaked embargo-sensitive CivicLoom merger information, or whether its agent-human communication system broke down under pressure.
+
+::: {.home-actions}
+[Shiny App](shiny.qmd){.btn .btn-primary}
+[User Guide](user-guide.qmd){.btn .btn-secondary}
+[Findings](findings.qmd){.btn .btn-secondary}
+[Poster](poster.qmd){.btn .btn-secondary}
+:::
+:::
+
+## Case Overview
+
+TenantThread was preparing Project HarborCrest, a confidential merger with CivicLoom Realty Partners, while The Judge monitored the public information environment. The merger announcement was under embargo until 6:00 PM on June 5, 2046, but evidence suggests an inappropriate release occurred around 5:00 PM.
+
+## Central Question
+
+Did TenantThread's team deliberately leak the merger, or did the system break down under pressure?
+
+## Our Solution
+
+Our group built a Shiny visual analytics application to reconstruct the crisis, examine communication patterns, and trace how sensitive information moved across agents, people, and public channels.
+
+## Investigation Workflow
+
+::: {.workflow}
+Landing Page
+
+Crisis Timeline
+
+Agent Network
+
+Embargo Breach Pathway
+:::
+
+## Final Finding
+
+The evidence points more strongly toward systemic breakdown under pressure than a clearly deliberate leak by a single actor.
 
 
