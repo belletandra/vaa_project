@@ -2,4 +2,13 @@
 title: "The Team"
 ---
 
-Placeholder content for the project team profile.
+## Team Members
+
+- Anabelle Eveleen T
+- Kelvin Andikko
+
+## Lecturer
+
+Dr Kam Tin Seong
+
+Our team developed the Shiny application and project website to present the visual analytics work clearly, support interactive exploration, and communicate the project findings in a concise, accessible format.
