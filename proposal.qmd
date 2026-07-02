@@ -21,15 +21,15 @@ execute:
 
 # Motivation
 
-As organisations increasingly rely on AI-enabled communication and compliance systems, sensitive corporate processes are now managed not only by humans but also by automated agents that draft messages, monitor sentiment, route approvals, and enforce disclosure rules. While these systems improve efficiency, they also create new risks when multiple agents, workflows, and decisions interact under pressure. This project is motivated by the case of TenantThread, a property technology company whose Retention Optimizer scores tenants using payment timing, maintenance requests, and message tone. Although the company publicly claimed its data was anonymised, internal communications suggest that tenants in smaller properties could still be re-identified through cross-referencing.
+As organisations increasingly rely on AI-enabled communication and compliance systems, sensitive corporate processes are now managed not only by humans but also by automated agents that draft messages, monitor sentiment, route approvals, and enforce disclosure rules. While these systems improve efficiency, they also create new risks when multiple agents, workflows, and decisions interact under pressure. This project examines the case of TenantThread, a property technology company whose Retention Optimizer scores tenants using payment timing, maintenance requests, and message tone. Although the company publicly claimed its data was anonymised, internal communications suggest that tenants in smaller properties could still be re-identified through cross-referencing.
 
-At the same time, TenantThread had entered a confidential merger agreement with CivicLoom Realty Partners under the codename Project HarborCrest, with a strict embargo until 6:00 PM on June 5th, 2046. Despite the presence of an automated compliance tool called The Judge, embargoed information about the merger appeared publicly on FleX around 5:00 PM. This makes the case important not only because a leak occurred, but because the cause is unclear: it may have resulted from deliberate human action, abnormal AI-agent behaviour, weak embargo enforcement, or a broader coordination failure. A Shiny-based visual analytics application is therefore well suited to support the investigation by helping users reconstruct the timeline of events, analyse agent interactions, compare normal and abnormal behaviour, and trace how embargo-sensitive information moved from internal communications to public release.
+At the same time, TenantThread had entered a confidential merger agreement with CivicLoom Realty Partners under the codename Project HarborCrest, with a strict embargo until 6:00 PM on June 5th, 2046. Despite the presence of an automated compliance tool called The Judge, embargoed information about the merger appeared publicly on FleX around 5:00 PM. This makes the case important not only because a leak occurred, but because the cause is unclear: it may have resulted from deliberate human action, abnormal AI-agent behaviour, weak embargo enforcement, or a broader coordination failure. The completed Shiny-based visual analytics application supports this investigation by helping users reconstruct the timeline of events, analyse agent interactions, compare normal and abnormal behaviour, and trace how embargo-sensitive information moved from internal communications to public release.
 
 # Problem Statement
 
 TenantThread's internal communication and automated response systems released embargoed merger information before the official disclosure time, despite the presence of an embargo enforcement mechanism. The cause of this breach is unclear.
 
-The central problem addressed by this project is: **Did TenantThread deliberately leak the merger information, or did the system break down under operational, reputational, and social media pressure?**
+The central problem addressed by this project is: **Did TenantThread deliberately leak the merger, or did the system break down under pressure?**
 
 To answer this question, investigators must analyse internal communications from the two weeks leading up to the breach and understand:
 
@@ -47,9 +47,9 @@ Because the data contains many interconnected events, agents, communication chan
 
 # Objectives
 
-The objective of this project is to develop a web-enabled visual analytics application using Shiny to support the investigation of the Project HarborCrest embargo breach.
+The objective of this project was to build a web-enabled visual analytics application using Shiny to support the investigation of the Project HarborCrest embargo breach.
 
-The application aims to:
+The application supports the following objectives:
 
 1.  Reconstruct the sequence of events leading to the inappropriate release of embargoed merger information.
 2.  Identify the key actors, systems, channels, and decision points involved in the release process.
@@ -80,7 +80,7 @@ This structure is suitable for temporal reconstruction, communication analysis, 
 
 ## Derived variables for analysis
 
-To support the visual analytics system, the raw JSON data will be transformed into several derived variables:
+To support the visual analytics system, the raw JSON data was transformed into several derived variables:
 
 | Derived Variable                                | Purpose                                                                          |
 |------------------------------------|------------------------------------|
@@ -98,7 +98,7 @@ To support the visual analytics system, the raw JSON data will be transformed in
 
 # Methodology
 
-The methodology consists of five main stages: data preparation, feature engineering, analytical modelling, visual analytics design, and Shiny implementation.
+The methodology consists of five main stages: data preparation, feature engineering, analytical modelling, visual analytics design, and Shiny implementation. Together, these stages convert the raw case data into an interactive investigative workflow for reconstructing the breach, comparing behaviour across crisis phases, and evaluating whether the evidence points more strongly to intentional leakage or systemic breakdown.
 
 ## Methodology diagram
 
@@ -128,8 +128,8 @@ digraph methodology {
 
   timeline_view [label='Crisis Timeline', fillcolor = Honeydew]
   network_view [label='Agent Interaction Network', fillcolor = Honeydew]
-  anomaly_view [label='Anomaly Explorer', fillcolor = Honeydew]
-  baseline_view [label='Behaviour Baseline View', fillcolor = Honeydew]
+  anomaly_view [label='Embedded Anomaly Flags', fillcolor = Honeydew]
+  baseline_view [label='Embedded Behaviour Baseline', fillcolor = Honeydew]
   pathway_view [label='Embargo Breach Pathway', fillcolor = Honeydew]
 
   shiny_app [label='Shiny Visual Analytics Application', fillcolor = MistyRose]
@@ -167,7 +167,7 @@ digraph methodology {
 
 ## Data preparation
 
-The first stage involves reading and transforming the JSON dataset into tidy tabular structures suitable for analysis and visualisation. The main steps include:
+The first stage involved reading and transforming the JSON dataset into tidy tabular structures suitable for analysis and visualisation. The main steps included:
 
 1.  Reading the JSON file using R.\
 2.  Extracting round-level information from the `rounds` array.\
@@ -180,13 +180,13 @@ The first stage involves reading and transforming the JSON dataset into tidy tab
 9.  Creating response-chain relationships using the `responding_to` field.\
 10. Preparing the cleaned datasets for Shiny application use.
 
-Special attention will be given to agent-name consistency. For example, similar naming variants such as Social Manager, Social Media Agent, and social media-related agent identifiers will be standardised into consistent labels for analysis and visualisation.
+Special attention was given to agent-name consistency. For example, similar naming variants such as Social Manager, Social Media Agent, and social media-related agent identifiers were standardised into consistent labels for analysis and visualisation.
 
 ## Feature engineering
 
 ### Time Period Classification
 
-Each message will be classified into one of several investigation phases, such as:
+Each message was classified into one of several investigation phases, such as:
 
 -   early pre-crisis period
 
@@ -200,10 +200,10 @@ Each message will be classified into one of several investigation phases, such a
 
 -   post-breach response period
 
-This will allow users to compare agent behaviour across different stages of the crisis
+This allows users to compare agent behaviour across different stages of the crisis.
 
 ### Channel Risk Classification
-Each channel will be classified by communication risk level:
+Each channel was classified by communication risk level:
 
 | Channel Type | Example Channels | Risk Interpretation |
 |---|---|---|
@@ -215,12 +215,12 @@ Each channel will be classified by communication risk level:
 | Anonymous public | `anonymous_post` | High risk due to reduced accountability |
 
 ### Embargo-Sensitive Keyword Detection
-Messages will be flagged if they contain sensitive terms related to the merger and breach context. Examples include: CivicLoom, Project HarborCrest, HarborCrest, merger, acquisition, embargo, announcement, ResidentIQ, SaltWind Journal, AlgorithmicEviction, Retention Optimizer, The Judge
+Messages were flagged when they contained sensitive terms related to the merger and breach context. Examples include: CivicLoom, Project HarborCrest, HarborCrest, merger, acquisition, embargo, announcement, ResidentIQ, SaltWind Journal, AlgorithmicEviction, Retention Optimizer, The Judge.
 
-These flags will help identify when sensitive topics appear, which agents mention them, and through which channels they are discussed.
+These flags help identify when sensitive topics appeared, which agents mentioned them, and through which channels they were discussed.
 
 ### Behaviour Baseline Construction
-To identify abnormal behaviour, the application will establish a baseline using pre-crisis communication patterns. Baseline metrics may include:
+To identify abnormal behaviour, the application establishes a baseline using pre-crisis communication patterns. Baseline metrics include:
 
 - number of messages per agent,
 - number of public posts per agent,
@@ -231,12 +231,12 @@ To identify abnormal behaviour, the application will establish a baseline using 
 - average message volume per round,
 - and use of internal state reasoning before public action.
 
-Crisis-day behaviour will then be compared against this baseline to identify deviations.
+Crisis-day behaviour is compared against this baseline to identify deviations. In the final application, these comparisons are embedded within the Crisis Timeline, Agent Network, and Embargo Breach Pathway views as supporting analytical components.
 
 ### Expected Versus Actual Behaviour
-Each agent will be assigned an expected role based on their function. For example, Legal is expected to reduce compliance risk, PR is expected to manage public messaging, Social Media is expected to monitor and respond to public sentiment, and The Judge is expected to enforce embargo restrictions.
+Each agent was assigned an expected role based on their function. For example, Legal is expected to reduce compliance risk, PR is expected to manage public messaging, Social Media is expected to monitor and respond to public sentiment, and The Judge is expected to enforce embargo restrictions.
 
-Actual behaviours will then be compared against these expectations. Examples of deviations may include:
+Actual behaviours are compared against these expectations. Examples of deviations include:
 
 - public posting during embargo-sensitive periods,
 - movement of sensitive information from internal to public channels,
@@ -246,10 +246,10 @@ Actual behaviours will then be compared against these expectations. Examples of 
 
 # Proposed Shiny Application Design
 
-The proposed application will be designed as an investigative visual analytics system. It will allow users to move from a high-level overview of the crisis into detailed inspection of specific agents, channels, messages, and decision pathways.
+The final Shiny application follows the proposed investigative visual analytics design. It allows users to move from a high-level overview of the crisis into detailed inspection of specific agents, channels, messages, and decision pathways. The interface is organised around the central question: **Did TenantThread deliberately leak the merger, or did the system break down under pressure?**
 
 ## Main Application Tabs
-The application will begin with an overview dashboard that provides summary information before users enter the three tabs below. This page will include:
+The application begins with a Landing Page / Overview dashboard that provides summary information before users enter the main investigative views. This page includes:
 
 - total number of rounds,
 - total number of communication records,
@@ -260,12 +260,14 @@ The application will begin with an overview dashboard that provides summary info
 
 | Tab | Purpose | Main Visual Outputs |
 |---|---|---|
-| Crisis Timeline | Reconstruct the sequence of events leading to the breach | Interactive timeline, round context panel, anomaly markers, linked event table |
-| Agent Network | Show how agents interacted and how information moved across channels | Interactive communication network, channel distribution summary, linked message table |
-| Embargo Breach Pathway | Trace how embargo-sensitive information moved toward public release and where controls weakened | Response-chain explorer, pathway diagram, risk-flagged message viewer, evidence table |
+| Landing Page / Overview | Orient users to the case, breach window, investigation question, and core metrics | Case summary, key indicators, breach window, and navigation entry points |
+| Crisis Timeline | Reconstruct the sequence of events leading to the breach | Interactive timeline, round context panel, anomaly markers, and linked event table |
+| Agent Network | Show how agents interacted and how information moved across channels | Interactive communication network, channel distribution summary, and linked message table |
+| Embargo Breach Pathway | Trace how embargo-sensitive information moved toward public release and where controls weakened | Response-chain explorer, pathway diagram, risk-flagged message viewer, and evidence table |
+| User Guide | Explain how investigators can use the website and Shiny application | Navigation guidance, interpretation notes, and usage instructions |
 
 ## User Inputs
-The Shiny application will include interactive controls such as:
+The Shiny application includes interactive controls such as:
 
 | Input | Purpose |
 |---|---|
@@ -275,27 +277,27 @@ The Shiny application will include interactive controls such as:
 | Keyword search | Search for sensitive terms and entities |
 | Crisis phase selector | Compare behaviour across pre-crisis, escalation, and breach phases |
 | Message type selector | Separate internal messages, public posts, and replies |
-| Risk flag selector | Focus on anomaly indicators or embargo-sensitive content |
+| Risk flag selector | Focus on embedded anomaly indicators or embargo-sensitive content |
 | Network depth control | Adjust how much of the communication network is displayed |
 
 # Prototype Sketches and Storyboard
-The following prototype sketches illustrate the proposed interface structure of the Shiny application. These wireframes are intended to show the main layout, navigation flow, and analytical components of the system before full implementation.
+The following prototype sketches illustrate the design rationale behind the Shiny application. The wireframes show the main layout, navigation flow, and analytical components that informed the final implementation.
 
 ## Prototype 1: Landing Page / Overview
 
-The landing page provides a concise summary of the case and orients users before they begin the investigation. It includes key metrics, the identified breach window, and the main investigation phases.
+The landing page provides a concise summary of the case and orients users before they begin the investigation. It includes key metrics, the identified breach window, the central investigation question, and the main investigation phases.
 
 ![](01_landing_page.png){fig-align="center" width="100%"}
 
 ## Prototype 2: Crisis Timeline Tab
 
-The Crisis Timeline tab allows users to reconstruct the chronological sequence of events leading to the breach. It combines event markers, anomaly highlights, round context, summary panels, and a linked event detail table.
+The Crisis Timeline tab allows users to reconstruct the chronological sequence of events leading to the breach. It combines event markers, embedded anomaly highlights, round context, summary panels, and a linked event detail table.
 
 ![](02_crisis_timeline_tab.png){fig-align="center" width="100%"}
 
 ## Prototype 3: Agent Network Tab
 
-The Agent Network tab allows users to explore communication relationships among agents and examine how information moved across channels. It includes the interaction network, channel distribution summary, linked message table, and comparison panel.
+The Agent Network tab allows users to explore communication relationships among agents and examine how information moved across channels. It includes the interaction network, channel distribution summary, linked message table, and embedded comparison panel.
 
 ![](03_agent_network_tab.png){fig-align="center" width="100%"}
 
@@ -306,7 +308,7 @@ The Embargo Breach Pathway tab focuses on tracing the pathway through which emba
 ![](04_embargo_breach_pathway_tab.png){fig-align="center" width="100%"}
 
 # R Packages
-The project will use the following R packages.
+The project uses the following R packages.
 
 | Category | Package | Purpose |
 |---|---|---|
@@ -322,7 +324,7 @@ The project will use the following R packages.
 | Formatting | `scales`, `ggtext` | Improving chart labels, annotations, and visual design |
 | Project website | `quarto` | Developing and publishing the project website |
 
-These packages will support the full workflow from data parsing to interactive visual analytics deployment.
+These packages support the full workflow from data parsing to interactive visual analytics deployment.
 
 # Project Schedule
 ```{r}
