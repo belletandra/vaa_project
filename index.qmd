@@ -7,31 +7,38 @@ format:
     page-layout: full
 ---
 
-:::: home-hero
+:::: {.hero-section .home-hero}
 ## Embargo Breach: Tracing TenantThread's AI Crisis
 
 This project investigates whether TenantThread deliberately leaked embargo-sensitive CivicLoom merger information, or whether its agent-human communication system broke down under pressure.
 
-::: home-actions
+::: {.home-actions}
 [Shiny App](https://visual-analytics-project-apr26.shinyapps.io/tenantthread-embargo-breach/){.btn .btn-primary} [User Guide](user-guide.qmd){.btn .btn-secondary} [Findings](findings.qmd){.btn .btn-secondary} [Poster](poster.qmd){.btn .btn-secondary}
 :::
 ::::
 
+::: {.content-card .dashboard-card}
 ## Case Overview
 
 TenantThread was preparing Project HarborCrest, a confidential merger with CivicLoom Realty Partners, while The Judge monitored the public information environment. The merger announcement was under embargo until 6:00 PM on June 5, 2046, but evidence suggests an inappropriate release occurred around 5:00 PM.
+:::
 
+::: {.content-card .callout-card .central-question}
 ## Central Question
 
 Did TenantThread's team deliberately leak the merger, or did the system break down under pressure?
+:::
 
+::: {.content-card .dashboard-card}
 ## Our Solution
 
 Our group built a Shiny visual analytics application to reconstruct the crisis, examine communication patterns, and trace how sensitive information moved across agents, people, and public channels.
+:::
 
+::: {.content-card .workflow-card}
 ## Investigation Workflow
 
-::: workflow
+::: {.workflow}
 Landing Page
 
 Crisis Timeline
@@ -40,7 +47,10 @@ Agent Network
 
 Embargo Breach Pathway
 :::
+:::
 
+::: {.content-card .callout-card .final-finding}
 ## Final Finding
 
 The evidence points more strongly toward systemic breakdown under pressure than a clearly deliberate leak by a single actor.
+:::

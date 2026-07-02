@@ -2,10 +2,13 @@
 title: "User Guide"
 ---
 
+::: {.content-card .guide-intro}
 This guide explains how to use the Shiny app to investigate whether TenantThread's embargo breach was caused by deliberate leakage or systemic breakdown.
 
 [Launch the deployed Shiny app](https://visual-analytics-project-apr26.shinyapps.io/tenantthread-embargo-breach/){.btn .btn-primary}
+:::
 
+::: {.content-card .guide-card .guide-workflow}
 ## Recommended Workflow
 
 1.  Start with **Landing Page / Overview**.
@@ -13,7 +16,9 @@ This guide explains how to use the Shiny app to investigate whether TenantThread
 3.  Use **Agent Network** to identify who was involved.
 4.  Use **Embargo Breach Pathway** to trace sensitive information movement.
 5.  Use evidence tables to support conclusions.
+:::
 
+::: {.content-card .guide-card}
 ## Landing Page / Overview
 
 **Purpose:**\
@@ -27,7 +32,9 @@ Look for the main crisis themes, the suspected breach context, and the app secti
 
 **How the output contributes evidence:**\
 The overview helps frame the investigation. It explains what the app is trying to test, so later findings from the timeline, network, and pathway views can be interpreted against the same investigation question.
+:::
 
+::: {.content-card .guide-card}
 ## Crisis Timeline
 
 **Purpose:**\
@@ -41,7 +48,9 @@ Look for sudden increases in activity, repeated references to sensitive informat
 
 **How the output contributes evidence:**\
 The timeline supports evidence about sequence and timing. It helps users decide whether the breach followed a clear chain of events or whether the crisis emerged from broader communication breakdowns.
+:::
 
+::: {.content-card .guide-card}
 ## Agent Network
 
 **Purpose:**\
@@ -55,7 +64,9 @@ Look for highly connected agents, unusual bridges between groups, repeated conta
 
 **How the output contributes evidence:**\
 The network view supports evidence about involvement and communication structure. It can help show whether the breach depends on one central actor, a small group of connected actors, or a wider systemic pattern.
+:::
 
+::: {.content-card .guide-card}
 ## Embargo Breach Pathway
 
 **Purpose:**\
@@ -69,13 +80,18 @@ Look for paths where sensitive information moves from internal sources to extern
 
 **How the output contributes evidence:**\
 The pathway view supports evidence about possible information movement. It helps connect agents, channels, and events into an investigative summary that can be checked against the underlying records.
+:::
 
+::: {.content-card .guide-card}
 ## Evidence Tables
 
 Evidence tables should be used throughout the investigation. They provide the detailed records behind the visual outputs and help users verify claims before drawing conclusions.
 
 Use the hide and show evidence table controls depending on the task. Hide the tables when you need to focus on the visual pattern. Show the tables when you need to inspect message details, timestamps, agents, channels, crisis phases, or anomaly flags.
+:::
 
+::: {.content-card .callout-card}
 ## Interpretation Note
 
 The causal chain and pathway diagrams are investigative summaries and should be read together with the linked evidence tables.
+:::

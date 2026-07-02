@@ -4,6 +4,10 @@ title: "Poster"
 
 The poster summarises the project problem, approach, Shiny application overview, investigation workflow, conclusion, and future work.
 
+::: {.image-card .poster-card}
 ![](poster.png){fig-alt='TenantThread Embargo Breach project poster' width='100%'}
+:::
 
-[Download the poster](poster.png)
+::: {.poster-actions}
+[Download the poster](poster.png){.btn .btn-primary}
+:::

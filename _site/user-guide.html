@@ -136,6 +136,18 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./meeting-minutes/mom1.html">
  <span class="dropdown-text">Minute of Meeting 1</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./meeting-minutes/mom2.html">
+ <span class="dropdown-text">Minute of Meeting 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./meeting-minutes/mom3.html">
+ <span class="dropdown-text">Minute of Meeting 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./meeting-minutes/mom4.html">
+ <span class="dropdown-text">Minute of Meeting 4</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -222,9 +234,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="content-card guide-intro">
 <p>This guide explains how to use the Shiny app to investigate whether TenantThread’s embargo breach was caused by deliberate leakage or systemic breakdown.</p>
 <p><a href="https://visual-analytics-project-apr26.shinyapps.io/tenantthread-embargo-breach/" class="btn btn-primary">Launch the deployed Shiny app</a></p>
-<section id="recommended-workflow" class="level2">
+</div>
+<section id="recommended-workflow" class="level2 content-card guide-card guide-workflow">
 <h2 class="anchored" data-anchor-id="recommended-workflow">Recommended Workflow</h2>
 <ol type="1">
 <li>Start with <strong>Landing Page / Overview</strong>.</li>
@@ -234,7 +248,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Use evidence tables to support conclusions.</li>
 </ol>
 </section>
-<section id="landing-page-overview" class="level2">
+<section id="landing-page-overview" class="level2 content-card guide-card">
 <h2 class="anchored" data-anchor-id="landing-page-overview">Landing Page / Overview</h2>
 <p><strong>Purpose:</strong><br>
 Use this tab to understand the case context, the main investigation question, and the overall structure of the app.</p>
@@ -245,7 +259,7 @@ Look for the main crisis themes, the suspected breach context, and the app secti
 <p><strong>How the output contributes evidence:</strong><br>
 The overview helps frame the investigation. It explains what the app is trying to test, so later findings from the timeline, network, and pathway views can be interpreted against the same investigation question.</p>
 </section>
-<section id="crisis-timeline" class="level2">
+<section id="crisis-timeline" class="level2 content-card guide-card">
 <h2 class="anchored" data-anchor-id="crisis-timeline">Crisis Timeline</h2>
 <p><strong>Purpose:</strong><br>
 Use this tab to reconstruct when key crisis events happened and how the situation developed over time.</p>
@@ -256,7 +270,7 @@ Look for sudden increases in activity, repeated references to sensitive informat
 <p><strong>How the output contributes evidence:</strong><br>
 The timeline supports evidence about sequence and timing. It helps users decide whether the breach followed a clear chain of events or whether the crisis emerged from broader communication breakdowns.</p>
 </section>
-<section id="agent-network" class="level2">
+<section id="agent-network" class="level2 content-card guide-card">
 <h2 class="anchored" data-anchor-id="agent-network">Agent Network</h2>
 <p><strong>Purpose:</strong><br>
 Use this tab to identify who was involved, how agents were connected, and whether specific people or groups appear central to the crisis.</p>
@@ -267,7 +281,7 @@ Look for highly connected agents, unusual bridges between groups, repeated conta
 <p><strong>How the output contributes evidence:</strong><br>
 The network view supports evidence about involvement and communication structure. It can help show whether the breach depends on one central actor, a small group of connected actors, or a wider systemic pattern.</p>
 </section>
-<section id="embargo-breach-pathway" class="level2">
+<section id="embargo-breach-pathway" class="level2 content-card guide-card">
 <h2 class="anchored" data-anchor-id="embargo-breach-pathway">Embargo Breach Pathway</h2>
 <p><strong>Purpose:</strong><br>
 Use this tab to trace how sensitive information may have moved across agents, channels, and crisis events.</p>
@@ -278,17 +292,17 @@ Look for paths where sensitive information moves from internal sources to extern
 <p><strong>How the output contributes evidence:</strong><br>
 The pathway view supports evidence about possible information movement. It helps connect agents, channels, and events into an investigative summary that can be checked against the underlying records.</p>
 </section>
-<section id="evidence-tables" class="level2">
+<section id="evidence-tables" class="level2 content-card guide-card">
 <h2 class="anchored" data-anchor-id="evidence-tables">Evidence Tables</h2>
 <p>Evidence tables should be used throughout the investigation. They provide the detailed records behind the visual outputs and help users verify claims before drawing conclusions.</p>
 <p>Use the hide and show evidence table controls depending on the task. Hide the tables when you need to focus on the visual pattern. Show the tables when you need to inspect message details, timestamps, agents, channels, crisis phases, or anomaly flags.</p>
 </section>
-<section id="interpretation-note" class="level2">
+<section id="interpretation-note" class="level2 content-card callout-card">
 <h2 class="anchored" data-anchor-id="interpretation-note">Interpretation Note</h2>
 <p>The causal chain and pathway diagrams are investigative summaries and should be read together with the linked evidence tables.</p>
-
-
 </section>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
