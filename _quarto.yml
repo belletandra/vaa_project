@@ -3,7 +3,7 @@ project:
   output-dir: _site
 
 website:
-  title: "Embargo Breach: Tracing TenantThread’s AI Crisis"
+  title: "Embargo Breach: Tracing TenantThread's AI Crisis"
   navbar:
     left:
       - href: index.qmd
@@ -12,14 +12,14 @@ website:
         text: Proposal
       - text: Methodology
         menu:
-          - href: data-prep.qmd
+          - href: methodology/data-preparation.qmd
             text: Data Preparation
             
-          - href: stats-analysis.qmd
-            text: Statistical Analysis
+          - href: methodology/feature-engineering.qmd
+            text: Feature Engineering
             
-          - href: visualisation.qmd
-            text: Data Visualisation
+          - href: methodology/visual-analytics-design.qmd
+            text: Visual Analytics Design
             
       - href: findings.qmd
         text: Findings
@@ -34,13 +34,23 @@ website:
 
     right:
       - href: about.qmd
-        text: About Us
+        text: The Team
         
-      - href: shiny.qmd
-        text: Shiny App
+      - text: Shiny App
+        menu:
+          - href: user-guide.qmd
+            text: User Guide
+            
+          - href: shiny.qmd
+            text: Launch Shiny App
         
-      - href: github.qmd
-        text: GitHub Repo
+      - text: GitHub
+        menu:
+          - href: github.qmd#project-website-repository
+            text: Project Website Repository
+            
+          - href: github.qmd#shiny-app-repository
+            text: Shiny App Repository
         
 format:
   html:

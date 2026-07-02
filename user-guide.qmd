@@ -1,0 +1,5 @@
+---
+title: "User Guide"
+---
+
+Placeholder content for the Shiny application user guide.

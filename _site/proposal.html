@@ -152,25 +152,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-methodology">    
         <li>
-    <a class="dropdown-item" href="./data-prep.qmd">
+    <a class="dropdown-item" href="./methodology/data-preparation.html">
  <span class="dropdown-text">Data Preparation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./stats-analysis.qmd">
- <span class="dropdown-text">Statistical Analysis</span></a>
+    <a class="dropdown-item" href="./methodology/feature-engineering.html">
+ <span class="dropdown-text">Feature Engineering</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./visualisation.qmd">
- <span class="dropdown-text">Data Visualisation</span></a>
+    <a class="dropdown-item" href="./methodology/visual-analytics-design.html">
+ <span class="dropdown-text">Visual Analytics Design</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./findings.qmd"> 
+    <a class="nav-link" href="./findings.html"> 
 <span class="menu-text">Findings</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./poster.qmd"> 
+    <a class="nav-link" href="./poster.html"> 
 <span class="menu-text">Poster</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -188,16 +188,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About Us</span></a>
+<span class="menu-text">The Team</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./shiny.qmd"> 
-<span class="menu-text">Shiny App</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-shiny-app" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Shiny App</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-shiny-app">    
+        <li>
+    <a class="dropdown-item" href="./user-guide.html">
+ <span class="dropdown-text">User Guide</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./github.qmd"> 
-<span class="menu-text">GitHub Repo</span></a>
+        <li>
+    <a class="dropdown-item" href="./shiny.html">
+ <span class="dropdown-text">Launch Shiny App</span></a>
   </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-github" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">GitHub</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-github">    
+        <li>
+    <a class="dropdown-item" href="./github.html#project-website-repository">
+ <span class="dropdown-text">Project Website Repository</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./github.html#shiny-app-repository">
+ <span class="dropdown-text">Shiny App Repository</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -275,7 +297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">June 16, 2026</p>
+      <p class="date-modified">July 1, 2026</p>
     </div>
   </div>
     
@@ -473,8 +495,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-5cfb1d9ffc945c186227" style="width:100%;height:390px;"></div>
-<script type="application/json" data-for="htmlwidget-5cfb1d9ffc945c186227">{"x":{"diagram":"\ndigraph methodology {\n  graph [layout = dot, rankdir = LR]\n\n  node [shape = box, style = filled, fillcolor = LightBlue, color = black]\n\n  raw_json [label=\"MC1 JSON Data\"]\n  parse [label=\"Parse and Unnest JSON\"]\n  clean [label=\"Clean and Standardise Fields\"]\n  comms_table [label=\"Communication Table\"]\n  rounds_table [label=\"Round Context Table\"]\n  participants_table [label=\"Participant Table\"]\n\n  feature_engineering [label=\"Feature Engineering\", fillcolor = LightGoldenrod1]\n\n  timeline_data [label=\"Timeline Dataset\"]\n  network_data [label=\"Agent Network Dataset\"]\n  anomaly_data [label=\"Anomaly Dataset\"]\n  behaviour_data [label=\"Behaviour Baseline Dataset\"]\n  causal_data [label=\"Causal Pathway Dataset\"]\n\n  timeline_view [label=\"Crisis Timeline\", fillcolor = Honeydew]\n  network_view [label=\"Agent Interaction Network\", fillcolor = Honeydew]\n  anomaly_view [label=\"Anomaly Explorer\", fillcolor = Honeydew]\n  baseline_view [label=\"Behaviour Baseline View\", fillcolor = Honeydew]\n  pathway_view [label=\"Embargo Breach Pathway\", fillcolor = Honeydew]\n\n  shiny_app [label=\"Shiny Visual Analytics Application\", fillcolor = MistyRose]\n\n  raw_json -> parse\n  parse -> clean\n  clean -> comms_table\n  clean -> rounds_table\n  clean -> participants_table\n\n  comms_table -> feature_engineering\n  rounds_table -> feature_engineering\n  participants_table -> feature_engineering\n\n  feature_engineering -> timeline_data\n  feature_engineering -> network_data\n  feature_engineering -> anomaly_data\n  feature_engineering -> behaviour_data\n  feature_engineering -> causal_data\n\n  timeline_data -> timeline_view\n  network_data -> network_view\n  anomaly_data -> anomaly_view\n  behaviour_data -> baseline_view\n  causal_data -> pathway_view\n\n  timeline_view -> shiny_app\n  network_view -> shiny_app\n  anomaly_view -> shiny_app\n  baseline_view -> shiny_app\n  pathway_view -> shiny_app\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-ed04b6bad9db76a43010" style="width:100%;height:390px;"></div>
+<script type="application/json" data-for="htmlwidget-ed04b6bad9db76a43010">{"x":{"diagram":"\ndigraph methodology {\n  graph [layout = dot, rankdir = LR]\n\n  node [shape = box, style = filled, fillcolor = LightBlue, color = black]\n\n  raw_json [label=\"MC1 JSON Data\"]\n  parse [label=\"Parse and Unnest JSON\"]\n  clean [label=\"Clean and Standardise Fields\"]\n  comms_table [label=\"Communication Table\"]\n  rounds_table [label=\"Round Context Table\"]\n  participants_table [label=\"Participant Table\"]\n\n  feature_engineering [label=\"Feature Engineering\", fillcolor = LightGoldenrod1]\n\n  timeline_data [label=\"Timeline Dataset\"]\n  network_data [label=\"Agent Network Dataset\"]\n  anomaly_data [label=\"Anomaly Dataset\"]\n  behaviour_data [label=\"Behaviour Baseline Dataset\"]\n  causal_data [label=\"Causal Pathway Dataset\"]\n\n  timeline_view [label=\"Crisis Timeline\", fillcolor = Honeydew]\n  network_view [label=\"Agent Interaction Network\", fillcolor = Honeydew]\n  anomaly_view [label=\"Anomaly Explorer\", fillcolor = Honeydew]\n  baseline_view [label=\"Behaviour Baseline View\", fillcolor = Honeydew]\n  pathway_view [label=\"Embargo Breach Pathway\", fillcolor = Honeydew]\n\n  shiny_app [label=\"Shiny Visual Analytics Application\", fillcolor = MistyRose]\n\n  raw_json -> parse\n  parse -> clean\n  clean -> comms_table\n  clean -> rounds_table\n  clean -> participants_table\n\n  comms_table -> feature_engineering\n  rounds_table -> feature_engineering\n  participants_table -> feature_engineering\n\n  feature_engineering -> timeline_data\n  feature_engineering -> network_data\n  feature_engineering -> anomaly_data\n  feature_engineering -> behaviour_data\n  feature_engineering -> causal_data\n\n  timeline_data -> timeline_view\n  network_data -> network_view\n  anomaly_data -> anomaly_view\n  behaviour_data -> baseline_view\n  causal_data -> pathway_view\n\n  timeline_view -> shiny_app\n  network_view -> shiny_app\n  anomaly_view -> shiny_app\n  baseline_view -> shiny_app\n  pathway_view -> shiny_app\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>

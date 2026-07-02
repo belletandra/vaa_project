@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "user-guide.html",
+    "href": "user-guide.html",
+    "title": "User Guide",
+    "section": "",
+    "text": "Placeholder content for the Shiny application user guide."
+  },
+  {
     "objectID": "proposal.html",
     "href": "proposal.html",
     "title": "Project Proposal",
@@ -84,11 +91,18 @@
     "text": "Prototype 4: Embargo Breach Pathway Tab\nThe Embargo Breach Pathway tab focuses on tracing the pathway through which embargo-sensitive information moved from internal communication into public release. It includes the response-chain view, embedded risk summary, behaviour comparison panel, and linked evidence viewer."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "methodology/visual-analytics-design.html",
+    "href": "methodology/visual-analytics-design.html",
+    "title": "Visual Analytics Design",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Placeholder content for the final visual analytics design write-up."
+  },
+  {
+    "objectID": "methodology/data-preparation.html",
+    "href": "methodology/data-preparation.html",
+    "title": "Data Preparation",
+    "section": "",
+    "text": "Placeholder content for the final data preparation write-up."
   },
   {
     "objectID": "index.html",
@@ -96,6 +110,27 @@
     "title": "Embargo Breach: Tracing TenantThread’s AI Crisis",
     "section": "",
     "text": "This project investigates how embargoed merger information from TenantThread was released publicly before its scheduled announcement. Using internal communications, agent deliberations, public posts, and contextual crisis signals, the project develops a Shiny-based visual analytics application to reconstruct the breach and determine whether it was caused by deliberate leakage, abnormal agent behaviour, or a breakdown in coordination across automated communication systems."
+  },
+  {
+    "objectID": "findings.html",
+    "href": "findings.html",
+    "title": "Findings",
+    "section": "",
+    "text": "Placeholder content for the final project findings."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "The Team",
+    "section": "",
+    "text": "Placeholder content for the project team profile."
+  },
+  {
+    "objectID": "github.html",
+    "href": "github.html",
+    "title": "GitHub",
+    "section": "",
+    "text": "Project Website Repository\nPlaceholder content for the project website repository link.\n\n\nShiny App Repository\nPlaceholder content for the Shiny application repository link."
   },
   {
     "objectID": "meeting-minutes/mom1.html",
@@ -152,5 +187,26 @@
     "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 1",
     "section": "",
     "text": "The meeting was adjourned after confirming the selected mini challenge, initial visualisation directions, task delegation, and agenda for the next meeting.\nMinutes submitted by:\nKelvin Andikko\nApproved by:\nAnabelle Eveleen Tandra"
+  },
+  {
+    "objectID": "methodology/feature-engineering.html",
+    "href": "methodology/feature-engineering.html",
+    "title": "Feature Engineering",
+    "section": "",
+    "text": "Placeholder content for the final feature engineering write-up."
+  },
+  {
+    "objectID": "poster.html",
+    "href": "poster.html",
+    "title": "Poster",
+    "section": "",
+    "text": "Placeholder content for the final project poster."
+  },
+  {
+    "objectID": "shiny.html",
+    "href": "shiny.html",
+    "title": "Launch Shiny App",
+    "section": "",
+    "text": "Placeholder content for the deployed Shiny application link."
   }
 ]

@@ -1,0 +1,5 @@
+---
+title: "Visual Analytics Design"
+---
+
+Placeholder content for the final visual analytics design write-up.
