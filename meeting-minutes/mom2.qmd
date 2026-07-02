@@ -1,0 +1,67 @@
+---
+title: "ISSS608 Visual Analytics & Applications Group Project Meeting 2"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+editor: visual
+---
+
+# Meeting Minutes
+
+**Date:** June 17, 2026
+
+## Opening
+
+The second meeting was conducted on June 17, 2026. The meeting focused on reviewing the VAST Challenge 2026 Mini-Challenge 1 data structure, preparing the raw data for analysis, identifying feature engineering requirements, and confirming the overall architecture of the Shiny application.
+
+## Present
+
+Kelvin Andikko\
+Anabelle Eveleen T
+
+## Agenda for this meeting
+
+Review of MC1 data structure\
+Transformation of raw JSON files into structured datasets\
+Discussion on feature engineering requirements\
+Confirmation of Shiny application architecture\
+Delegation of work\
+Confirmation of agenda for the next meeting
+
+## Data Preparation and Feature Engineering
+
+1.  The group reviewed the structure of the MC1 dataset, including communication rounds, communication records, participants, communication channels, and the broader environment context surrounding the embargo breach.
+2.  The group agreed that the raw JSON files should be transformed into structured datasets to support clearer analysis and easier integration with the Shiny application.
+3.  The structured datasets should allow the group to examine communication activity by round, participant, channel, and crisis period.
+4.  The group discussed the need to create derived fields that would support the investigation workflow. These include crisis phases, channel risk categories, embargo-sensitive keyword flags, anomaly flags, Judge monitoring status, network edges, and pathway evidence.
+5.  The group agreed that the feature engineering process should not only prepare data for visualisation, but also help explain how information moved across agents and channels before the public release.
+6.  The group noted that the evidence should be traceable within the application so that users can move from summary observations to specific communication records.
+
+## Shiny Application Architecture
+
+1.  The group confirmed that the final Shiny application should function as an investigation workflow rather than a static dashboard.
+2.  The application should guide users from an overview of the crisis toward more detailed evidence on event timing, agent communication, and possible breach pathways.
+3.  The group agreed that the application should include interactive filters where appropriate, while still maintaining a clear narrative structure.
+4.  The application architecture should support around three to four main visual analytics components that collectively explain the embargo breach.
+5.  The group also agreed that each visualisation should contribute to the central question of whether the breach was caused by deliberate leakage or by systemic breakdown under pressure.
+
+## Delegation of Work
+
+Kelvin will continue preparing the Quarto project website, study the transformed data structure, and begin planning the Shiny application interface and workflow.
+
+Anabelle will continue exploring possible visualisations, review the engineered features, and identify which visual outputs are most suitable for explaining communication behaviour and breach progression.
+
+## Agenda for Next Meeting
+
+The next meeting will focus on finalising the main Shiny application tabs, discussing the visual analytics design, and reviewing the first Shiny application prototype.
+
+## Adjournment
+
+The meeting was adjourned after confirming the data preparation direction, feature engineering requirements, Shiny application architecture, task delegation, and agenda for the next meeting.
+
+**Minutes submitted by:**\
+Kelvin Andikko
+
+**Approved by:**\
+Anabelle Eveleen T

@@ -31,6 +31,12 @@ website:
         menu:
           - href: meeting-minutes/mom1.qmd
             text: Minute of Meeting 1
+          - href: meeting-minutes/mom2.qmd
+            text: Minute of Meeting 2
+          - href: meeting-minutes/mom3.qmd
+            text: Minute of Meeting 3
+          - href: meeting-minutes/mom4.qmd
+            text: Minute of Meeting 4
 
     right:
       - href: about.qmd

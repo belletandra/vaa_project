@@ -397,5 +397,201 @@
     "title": "Project Proposal",
     "section": "Prototype 4: Embargo Breach Pathway Tab",
     "text": "Prototype 4: Embargo Breach Pathway Tab\nThe Embargo Breach Pathway tab focuses on tracing the pathway through which embargo-sensitive information moved from internal communication into public release. It includes the response-chain view, embedded risk summary, behaviour comparison panel, and linked evidence viewer."
+  },
+  {
+    "objectID": "meeting-minutes/mom4.html",
+    "href": "meeting-minutes/mom4.html",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 4",
+    "section": "",
+    "text": "Date: July 1, 2026\n\n\nThe fourth meeting was conducted on July 1, 2026. The meeting focused on final refinement of the Shiny application, deployment, poster completion, and updates to the Quarto project website for the final submission.\n\n\n\nKelvin Andikko\nAnabelle Eveleen T\n\n\n\nReview of final Shiny application tabs\nRefinement of application interface and evidence sections\nFinalisation of poster content and visual insights\nDiscussion on deployment and screenshot readiness\nUpdates to Quarto website structure\nConfirmation of final project conclusion\nAdjournment of project meeting series\n\n\n\n\nThe group reviewed the four tabs in the final Shiny application:\n\nLanding Page / Overview\nCrisis Timeline\nAgent Network\nEmbargo Breach Pathway\n\nThe main tab was confirmed as a summary dashboard showing total rounds, total communication records, number of agents, number of public posts, embargo-sensitive keyword mentions, and the identified breach window.\nThe Crisis Timeline tab was confirmed as the main view for showing the sequence of events that led to the breach.\nThe Agent Network tab was confirmed to include the causal chain diagram and the agent communication network. The causal chain diagram shows how the event unfolded toward the crisis, while the communication network complements it by showing communication relationships between agents.\nThe Embargo Breach Pathway tab was confirmed as the visualisation that traces how embargo-sensitive information moved toward public release and where controls weakened.\nThe group agreed that the final application successfully presents the project as an investigative workflow rather than a static dashboard.\n\n\n\n\n\nThe group discussed final Shiny application refinements, including moving filters to the left sidebar to improve usability and create a cleaner visual layout.\nThe group agreed to include hide and show sections for evidence tables so that detailed records can be accessed when needed without overwhelming the main view.\nThe application was refined for screenshot readiness, with attention given to spacing, readability, and consistency across visual outputs.\nThe group confirmed that the final Shiny application had been completed and deployed.\nThe group also discussed how the deployed application should be linked from the Quarto website for final assessment.\n\n\n\n\n\nAnabelle worked on the poster design, Prototype 2 and Prototype 3 visualisations, and the key insights to be communicated in the final poster.\nKelvin worked on the website UI, Shiny application UI, Landing Page, and Prototype 4 visualisation.\nThe group discussed completing the poster and ensuring that the selected visualisations clearly support the final argument.\nThe group agreed to update the Quarto website structure to include the final findings, user guide, poster, Shiny application link, and GitHub link.\nThe group also reviewed the need for consistent wording between the poster, website, and Shiny application.\n\n\n\n\n\nThe group agreed that the evidence points more strongly toward systemic breakdown under pressure than a clearly deliberate leak by one actor.\nThe conclusion should be supported by the timeline evidence, causal chain, agent communication network, and breach pathway visualisation.\nThe group agreed that the final project should emphasise how multiple weaknesses in communication monitoring, workflow coordination, and control enforcement contributed to the embargo breach.\n\n\n\n\nNo further formal project meeting was scheduled. The remaining work will focus on final checks, website updates, and submission preparation.\n\n\n\nThe meeting was adjourned after confirming the final Shiny application refinements, deployment status, poster completion plan, Quarto website updates, final conclusion, and remaining submission tasks.\nMinutes submitted by:\nKelvin Andikko\nApproved by:\nAnabelle Eveleen T"
+  },
+  {
+    "objectID": "meeting-minutes/mom4.html#opening",
+    "href": "meeting-minutes/mom4.html#opening",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 4",
+    "section": "",
+    "text": "The fourth meeting was conducted on July 1, 2026. The meeting focused on final refinement of the Shiny application, deployment, poster completion, and updates to the Quarto project website for the final submission."
+  },
+  {
+    "objectID": "meeting-minutes/mom4.html#present",
+    "href": "meeting-minutes/mom4.html#present",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 4",
+    "section": "",
+    "text": "Kelvin Andikko\nAnabelle Eveleen T"
+  },
+  {
+    "objectID": "meeting-minutes/mom4.html#agenda-for-this-meeting",
+    "href": "meeting-minutes/mom4.html#agenda-for-this-meeting",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 4",
+    "section": "",
+    "text": "Review of final Shiny application tabs\nRefinement of application interface and evidence sections\nFinalisation of poster content and visual insights\nDiscussion on deployment and screenshot readiness\nUpdates to Quarto website structure\nConfirmation of final project conclusion\nAdjournment of project meeting series"
+  },
+  {
+    "objectID": "meeting-minutes/mom4.html#final-shiny-application-review",
+    "href": "meeting-minutes/mom4.html#final-shiny-application-review",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 4",
+    "section": "",
+    "text": "The group reviewed the four tabs in the final Shiny application:\n\nLanding Page / Overview\nCrisis Timeline\nAgent Network\nEmbargo Breach Pathway\n\nThe main tab was confirmed as a summary dashboard showing total rounds, total communication records, number of agents, number of public posts, embargo-sensitive keyword mentions, and the identified breach window.\nThe Crisis Timeline tab was confirmed as the main view for showing the sequence of events that led to the breach.\nThe Agent Network tab was confirmed to include the causal chain diagram and the agent communication network. The causal chain diagram shows how the event unfolded toward the crisis, while the communication network complements it by showing communication relationships between agents.\nThe Embargo Breach Pathway tab was confirmed as the visualisation that traces how embargo-sensitive information moved toward public release and where controls weakened.\nThe group agreed that the final application successfully presents the project as an investigative workflow rather than a static dashboard."
+  },
+  {
+    "objectID": "meeting-minutes/mom4.html#refinement-and-deployment",
+    "href": "meeting-minutes/mom4.html#refinement-and-deployment",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 4",
+    "section": "",
+    "text": "The group discussed final Shiny application refinements, including moving filters to the left sidebar to improve usability and create a cleaner visual layout.\nThe group agreed to include hide and show sections for evidence tables so that detailed records can be accessed when needed without overwhelming the main view.\nThe application was refined for screenshot readiness, with attention given to spacing, readability, and consistency across visual outputs.\nThe group confirmed that the final Shiny application had been completed and deployed.\nThe group also discussed how the deployed application should be linked from the Quarto website for final assessment."
+  },
+  {
+    "objectID": "meeting-minutes/mom4.html#poster-and-website-completion",
+    "href": "meeting-minutes/mom4.html#poster-and-website-completion",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 4",
+    "section": "",
+    "text": "Anabelle worked on the poster design, Prototype 2 and Prototype 3 visualisations, and the key insights to be communicated in the final poster.\nKelvin worked on the website UI, Shiny application UI, Landing Page, and Prototype 4 visualisation.\nThe group discussed completing the poster and ensuring that the selected visualisations clearly support the final argument.\nThe group agreed to update the Quarto website structure to include the final findings, user guide, poster, Shiny application link, and GitHub link.\nThe group also reviewed the need for consistent wording between the poster, website, and Shiny application."
+  },
+  {
+    "objectID": "meeting-minutes/mom4.html#final-conclusion",
+    "href": "meeting-minutes/mom4.html#final-conclusion",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 4",
+    "section": "",
+    "text": "The group agreed that the evidence points more strongly toward systemic breakdown under pressure than a clearly deliberate leak by one actor.\nThe conclusion should be supported by the timeline evidence, causal chain, agent communication network, and breach pathway visualisation.\nThe group agreed that the final project should emphasise how multiple weaknesses in communication monitoring, workflow coordination, and control enforcement contributed to the embargo breach."
+  },
+  {
+    "objectID": "meeting-minutes/mom4.html#agenda-for-next-meeting",
+    "href": "meeting-minutes/mom4.html#agenda-for-next-meeting",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 4",
+    "section": "",
+    "text": "No further formal project meeting was scheduled. The remaining work will focus on final checks, website updates, and submission preparation."
+  },
+  {
+    "objectID": "meeting-minutes/mom4.html#adjournment",
+    "href": "meeting-minutes/mom4.html#adjournment",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 4",
+    "section": "",
+    "text": "The meeting was adjourned after confirming the final Shiny application refinements, deployment status, poster completion plan, Quarto website updates, final conclusion, and remaining submission tasks.\nMinutes submitted by:\nKelvin Andikko\nApproved by:\nAnabelle Eveleen T"
+  },
+  {
+    "objectID": "meeting-minutes/mom2.html",
+    "href": "meeting-minutes/mom2.html",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 2",
+    "section": "",
+    "text": "Date: June 17, 2026\n\n\nThe second meeting was conducted on June 17, 2026. The meeting focused on reviewing the VAST Challenge 2026 Mini-Challenge 1 data structure, preparing the raw data for analysis, identifying feature engineering requirements, and confirming the overall architecture of the Shiny application.\n\n\n\nKelvin Andikko\nAnabelle Eveleen T\n\n\n\nReview of MC1 data structure\nTransformation of raw JSON files into structured datasets\nDiscussion on feature engineering requirements\nConfirmation of Shiny application architecture\nDelegation of work\nConfirmation of agenda for the next meeting\n\n\n\n\nThe group reviewed the structure of the MC1 dataset, including communication rounds, communication records, participants, communication channels, and the broader environment context surrounding the embargo breach.\nThe group agreed that the raw JSON files should be transformed into structured datasets to support clearer analysis and easier integration with the Shiny application.\nThe structured datasets should allow the group to examine communication activity by round, participant, channel, and crisis period.\nThe group discussed the need to create derived fields that would support the investigation workflow. These include crisis phases, channel risk categories, embargo-sensitive keyword flags, anomaly flags, Judge monitoring status, network edges, and pathway evidence.\nThe group agreed that the feature engineering process should not only prepare data for visualisation, but also help explain how information moved across agents and channels before the public release.\nThe group noted that the evidence should be traceable within the application so that users can move from summary observations to specific communication records.\n\n\n\n\n\nThe group confirmed that the final Shiny application should function as an investigation workflow rather than a static dashboard.\nThe application should guide users from an overview of the crisis toward more detailed evidence on event timing, agent communication, and possible breach pathways.\nThe group agreed that the application should include interactive filters where appropriate, while still maintaining a clear narrative structure.\nThe application architecture should support around three to four main visual analytics components that collectively explain the embargo breach.\nThe group also agreed that each visualisation should contribute to the central question of whether the breach was caused by deliberate leakage or by systemic breakdown under pressure.\n\n\n\n\nKelvin will continue preparing the Quarto project website, study the transformed data structure, and begin planning the Shiny application interface and workflow.\nAnabelle will continue exploring possible visualisations, review the engineered features, and identify which visual outputs are most suitable for explaining communication behaviour and breach progression.\n\n\n\nThe next meeting will focus on finalising the main Shiny application tabs, discussing the visual analytics design, and reviewing the first Shiny application prototype.\n\n\n\nThe meeting was adjourned after confirming the data preparation direction, feature engineering requirements, Shiny application architecture, task delegation, and agenda for the next meeting.\nMinutes submitted by:\nKelvin Andikko\nApproved by:\nAnabelle Eveleen T"
+  },
+  {
+    "objectID": "meeting-minutes/mom2.html#opening",
+    "href": "meeting-minutes/mom2.html#opening",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 2",
+    "section": "",
+    "text": "The second meeting was conducted on June 17, 2026. The meeting focused on reviewing the VAST Challenge 2026 Mini-Challenge 1 data structure, preparing the raw data for analysis, identifying feature engineering requirements, and confirming the overall architecture of the Shiny application."
+  },
+  {
+    "objectID": "meeting-minutes/mom2.html#present",
+    "href": "meeting-minutes/mom2.html#present",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 2",
+    "section": "",
+    "text": "Kelvin Andikko\nAnabelle Eveleen T"
+  },
+  {
+    "objectID": "meeting-minutes/mom2.html#agenda-for-this-meeting",
+    "href": "meeting-minutes/mom2.html#agenda-for-this-meeting",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 2",
+    "section": "",
+    "text": "Review of MC1 data structure\nTransformation of raw JSON files into structured datasets\nDiscussion on feature engineering requirements\nConfirmation of Shiny application architecture\nDelegation of work\nConfirmation of agenda for the next meeting"
+  },
+  {
+    "objectID": "meeting-minutes/mom2.html#data-preparation-and-feature-engineering",
+    "href": "meeting-minutes/mom2.html#data-preparation-and-feature-engineering",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 2",
+    "section": "",
+    "text": "The group reviewed the structure of the MC1 dataset, including communication rounds, communication records, participants, communication channels, and the broader environment context surrounding the embargo breach.\nThe group agreed that the raw JSON files should be transformed into structured datasets to support clearer analysis and easier integration with the Shiny application.\nThe structured datasets should allow the group to examine communication activity by round, participant, channel, and crisis period.\nThe group discussed the need to create derived fields that would support the investigation workflow. These include crisis phases, channel risk categories, embargo-sensitive keyword flags, anomaly flags, Judge monitoring status, network edges, and pathway evidence.\nThe group agreed that the feature engineering process should not only prepare data for visualisation, but also help explain how information moved across agents and channels before the public release.\nThe group noted that the evidence should be traceable within the application so that users can move from summary observations to specific communication records."
+  },
+  {
+    "objectID": "meeting-minutes/mom2.html#shiny-application-architecture",
+    "href": "meeting-minutes/mom2.html#shiny-application-architecture",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 2",
+    "section": "",
+    "text": "The group confirmed that the final Shiny application should function as an investigation workflow rather than a static dashboard.\nThe application should guide users from an overview of the crisis toward more detailed evidence on event timing, agent communication, and possible breach pathways.\nThe group agreed that the application should include interactive filters where appropriate, while still maintaining a clear narrative structure.\nThe application architecture should support around three to four main visual analytics components that collectively explain the embargo breach.\nThe group also agreed that each visualisation should contribute to the central question of whether the breach was caused by deliberate leakage or by systemic breakdown under pressure."
+  },
+  {
+    "objectID": "meeting-minutes/mom2.html#delegation-of-work",
+    "href": "meeting-minutes/mom2.html#delegation-of-work",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 2",
+    "section": "",
+    "text": "Kelvin will continue preparing the Quarto project website, study the transformed data structure, and begin planning the Shiny application interface and workflow.\nAnabelle will continue exploring possible visualisations, review the engineered features, and identify which visual outputs are most suitable for explaining communication behaviour and breach progression."
+  },
+  {
+    "objectID": "meeting-minutes/mom2.html#agenda-for-next-meeting",
+    "href": "meeting-minutes/mom2.html#agenda-for-next-meeting",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 2",
+    "section": "",
+    "text": "The next meeting will focus on finalising the main Shiny application tabs, discussing the visual analytics design, and reviewing the first Shiny application prototype."
+  },
+  {
+    "objectID": "meeting-minutes/mom2.html#adjournment",
+    "href": "meeting-minutes/mom2.html#adjournment",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 2",
+    "section": "",
+    "text": "The meeting was adjourned after confirming the data preparation direction, feature engineering requirements, Shiny application architecture, task delegation, and agenda for the next meeting.\nMinutes submitted by:\nKelvin Andikko\nApproved by:\nAnabelle Eveleen T"
+  },
+  {
+    "objectID": "meeting-minutes/mom3.html",
+    "href": "meeting-minutes/mom3.html",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 3",
+    "section": "",
+    "text": "Date: June 24, 2026\n\n\nThe third meeting was conducted on June 24, 2026. The meeting focused on finalising the visual analytics design, reviewing the Shiny application prototype, and confirming the role of each main tab in supporting the TenantThread embargo breach investigation.\n\n\n\nKelvin Andikko\nAnabelle Eveleen T\n\n\n\nFinalisation of the main Shiny application tabs\nDiscussion on Landing Page and summary dashboard design\nReview of Crisis Timeline visualisation\nReview of Agent Network and causal chain design\nDiscussion on Embargo Breach Pathway visualisation\nDelegation of work\nConfirmation of agenda for the next meeting\n\n\n\n\nThe group finalised four main tabs for the Shiny application:\n\nLanding Page / Overview\nCrisis Timeline\nAgent Network\nEmbargo Breach Pathway\n\nThe Landing Page / Overview tab was planned as a static summary dashboard. It should present total rounds, total communication records, number of agents, number of public posts, embargo-sensitive keyword mentions, and the identified breach window.\nThe Crisis Timeline tab was planned as an interactive view that shows how the crisis unfolded across rounds and how key events moved toward the public release of embargo-sensitive information.\nThe Agent Network tab was planned to include both a causal chain diagram and an agent communication network. The causal chain diagram should explain how the event unfolded toward the crisis, while the communication network should show relationships between agents.\nThe Embargo Breach Pathway tab was added as a new visualisation to trace how embargo-sensitive information moved toward public release and where controls weakened.\nThe group agreed that the four tabs should work together as an investigative sequence rather than as independent charts.\n\n\n\n\n\nThe group discussed the RStudio Shiny user interface and the need for clear user inputs, dynamic outputs, and consistent visual styling across the application.\nThe group agreed that user inputs should help users explore the evidence without making the application difficult to navigate.\nThe prototype should allow users to move from summary metrics to detailed visual evidence, especially for the crisis timeline, agent relationships, and breach pathway.\nThe group noted that the application should be prepared for presentation screenshots, poster figures, and website integration.\nThe group also agreed that the wording in the application should remain concise and focused on the investigative findings.\n\n\n\n\nAnabelle will work on Prototype 2 and Prototype 3 visualisations and begin preparing the poster design. She will also refine the visual insights that should be highlighted in the final presentation.\nKelvin will work on the website UI, Shiny interface, Landing Page, and Prototype 4 visualisation. He will also ensure that the Shiny application structure aligns with the Quarto website.\n\n\n\nThe next meeting will focus on final refinement of the Shiny application, deployment preparation, poster completion, and updates to the Quarto website structure.\n\n\n\nThe meeting was adjourned after finalising the four Shiny application tabs, confirming the prototype development direction, assigning responsibilities, and setting the agenda for the next meeting.\nMinutes submitted by:\nKelvin Andikko\nApproved by:\nAnabelle Eveleen T"
+  },
+  {
+    "objectID": "meeting-minutes/mom3.html#opening",
+    "href": "meeting-minutes/mom3.html#opening",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 3",
+    "section": "",
+    "text": "The third meeting was conducted on June 24, 2026. The meeting focused on finalising the visual analytics design, reviewing the Shiny application prototype, and confirming the role of each main tab in supporting the TenantThread embargo breach investigation."
+  },
+  {
+    "objectID": "meeting-minutes/mom3.html#present",
+    "href": "meeting-minutes/mom3.html#present",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 3",
+    "section": "",
+    "text": "Kelvin Andikko\nAnabelle Eveleen T"
+  },
+  {
+    "objectID": "meeting-minutes/mom3.html#agenda-for-this-meeting",
+    "href": "meeting-minutes/mom3.html#agenda-for-this-meeting",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 3",
+    "section": "",
+    "text": "Finalisation of the main Shiny application tabs\nDiscussion on Landing Page and summary dashboard design\nReview of Crisis Timeline visualisation\nReview of Agent Network and causal chain design\nDiscussion on Embargo Breach Pathway visualisation\nDelegation of work\nConfirmation of agenda for the next meeting"
+  },
+  {
+    "objectID": "meeting-minutes/mom3.html#visual-analytics-design",
+    "href": "meeting-minutes/mom3.html#visual-analytics-design",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 3",
+    "section": "",
+    "text": "The group finalised four main tabs for the Shiny application:\n\nLanding Page / Overview\nCrisis Timeline\nAgent Network\nEmbargo Breach Pathway\n\nThe Landing Page / Overview tab was planned as a static summary dashboard. It should present total rounds, total communication records, number of agents, number of public posts, embargo-sensitive keyword mentions, and the identified breach window.\nThe Crisis Timeline tab was planned as an interactive view that shows how the crisis unfolded across rounds and how key events moved toward the public release of embargo-sensitive information.\nThe Agent Network tab was planned to include both a causal chain diagram and an agent communication network. The causal chain diagram should explain how the event unfolded toward the crisis, while the communication network should show relationships between agents.\nThe Embargo Breach Pathway tab was added as a new visualisation to trace how embargo-sensitive information moved toward public release and where controls weakened.\nThe group agreed that the four tabs should work together as an investigative sequence rather than as independent charts."
+  },
+  {
+    "objectID": "meeting-minutes/mom3.html#shiny-prototype-development",
+    "href": "meeting-minutes/mom3.html#shiny-prototype-development",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 3",
+    "section": "",
+    "text": "The group discussed the RStudio Shiny user interface and the need for clear user inputs, dynamic outputs, and consistent visual styling across the application.\nThe group agreed that user inputs should help users explore the evidence without making the application difficult to navigate.\nThe prototype should allow users to move from summary metrics to detailed visual evidence, especially for the crisis timeline, agent relationships, and breach pathway.\nThe group noted that the application should be prepared for presentation screenshots, poster figures, and website integration.\nThe group also agreed that the wording in the application should remain concise and focused on the investigative findings."
+  },
+  {
+    "objectID": "meeting-minutes/mom3.html#delegation-of-work",
+    "href": "meeting-minutes/mom3.html#delegation-of-work",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 3",
+    "section": "",
+    "text": "Anabelle will work on Prototype 2 and Prototype 3 visualisations and begin preparing the poster design. She will also refine the visual insights that should be highlighted in the final presentation.\nKelvin will work on the website UI, Shiny interface, Landing Page, and Prototype 4 visualisation. He will also ensure that the Shiny application structure aligns with the Quarto website."
+  },
+  {
+    "objectID": "meeting-minutes/mom3.html#agenda-for-next-meeting",
+    "href": "meeting-minutes/mom3.html#agenda-for-next-meeting",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 3",
+    "section": "",
+    "text": "The next meeting will focus on final refinement of the Shiny application, deployment preparation, poster completion, and updates to the Quarto website structure."
+  },
+  {
+    "objectID": "meeting-minutes/mom3.html#adjournment",
+    "href": "meeting-minutes/mom3.html#adjournment",
+    "title": "ISSS608 Visual Analytics & Applications Group Project Meeting 3",
+    "section": "",
+    "text": "The meeting was adjourned after finalising the four Shiny application tabs, confirming the prototype development direction, assigning responsibilities, and setting the agenda for the next meeting.\nMinutes submitted by:\nKelvin Andikko\nApproved by:\nAnabelle Eveleen T"
   }
 ]

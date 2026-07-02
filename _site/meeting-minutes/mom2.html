@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Preparation – Embargo Breach: Tracing TenantThread’s AI Crisis</title>
+<title>ISSS608 Visual Analytics &amp; Applications Group Project Meeting 2 – Embargo Breach: Tracing TenantThread’s AI Crisis</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -70,9 +70,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -204,11 +201,18 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul>
-  <li><a href="#source-structure" id="toc-source-structure" class="nav-link active" data-scroll-target="#source-structure">Source Structure</a></li>
-  <li><a href="#cleaned-outputs" id="toc-cleaned-outputs" class="nav-link" data-scroll-target="#cleaned-outputs">Cleaned Outputs</a></li>
-  <li><a href="#cleaning-steps" id="toc-cleaning-steps" class="nav-link" data-scroll-target="#cleaning-steps">Cleaning Steps</a></li>
-  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a></li>
+  <ul class="collapse">
+  <li><a href="#meeting-minutes" id="toc-meeting-minutes" class="nav-link active" data-scroll-target="#meeting-minutes">Meeting Minutes</a>
+  <ul class="collapse">
+  <li><a href="#opening" id="toc-opening" class="nav-link" data-scroll-target="#opening">Opening</a></li>
+  <li><a href="#present" id="toc-present" class="nav-link" data-scroll-target="#present">Present</a></li>
+  <li><a href="#agenda-for-this-meeting" id="toc-agenda-for-this-meeting" class="nav-link" data-scroll-target="#agenda-for-this-meeting">Agenda for this meeting</a></li>
+  <li><a href="#data-preparation-and-feature-engineering" id="toc-data-preparation-and-feature-engineering" class="nav-link" data-scroll-target="#data-preparation-and-feature-engineering">Data Preparation and Feature Engineering</a></li>
+  <li><a href="#shiny-application-architecture" id="toc-shiny-application-architecture" class="nav-link" data-scroll-target="#shiny-application-architecture">Shiny Application Architecture</a></li>
+  <li><a href="#delegation-of-work" id="toc-delegation-of-work" class="nav-link" data-scroll-target="#delegation-of-work">Delegation of Work</a></li>
+  <li><a href="#agenda-for-next-meeting" id="toc-agenda-for-next-meeting" class="nav-link" data-scroll-target="#agenda-for-next-meeting">Agenda for Next Meeting</a></li>
+  <li><a href="#adjournment" id="toc-adjournment" class="nav-link" data-scroll-target="#adjournment">Adjournment</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -217,7 +221,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Preparation</h1>
+<h1 class="title">ISSS608 Visual Analytics &amp; Applications Group Project Meeting 2</h1>
 </div>
 
 
@@ -234,51 +238,67 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The raw Mini-Challenge 1 (MC1) JSON data was transformed into tidy analytical tables for use in the TenantThread visual analytics workflow. The preparation process focused on converting the nested source format into structured records that could support temporal analysis, communication network analysis, and response-chain tracing.</p>
-<section id="source-structure" class="level2">
-<h2 class="anchored" data-anchor-id="source-structure">Source Structure</h2>
-<p>The original JSON files were organised around four main components:</p>
-<ul>
-<li><code>rounds</code>: simulation rounds and their associated activity records.</li>
-<li><code>environment_context</code>: contextual information describing the state of the environment during each round.</li>
-<li><code>communications</code>: nested message records exchanged between agents.</li>
-<li><code>participants</code>: metadata about agents involved in the scenario.</li>
-</ul>
+<section id="meeting-minutes" class="level1">
+<h1>Meeting Minutes</h1>
+<p><strong>Date:</strong> June 17, 2026</p>
+<section id="opening" class="level2">
+<h2 class="anchored" data-anchor-id="opening">Opening</h2>
+<p>The second meeting was conducted on June 17, 2026. The meeting focused on reviewing the VAST Challenge 2026 Mini-Challenge 1 data structure, preparing the raw data for analysis, identifying feature engineering requirements, and confirming the overall architecture of the Shiny application.</p>
 </section>
-<section id="cleaned-outputs" class="level2">
-<h2 class="anchored" data-anchor-id="cleaned-outputs">Cleaned Outputs</h2>
-<p>The preparation process produced three main cleaned datasets:</p>
-<ul>
-<li><code>rounds_context</code>: round-level records combined with relevant environmental context.</li>
-<li><code>comms_flat</code>: a tidy communication table with one row per message.</li>
-<li><code>participants</code>: a standardised participant reference table for joining agent metadata to communication records.</li>
-</ul>
+<section id="present" class="level2">
+<h2 class="anchored" data-anchor-id="present">Present</h2>
+<p>Kelvin Andikko<br>
+Anabelle Eveleen T</p>
 </section>
-<section id="cleaning-steps" class="level2">
-<h2 class="anchored" data-anchor-id="cleaning-steps">Cleaning Steps</h2>
-<p>Nested JSON objects were parsed and converted into tabular structures. Communication records were unnested so that each message could be analysed independently while preserving links to its source round and context. Timestamps were standardised to support chronological ordering and time-based filtering. Agent names were standardised to reduce duplication caused by inconsistent labels. Communication channels were grouped into broader channel categories for comparison across message types. Response-chain relationships were also prepared so that message replies and related exchanges could be traced in the Shiny application.</p>
+<section id="agenda-for-this-meeting" class="level2">
+<h2 class="anchored" data-anchor-id="agenda-for-this-meeting">Agenda for this meeting</h2>
+<p>Review of MC1 data structure<br>
+Transformation of raw JSON files into structured datasets<br>
+Discussion on feature engineering requirements<br>
+Confirmation of Shiny application architecture<br>
+Delegation of work<br>
+Confirmation of agenda for the next meeting</p>
 </section>
-<section id="workflow" class="level2">
-<h2 class="anchored" data-anchor-id="workflow">Workflow</h2>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-  A[Raw JSON] --&gt; B[Parsed rounds]
-  B --&gt; C[Communication table]
-  C --&gt; D[Feature engineering]
-  D --&gt; E[Shiny app]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p>This data preparation step created the structured foundation required for subsequent feature engineering and interactive visual analytics.</p>
+<section id="data-preparation-and-feature-engineering" class="level2">
+<h2 class="anchored" data-anchor-id="data-preparation-and-feature-engineering">Data Preparation and Feature Engineering</h2>
+<ol type="1">
+<li>The group reviewed the structure of the MC1 dataset, including communication rounds, communication records, participants, communication channels, and the broader environment context surrounding the embargo breach.</li>
+<li>The group agreed that the raw JSON files should be transformed into structured datasets to support clearer analysis and easier integration with the Shiny application.</li>
+<li>The structured datasets should allow the group to examine communication activity by round, participant, channel, and crisis period.</li>
+<li>The group discussed the need to create derived fields that would support the investigation workflow. These include crisis phases, channel risk categories, embargo-sensitive keyword flags, anomaly flags, Judge monitoring status, network edges, and pathway evidence.</li>
+<li>The group agreed that the feature engineering process should not only prepare data for visualisation, but also help explain how information moved across agents and channels before the public release.</li>
+<li>The group noted that the evidence should be traceable within the application so that users can move from summary observations to specific communication records.</li>
+</ol>
+</section>
+<section id="shiny-application-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="shiny-application-architecture">Shiny Application Architecture</h2>
+<ol type="1">
+<li>The group confirmed that the final Shiny application should function as an investigation workflow rather than a static dashboard.</li>
+<li>The application should guide users from an overview of the crisis toward more detailed evidence on event timing, agent communication, and possible breach pathways.</li>
+<li>The group agreed that the application should include interactive filters where appropriate, while still maintaining a clear narrative structure.</li>
+<li>The application architecture should support around three to four main visual analytics components that collectively explain the embargo breach.</li>
+<li>The group also agreed that each visualisation should contribute to the central question of whether the breach was caused by deliberate leakage or by systemic breakdown under pressure.</li>
+</ol>
+</section>
+<section id="delegation-of-work" class="level2">
+<h2 class="anchored" data-anchor-id="delegation-of-work">Delegation of Work</h2>
+<p>Kelvin will continue preparing the Quarto project website, study the transformed data structure, and begin planning the Shiny application interface and workflow.</p>
+<p>Anabelle will continue exploring possible visualisations, review the engineered features, and identify which visual outputs are most suitable for explaining communication behaviour and breach progression.</p>
+</section>
+<section id="agenda-for-next-meeting" class="level2">
+<h2 class="anchored" data-anchor-id="agenda-for-next-meeting">Agenda for Next Meeting</h2>
+<p>The next meeting will focus on finalising the main Shiny application tabs, discussing the visual analytics design, and reviewing the first Shiny application prototype.</p>
+</section>
+<section id="adjournment" class="level2">
+<h2 class="anchored" data-anchor-id="adjournment">Adjournment</h2>
+<p>The meeting was adjourned after confirming the data preparation direction, feature engineering requirements, Shiny application architecture, task delegation, and agenda for the next meeting.</p>
+<p><strong>Minutes submitted by:</strong><br>
+Kelvin Andikko</p>
+<p><strong>Approved by:</strong><br>
+Anabelle Eveleen T</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

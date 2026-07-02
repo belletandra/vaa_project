@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Preparation – Embargo Breach: Tracing TenantThread’s AI Crisis</title>
+<title>ISSS608 Visual Analytics &amp; Applications Group Project Meeting 3 – Embargo Breach: Tracing TenantThread’s AI Crisis</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -70,9 +70,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -204,11 +201,18 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul>
-  <li><a href="#source-structure" id="toc-source-structure" class="nav-link active" data-scroll-target="#source-structure">Source Structure</a></li>
-  <li><a href="#cleaned-outputs" id="toc-cleaned-outputs" class="nav-link" data-scroll-target="#cleaned-outputs">Cleaned Outputs</a></li>
-  <li><a href="#cleaning-steps" id="toc-cleaning-steps" class="nav-link" data-scroll-target="#cleaning-steps">Cleaning Steps</a></li>
-  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a></li>
+  <ul class="collapse">
+  <li><a href="#meeting-minutes" id="toc-meeting-minutes" class="nav-link active" data-scroll-target="#meeting-minutes">Meeting Minutes</a>
+  <ul class="collapse">
+  <li><a href="#opening" id="toc-opening" class="nav-link" data-scroll-target="#opening">Opening</a></li>
+  <li><a href="#present" id="toc-present" class="nav-link" data-scroll-target="#present">Present</a></li>
+  <li><a href="#agenda-for-this-meeting" id="toc-agenda-for-this-meeting" class="nav-link" data-scroll-target="#agenda-for-this-meeting">Agenda for this meeting</a></li>
+  <li><a href="#visual-analytics-design" id="toc-visual-analytics-design" class="nav-link" data-scroll-target="#visual-analytics-design">Visual Analytics Design</a></li>
+  <li><a href="#shiny-prototype-development" id="toc-shiny-prototype-development" class="nav-link" data-scroll-target="#shiny-prototype-development">Shiny Prototype Development</a></li>
+  <li><a href="#delegation-of-work" id="toc-delegation-of-work" class="nav-link" data-scroll-target="#delegation-of-work">Delegation of Work</a></li>
+  <li><a href="#agenda-for-next-meeting" id="toc-agenda-for-next-meeting" class="nav-link" data-scroll-target="#agenda-for-next-meeting">Agenda for Next Meeting</a></li>
+  <li><a href="#adjournment" id="toc-adjournment" class="nav-link" data-scroll-target="#adjournment">Adjournment</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -217,7 +221,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Preparation</h1>
+<h1 class="title">ISSS608 Visual Analytics &amp; Applications Group Project Meeting 3</h1>
 </div>
 
 
@@ -234,51 +238,74 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The raw Mini-Challenge 1 (MC1) JSON data was transformed into tidy analytical tables for use in the TenantThread visual analytics workflow. The preparation process focused on converting the nested source format into structured records that could support temporal analysis, communication network analysis, and response-chain tracing.</p>
-<section id="source-structure" class="level2">
-<h2 class="anchored" data-anchor-id="source-structure">Source Structure</h2>
-<p>The original JSON files were organised around four main components:</p>
-<ul>
-<li><code>rounds</code>: simulation rounds and their associated activity records.</li>
-<li><code>environment_context</code>: contextual information describing the state of the environment during each round.</li>
-<li><code>communications</code>: nested message records exchanged between agents.</li>
-<li><code>participants</code>: metadata about agents involved in the scenario.</li>
-</ul>
+<section id="meeting-minutes" class="level1">
+<h1>Meeting Minutes</h1>
+<p><strong>Date:</strong> June 24, 2026</p>
+<section id="opening" class="level2">
+<h2 class="anchored" data-anchor-id="opening">Opening</h2>
+<p>The third meeting was conducted on June 24, 2026. The meeting focused on finalising the visual analytics design, reviewing the Shiny application prototype, and confirming the role of each main tab in supporting the TenantThread embargo breach investigation.</p>
 </section>
-<section id="cleaned-outputs" class="level2">
-<h2 class="anchored" data-anchor-id="cleaned-outputs">Cleaned Outputs</h2>
-<p>The preparation process produced three main cleaned datasets:</p>
-<ul>
-<li><code>rounds_context</code>: round-level records combined with relevant environmental context.</li>
-<li><code>comms_flat</code>: a tidy communication table with one row per message.</li>
-<li><code>participants</code>: a standardised participant reference table for joining agent metadata to communication records.</li>
-</ul>
+<section id="present" class="level2">
+<h2 class="anchored" data-anchor-id="present">Present</h2>
+<p>Kelvin Andikko<br>
+Anabelle Eveleen T</p>
 </section>
-<section id="cleaning-steps" class="level2">
-<h2 class="anchored" data-anchor-id="cleaning-steps">Cleaning Steps</h2>
-<p>Nested JSON objects were parsed and converted into tabular structures. Communication records were unnested so that each message could be analysed independently while preserving links to its source round and context. Timestamps were standardised to support chronological ordering and time-based filtering. Agent names were standardised to reduce duplication caused by inconsistent labels. Communication channels were grouped into broader channel categories for comparison across message types. Response-chain relationships were also prepared so that message replies and related exchanges could be traced in the Shiny application.</p>
+<section id="agenda-for-this-meeting" class="level2">
+<h2 class="anchored" data-anchor-id="agenda-for-this-meeting">Agenda for this meeting</h2>
+<p>Finalisation of the main Shiny application tabs<br>
+Discussion on Landing Page and summary dashboard design<br>
+Review of Crisis Timeline visualisation<br>
+Review of Agent Network and causal chain design<br>
+Discussion on Embargo Breach Pathway visualisation<br>
+Delegation of work<br>
+Confirmation of agenda for the next meeting</p>
 </section>
-<section id="workflow" class="level2">
-<h2 class="anchored" data-anchor-id="workflow">Workflow</h2>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-  A[Raw JSON] --&gt; B[Parsed rounds]
-  B --&gt; C[Communication table]
-  C --&gt; D[Feature engineering]
-  D --&gt; E[Shiny app]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p>This data preparation step created the structured foundation required for subsequent feature engineering and interactive visual analytics.</p>
+<section id="visual-analytics-design" class="level2">
+<h2 class="anchored" data-anchor-id="visual-analytics-design">Visual Analytics Design</h2>
+<ol type="1">
+<li>The group finalised four main tabs for the Shiny application:
+<ol type="a">
+<li>Landing Page / Overview</li>
+<li>Crisis Timeline</li>
+<li>Agent Network</li>
+<li>Embargo Breach Pathway</li>
+</ol></li>
+<li>The Landing Page / Overview tab was planned as a static summary dashboard. It should present total rounds, total communication records, number of agents, number of public posts, embargo-sensitive keyword mentions, and the identified breach window.</li>
+<li>The Crisis Timeline tab was planned as an interactive view that shows how the crisis unfolded across rounds and how key events moved toward the public release of embargo-sensitive information.</li>
+<li>The Agent Network tab was planned to include both a causal chain diagram and an agent communication network. The causal chain diagram should explain how the event unfolded toward the crisis, while the communication network should show relationships between agents.</li>
+<li>The Embargo Breach Pathway tab was added as a new visualisation to trace how embargo-sensitive information moved toward public release and where controls weakened.</li>
+<li>The group agreed that the four tabs should work together as an investigative sequence rather than as independent charts.</li>
+</ol>
+</section>
+<section id="shiny-prototype-development" class="level2">
+<h2 class="anchored" data-anchor-id="shiny-prototype-development">Shiny Prototype Development</h2>
+<ol type="1">
+<li>The group discussed the RStudio Shiny user interface and the need for clear user inputs, dynamic outputs, and consistent visual styling across the application.</li>
+<li>The group agreed that user inputs should help users explore the evidence without making the application difficult to navigate.</li>
+<li>The prototype should allow users to move from summary metrics to detailed visual evidence, especially for the crisis timeline, agent relationships, and breach pathway.</li>
+<li>The group noted that the application should be prepared for presentation screenshots, poster figures, and website integration.</li>
+<li>The group also agreed that the wording in the application should remain concise and focused on the investigative findings.</li>
+</ol>
+</section>
+<section id="delegation-of-work" class="level2">
+<h2 class="anchored" data-anchor-id="delegation-of-work">Delegation of Work</h2>
+<p>Anabelle will work on Prototype 2 and Prototype 3 visualisations and begin preparing the poster design. She will also refine the visual insights that should be highlighted in the final presentation.</p>
+<p>Kelvin will work on the website UI, Shiny interface, Landing Page, and Prototype 4 visualisation. He will also ensure that the Shiny application structure aligns with the Quarto website.</p>
+</section>
+<section id="agenda-for-next-meeting" class="level2">
+<h2 class="anchored" data-anchor-id="agenda-for-next-meeting">Agenda for Next Meeting</h2>
+<p>The next meeting will focus on final refinement of the Shiny application, deployment preparation, poster completion, and updates to the Quarto website structure.</p>
+</section>
+<section id="adjournment" class="level2">
+<h2 class="anchored" data-anchor-id="adjournment">Adjournment</h2>
+<p>The meeting was adjourned after finalising the four Shiny application tabs, confirming the prototype development direction, assigning responsibilities, and setting the agenda for the next meeting.</p>
+<p><strong>Minutes submitted by:</strong><br>
+Kelvin Andikko</p>
+<p><strong>Approved by:</strong><br>
+Anabelle Eveleen T</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
