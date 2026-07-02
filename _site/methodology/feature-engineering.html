@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ISSS608 Visual Analytics &amp; Applications Group Project Meeting 1 – Embargo Breach: Tracing TenantThread’s AI Crisis</title>
+<title>Feature Engineering – Embargo Breach: Tracing TenantThread’s AI Crisis</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -201,17 +201,9 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul class="collapse">
-  <li><a href="#meeting-minutes" id="toc-meeting-minutes" class="nav-link active" data-scroll-target="#meeting-minutes">Meeting Minutes</a>
-  <ul class="collapse">
-  <li><a href="#opening" id="toc-opening" class="nav-link" data-scroll-target="#opening">Opening</a></li>
-  <li><a href="#present" id="toc-present" class="nav-link" data-scroll-target="#present">Present</a></li>
-  <li><a href="#agenda-for-this-meeting" id="toc-agenda-for-this-meeting" class="nav-link" data-scroll-target="#agenda-for-this-meeting">Agenda for this meeting</a></li>
-  <li><a href="#ideation-and-finalisation-of-ideas" id="toc-ideation-and-finalisation-of-ideas" class="nav-link" data-scroll-target="#ideation-and-finalisation-of-ideas">Ideation and Finalisation of Ideas</a></li>
-  <li><a href="#delegation-of-work" id="toc-delegation-of-work" class="nav-link" data-scroll-target="#delegation-of-work">Delegation of Work</a></li>
-  <li><a href="#agenda-for-next-meeting" id="toc-agenda-for-next-meeting" class="nav-link" data-scroll-target="#agenda-for-next-meeting">Agenda for Next Meeting</a></li>
-  <li><a href="#adjournment" id="toc-adjournment" class="nav-link" data-scroll-target="#adjournment">Adjournment</a></li>
-  </ul></li>
+  <ul>
+  <li><a href="#feature-groups" id="toc-feature-groups" class="nav-link active" data-scroll-target="#feature-groups">Feature Groups</a></li>
+  <li><a href="#feature-summary" id="toc-feature-summary" class="nav-link" data-scroll-target="#feature-summary">Feature Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -220,7 +212,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">ISSS608 Visual Analytics &amp; Applications Group Project Meeting 1</h1>
+<h1 class="title">Feature Engineering</h1>
 </div>
 
 
@@ -237,62 +229,89 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="meeting-minutes" class="level1">
-<h1>Meeting Minutes</h1>
-<p><strong>Date:</strong> June 9, 2026</p>
-<section id="opening" class="level2">
-<h2 class="anchored" data-anchor-id="opening">Opening</h2>
-<p>The first meeting was conducted on June 9, 2026. The meeting focused on selecting the group project topic, identifying possible visual analytics directions, and assigning initial responsibilities for the project proposal and website preparation.</p>
+<p>Feature engineering converted the cleaned communication and participant tables into investigation-ready variables for the TenantThread Shiny application. These derived variables support filtering, timeline exploration, network analysis, and evidence tracing across the MC1 scenario.</p>
+<p>The features were designed to help assess the central MC1 question: whether the embargo breach reflects deliberate leakage or a wider systemic breakdown in communication controls.</p>
+<section id="feature-groups" class="level2">
+<h2 class="anchored" data-anchor-id="feature-groups">Feature Groups</h2>
+<p>The following feature groups were prepared for the application:</p>
+<ul>
+<li><code>crisis_phase</code>: classifies messages by stage of the crisis timeline so that communication patterns can be compared before, during, and after key events.</li>
+<li><code>channel_group</code>: groups detailed communication channels into broader categories for clearer comparison across message types.</li>
+<li><code>channel_risk</code>: assigns a risk level to each channel based on its suitability for sensitive or embargo-related communication.</li>
+<li><code>embargo_sensitive</code> keyword flag: identifies messages containing terms related to embargoed information, restricted releases, or premature disclosure.</li>
+<li><code>crisis_sensitive</code> keyword flag: identifies messages containing terms associated with crisis response, escalation, public reaction, or operational disruption.</li>
+<li><code>anomaly_flag</code> and <code>anomaly_reason</code>: highlight unusual records and provide interpretable reasons, such as risky channel use, sensitive keywords, or suspicious timing.</li>
+<li><code>judge_monitored_status</code>: indicates whether communications involved monitored or judge-relevant participants.</li>
+<li><code>network_edges</code> and <code>network_nodes</code>: represent communication relationships between agents for network visualisation and influence analysis.</li>
+<li><code>pathway_evidence</code>: captures response-chain and message-link evidence used to trace possible breach pathways.</li>
+</ul>
 </section>
-<section id="present" class="level2">
-<h2 class="anchored" data-anchor-id="present">Present</h2>
-<p>Kelvin Andikko<br>
-Anabelle Eveleen Tandra</p>
-</section>
-<section id="agenda-for-this-meeting" class="level2">
-<h2 class="anchored" data-anchor-id="agenda-for-this-meeting">Agenda for this meeting</h2>
-<p>Finalisation of the group project mini challenge<br>
-Initial ideation of possible visualisations<br>
-Discussion on the overarching concept for the visual analytics system<br>
-Delegation of work<br>
-Confirmation of agenda for the next meeting</p>
-</section>
-<section id="ideation-and-finalisation-of-ideas" class="level2">
-<h2 class="anchored" data-anchor-id="ideation-and-finalisation-of-ideas">Ideation and Finalisation of Ideas</h2>
-<ol type="1">
-<li>The group decided to work on <strong>VAST Challenge 2026 Mini-Challenge 1</strong>, which focuses on the TenantThread embargo breach and the multi-agent AI communications crisis.</li>
-<li>The group agreed that the project should not be presented as a set of disconnected visualisations. Instead, all visualisations should be tied to a coherent investigative concept based on MC1.</li>
-<li>The main project direction is to develop a visual analytics system that helps users understand whether the embargo breach was caused by deliberate leakage or by a breakdown in agent coordination, communication workflows, and compliance enforcement.</li>
-<li>Possible visualisations discussed include:
-<ol type="a">
-<li>A causal chain diagram to show the sequence of decisions, actors, and system elements that contributed to the release.</li>
-<li>An event timeline to reconstruct the key events leading up to the embargo breach.</li>
-<li>An agent interaction or communication network to show how different agents exchanged information across channels.</li>
-<li>A behaviour comparison or anomaly view to compare typical behaviour with breach-period behaviour.</li>
-</ol></li>
-<li>The group noted that further research is required to determine which visualisations will best support the investigation.</li>
-<li>The group agreed that the final application should contain around three to four main visualisations that collectively tell the story of the breach.</li>
-</ol>
-</section>
-<section id="delegation-of-work" class="level2">
-<h2 class="anchored" data-anchor-id="delegation-of-work">Delegation of Work</h2>
-<p>Kelvin will prepare the project website, study the MC1 dataset, and draft the project proposal. The dataset review is to be completed by Thursday night, 11:59 PM.</p>
-<p>Anabelle will start exploring the dataset and propose suitable visualisations. This is to be completed by Thursday night, 11:59 PM.</p>
-</section>
-<section id="agenda-for-next-meeting" class="level2">
-<h2 class="anchored" data-anchor-id="agenda-for-next-meeting">Agenda for Next Meeting</h2>
-<p>The next meeting will be conducted on Thursday night. The group will decide on the final visualisations and refine the main concept that the application should communicate.</p>
-</section>
-<section id="adjournment" class="level2">
-<h2 class="anchored" data-anchor-id="adjournment">Adjournment</h2>
-<p>The meeting was adjourned after confirming the selected mini challenge, initial visualisation directions, task delegation, and agenda for the next meeting.</p>
-<p><strong>Minutes submitted by:</strong><br>
-Kelvin Andikko</p>
-<p><strong>Approved by:</strong><br>
-Anabelle Eveleen Tandra</p>
+<section id="feature-summary" class="level2">
+<h2 class="anchored" data-anchor-id="feature-summary">Feature Summary</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Purpose</th>
+<th>App usage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>crisis_phase</code></td>
+<td>Places communication activity in crisis context</td>
+<td>Timeline filtering and phase comparison</td>
+</tr>
+<tr class="even">
+<td><code>channel_group</code></td>
+<td>Simplifies detailed channels into interpretable groups</td>
+<td>Channel distribution charts and filters</td>
+</tr>
+<tr class="odd">
+<td><code>channel_risk</code></td>
+<td>Indicates potential exposure risk by channel</td>
+<td>Risk-focused filtering and anomaly review</td>
+</tr>
+<tr class="even">
+<td><code>embargo_sensitive</code></td>
+<td>Flags possible embargo-related content</td>
+<td>Keyword evidence screening</td>
+</tr>
+<tr class="odd">
+<td><code>crisis_sensitive</code></td>
+<td>Flags crisis-related content</td>
+<td>Crisis response analysis</td>
+</tr>
+<tr class="even">
+<td><code>anomaly_flag</code>, <code>anomaly_reason</code></td>
+<td>Identifies unusual or suspicious records</td>
+<td>Anomaly table and evidence review</td>
+</tr>
+<tr class="odd">
+<td><code>judge_monitored_status</code></td>
+<td>Marks communications relevant to monitored actors</td>
+<td>Participant filtering and oversight analysis</td>
+</tr>
+<tr class="even">
+<td><code>network_edges</code>, <code>network_nodes</code></td>
+<td>Structures agent-to-agent communication links</td>
+<td>Network graph and centrality exploration</td>
+</tr>
+<tr class="odd">
+<td><code>pathway_evidence</code></td>
+<td>Preserves traceable links across related messages</td>
+<td>Breach pathway reconstruction</td>
+</tr>
+</tbody>
+</table>
+<p>Together, these variables allow the Shiny app to move beyond descriptive summaries and support evidence-based investigation. They make it possible to examine who communicated, through which channels, at what stage of the crisis, and whether sensitive information followed patterns consistent with intentional leakage or organisational failure.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

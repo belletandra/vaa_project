@@ -1,0 +1,80 @@
+---
+title: "ISSS608 Visual Analytics & Applications Group Project Meeting 4"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+editor: visual
+---
+
+# Meeting Minutes
+
+**Date:** July 1, 2026
+
+## Opening
+
+The fourth meeting was conducted on July 1, 2026. The meeting focused on final refinement of the Shiny application, deployment, poster completion, and updates to the Quarto project website for the final submission.
+
+## Present
+
+Kelvin Andikko\
+Anabelle Eveleen T
+
+## Agenda for this meeting
+
+Review of final Shiny application tabs\
+Refinement of application interface and evidence sections\
+Finalisation of poster content and visual insights\
+Discussion on deployment and screenshot readiness\
+Updates to Quarto website structure\
+Confirmation of final project conclusion\
+Adjournment of project meeting series
+
+## Final Shiny Application Review
+
+1.  The group reviewed the four tabs in the final Shiny application:
+    a.  Landing Page / Overview
+    b.  Crisis Timeline
+    c.  Agent Network
+    d.  Embargo Breach Pathway
+2.  The main tab was confirmed as a summary dashboard showing total rounds, total communication records, number of agents, number of public posts, embargo-sensitive keyword mentions, and the identified breach window.
+3.  The Crisis Timeline tab was confirmed as the main view for showing the sequence of events that led to the breach.
+4.  The Agent Network tab was confirmed to include the causal chain diagram and the agent communication network. The causal chain diagram shows how the event unfolded toward the crisis, while the communication network complements it by showing communication relationships between agents.
+5.  The Embargo Breach Pathway tab was confirmed as the visualisation that traces how embargo-sensitive information moved toward public release and where controls weakened.
+6.  The group agreed that the final application successfully presents the project as an investigative workflow rather than a static dashboard.
+
+## Refinement and Deployment
+
+1.  The group discussed final Shiny application refinements, including moving filters to the left sidebar to improve usability and create a cleaner visual layout.
+2.  The group agreed to include hide and show sections for evidence tables so that detailed records can be accessed when needed without overwhelming the main view.
+3.  The application was refined for screenshot readiness, with attention given to spacing, readability, and consistency across visual outputs.
+4.  The group confirmed that the final Shiny application had been completed and deployed.
+5.  The group also discussed how the deployed application should be linked from the Quarto website for final assessment.
+
+## Poster and Website Completion
+
+1.  Anabelle worked on the poster design, Prototype 2 and Prototype 3 visualisations, and the key insights to be communicated in the final poster.
+2.  Kelvin worked on the website UI, Shiny application UI, Landing Page, and Prototype 4 visualisation.
+3.  The group discussed completing the poster and ensuring that the selected visualisations clearly support the final argument.
+4.  The group agreed to update the Quarto website structure to include the final findings, user guide, poster, Shiny application link, and GitHub link.
+5.  The group also reviewed the need for consistent wording between the poster, website, and Shiny application.
+
+## Final Conclusion
+
+1.  The group agreed that the evidence points more strongly toward systemic breakdown under pressure than a clearly deliberate leak by one actor.
+2.  The conclusion should be supported by the timeline evidence, causal chain, agent communication network, and breach pathway visualisation.
+3.  The group agreed that the final project should emphasise how multiple weaknesses in communication monitoring, workflow coordination, and control enforcement contributed to the embargo breach.
+
+## Agenda for Next Meeting
+
+No further formal project meeting was scheduled. The remaining work will focus on final checks, website updates, and submission preparation.
+
+## Adjournment
+
+The meeting was adjourned after confirming the final Shiny application refinements, deployment status, poster completion plan, Quarto website updates, final conclusion, and remaining submission tasks.
+
+**Minutes submitted by:**\
+Kelvin Andikko
+
+**Approved by:**\
+Anabelle Eveleen T

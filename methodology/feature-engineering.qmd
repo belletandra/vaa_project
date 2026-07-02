@@ -1,0 +1,37 @@
+---
+title: "Feature Engineering"
+---
+
+Feature engineering converted the cleaned communication and participant tables into investigation-ready variables for the TenantThread Shiny application. These derived variables support filtering, timeline exploration, network analysis, and evidence tracing across the MC1 scenario.
+
+The features were designed to help assess the central MC1 question: whether the embargo breach reflects deliberate leakage or a wider systemic breakdown in communication controls.
+
+## Feature Groups
+
+The following feature groups were prepared for the application:
+
+- `crisis_phase`: classifies messages by stage of the crisis timeline so that communication patterns can be compared before, during, and after key events.
+- `channel_group`: groups detailed communication channels into broader categories for clearer comparison across message types.
+- `channel_risk`: assigns a risk level to each channel based on its suitability for sensitive or embargo-related communication.
+- `embargo_sensitive` keyword flag: identifies messages containing terms related to embargoed information, restricted releases, or premature disclosure.
+- `crisis_sensitive` keyword flag: identifies messages containing terms associated with crisis response, escalation, public reaction, or operational disruption.
+- `anomaly_flag` and `anomaly_reason`: highlight unusual records and provide interpretable reasons, such as risky channel use, sensitive keywords, or suspicious timing.
+- `judge_monitored_status`: indicates whether communications involved monitored or judge-relevant participants.
+- `network_edges` and `network_nodes`: represent communication relationships between agents for network visualisation and influence analysis.
+- `pathway_evidence`: captures response-chain and message-link evidence used to trace possible breach pathways.
+
+## Feature Summary
+
+| Feature | Purpose | App usage |
+|---|---|---|
+| `crisis_phase` | Places communication activity in crisis context | Timeline filtering and phase comparison |
+| `channel_group` | Simplifies detailed channels into interpretable groups | Channel distribution charts and filters |
+| `channel_risk` | Indicates potential exposure risk by channel | Risk-focused filtering and anomaly review |
+| `embargo_sensitive` | Flags possible embargo-related content | Keyword evidence screening |
+| `crisis_sensitive` | Flags crisis-related content | Crisis response analysis |
+| `anomaly_flag`, `anomaly_reason` | Identifies unusual or suspicious records | Anomaly table and evidence review |
+| `judge_monitored_status` | Marks communications relevant to monitored actors | Participant filtering and oversight analysis |
+| `network_edges`, `network_nodes` | Structures agent-to-agent communication links | Network graph and centrality exploration |
+| `pathway_evidence` | Preserves traceable links across related messages | Breach pathway reconstruction |
+
+Together, these variables allow the Shiny app to move beyond descriptive summaries and support evidence-based investigation. They make it possible to examine who communicated, through which channels, at what stage of the crisis, and whether sensitive information followed patterns consistent with intentional leakage or organisational failure.

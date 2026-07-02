@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ISSS608 Visual Analytics &amp; Applications Group Project Meeting 1 – Embargo Breach: Tracing TenantThread’s AI Crisis</title>
+<title>Visual Analytics Design – Embargo Breach: Tracing TenantThread’s AI Crisis</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -201,17 +201,11 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul class="collapse">
-  <li><a href="#meeting-minutes" id="toc-meeting-minutes" class="nav-link active" data-scroll-target="#meeting-minutes">Meeting Minutes</a>
-  <ul class="collapse">
-  <li><a href="#opening" id="toc-opening" class="nav-link" data-scroll-target="#opening">Opening</a></li>
-  <li><a href="#present" id="toc-present" class="nav-link" data-scroll-target="#present">Present</a></li>
-  <li><a href="#agenda-for-this-meeting" id="toc-agenda-for-this-meeting" class="nav-link" data-scroll-target="#agenda-for-this-meeting">Agenda for this meeting</a></li>
-  <li><a href="#ideation-and-finalisation-of-ideas" id="toc-ideation-and-finalisation-of-ideas" class="nav-link" data-scroll-target="#ideation-and-finalisation-of-ideas">Ideation and Finalisation of Ideas</a></li>
-  <li><a href="#delegation-of-work" id="toc-delegation-of-work" class="nav-link" data-scroll-target="#delegation-of-work">Delegation of Work</a></li>
-  <li><a href="#agenda-for-next-meeting" id="toc-agenda-for-next-meeting" class="nav-link" data-scroll-target="#agenda-for-next-meeting">Agenda for Next Meeting</a></li>
-  <li><a href="#adjournment" id="toc-adjournment" class="nav-link" data-scroll-target="#adjournment">Adjournment</a></li>
-  </ul></li>
+  <ul>
+  <li><a href="#visual-analytics-components" id="toc-visual-analytics-components" class="nav-link active" data-scroll-target="#visual-analytics-components">Visual Analytics Components</a></li>
+  <li><a href="#integrated-analytical-workflow" id="toc-integrated-analytical-workflow" class="nav-link" data-scroll-target="#integrated-analytical-workflow">Integrated Analytical Workflow</a></li>
+  <li><a href="#interactivity" id="toc-interactivity" class="nav-link" data-scroll-target="#interactivity">Interactivity</a></li>
+  <li><a href="#design-rationale" id="toc-design-rationale" class="nav-link" data-scroll-target="#design-rationale">Design Rationale</a></li>
   </ul>
 </nav>
     </div>
@@ -220,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">ISSS608 Visual Analytics &amp; Applications Group Project Meeting 1</h1>
+<h1 class="title">Visual Analytics Design</h1>
 </div>
 
 
@@ -237,62 +231,39 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="meeting-minutes" class="level1">
-<h1>Meeting Minutes</h1>
-<p><strong>Date:</strong> June 9, 2026</p>
-<section id="opening" class="level2">
-<h2 class="anchored" data-anchor-id="opening">Opening</h2>
-<p>The first meeting was conducted on June 9, 2026. The meeting focused on selecting the group project topic, identifying possible visual analytics directions, and assigning initial responsibilities for the project proposal and website preparation.</p>
+<p>The TenantThread Shiny application is designed as an investigation workflow. It guides users from case orientation to temporal reconstruction, communication network exploration, breach pathway tracing, and message-level evidence validation.</p>
+<section id="visual-analytics-components" class="level2">
+<h2 class="anchored" data-anchor-id="visual-analytics-components">Visual Analytics Components</h2>
+<p>The application combines several coordinated views:</p>
+<ul>
+<li><strong>Landing Page / Overview</strong>: introduces the case context and provides orientation for the investigation.</li>
+<li><strong>Crisis Timeline</strong>: reconstructs events over time and shows how communication activity changes across crisis phases.</li>
+<li><strong>Agent Network</strong>: visualises communication relationships between agents, allowing investigators to identify central actors, clusters, and unusual connections.</li>
+<li><strong>Embargo Breach Pathway</strong>: traces the movement of sensitive information across messages, agents, and channels.</li>
+<li><strong>Evidence tables</strong>: provide message-level records for validating patterns observed in the visual views.</li>
+</ul>
 </section>
-<section id="present" class="level2">
-<h2 class="anchored" data-anchor-id="present">Present</h2>
-<p>Kelvin Andikko<br>
-Anabelle Eveleen Tandra</p>
+<section id="integrated-analytical-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="integrated-analytical-workflow">Integrated Analytical Workflow</h2>
+<p>The app combines timeline, network, pathway, and linked table views because no single chart can fully explain the embargo breach. The timeline shows when activity occurred, the network shows who was connected, the pathway view shows how sensitive information may have moved, and the evidence tables allow users to inspect the underlying messages. Together, these components support both exploratory analysis and defensible evidence review.</p>
 </section>
-<section id="agenda-for-this-meeting" class="level2">
-<h2 class="anchored" data-anchor-id="agenda-for-this-meeting">Agenda for this meeting</h2>
-<p>Finalisation of the group project mini challenge<br>
-Initial ideation of possible visualisations<br>
-Discussion on the overarching concept for the visual analytics system<br>
-Delegation of work<br>
-Confirmation of agenda for the next meeting</p>
+<section id="interactivity" class="level2">
+<h2 class="anchored" data-anchor-id="interactivity">Interactivity</h2>
+<p>Interactive controls allow investigators to refine the analysis without leaving the workflow:</p>
+<ul>
+<li><strong>Filters</strong> support focused analysis by crisis phase, channel, agent, and other derived attributes.</li>
+<li><strong>Keyword search</strong> helps locate messages containing embargo-sensitive or crisis-sensitive terms.</li>
+<li><strong>Range slider</strong> supports temporal narrowing within the crisis timeline.</li>
+<li><strong>Focal agent selection</strong> allows the network and pathway views to centre on selected participants.</li>
+<li><strong>Channel risk selection</strong> helps isolate communications that used higher-risk channels.</li>
+<li><strong>Hide and show evidence tables</strong> lets users move between visual exploration and detailed message validation as needed.</li>
+</ul>
 </section>
-<section id="ideation-and-finalisation-of-ideas" class="level2">
-<h2 class="anchored" data-anchor-id="ideation-and-finalisation-of-ideas">Ideation and Finalisation of Ideas</h2>
-<ol type="1">
-<li>The group decided to work on <strong>VAST Challenge 2026 Mini-Challenge 1</strong>, which focuses on the TenantThread embargo breach and the multi-agent AI communications crisis.</li>
-<li>The group agreed that the project should not be presented as a set of disconnected visualisations. Instead, all visualisations should be tied to a coherent investigative concept based on MC1.</li>
-<li>The main project direction is to develop a visual analytics system that helps users understand whether the embargo breach was caused by deliberate leakage or by a breakdown in agent coordination, communication workflows, and compliance enforcement.</li>
-<li>Possible visualisations discussed include:
-<ol type="a">
-<li>A causal chain diagram to show the sequence of decisions, actors, and system elements that contributed to the release.</li>
-<li>An event timeline to reconstruct the key events leading up to the embargo breach.</li>
-<li>An agent interaction or communication network to show how different agents exchanged information across channels.</li>
-<li>A behaviour comparison or anomaly view to compare typical behaviour with breach-period behaviour.</li>
-</ol></li>
-<li>The group noted that further research is required to determine which visualisations will best support the investigation.</li>
-<li>The group agreed that the final application should contain around three to four main visualisations that collectively tell the story of the breach.</li>
-</ol>
-</section>
-<section id="delegation-of-work" class="level2">
-<h2 class="anchored" data-anchor-id="delegation-of-work">Delegation of Work</h2>
-<p>Kelvin will prepare the project website, study the MC1 dataset, and draft the project proposal. The dataset review is to be completed by Thursday night, 11:59 PM.</p>
-<p>Anabelle will start exploring the dataset and propose suitable visualisations. This is to be completed by Thursday night, 11:59 PM.</p>
-</section>
-<section id="agenda-for-next-meeting" class="level2">
-<h2 class="anchored" data-anchor-id="agenda-for-next-meeting">Agenda for Next Meeting</h2>
-<p>The next meeting will be conducted on Thursday night. The group will decide on the final visualisations and refine the main concept that the application should communicate.</p>
-</section>
-<section id="adjournment" class="level2">
-<h2 class="anchored" data-anchor-id="adjournment">Adjournment</h2>
-<p>The meeting was adjourned after confirming the selected mini challenge, initial visualisation directions, task delegation, and agenda for the next meeting.</p>
-<p><strong>Minutes submitted by:</strong><br>
-Kelvin Andikko</p>
-<p><strong>Approved by:</strong><br>
-Anabelle Eveleen Tandra</p>
+<section id="design-rationale" class="level2">
+<h2 class="anchored" data-anchor-id="design-rationale">Design Rationale</h2>
+<p>The design supports legal and compliance investigators by structuring the analysis from overview to detailed evidence. Users can begin with the case context, identify suspicious time periods or communication patterns, trace possible information pathways, and then validate findings using the underlying message records. This workflow helps assess whether the breach reflects deliberate leakage or a systemic breakdown in communication governance.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

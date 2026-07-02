@@ -1,0 +1,38 @@
+---
+title: "Data Preparation"
+---
+
+The raw Mini-Challenge 1 (MC1) JSON data was transformed into tidy analytical tables for use in the TenantThread visual analytics workflow. The preparation process focused on converting the nested source format into structured records that could support temporal analysis, communication network analysis, and response-chain tracing.
+
+## Source Structure
+
+The original JSON files were organised around four main components:
+
+- `rounds`: simulation rounds and their associated activity records.
+- `environment_context`: contextual information describing the state of the environment during each round.
+- `communications`: nested message records exchanged between agents.
+- `participants`: metadata about agents involved in the scenario.
+
+## Cleaned Outputs
+
+The preparation process produced three main cleaned datasets:
+
+- `rounds_context`: round-level records combined with relevant environmental context.
+- `comms_flat`: a tidy communication table with one row per message.
+- `participants`: a standardised participant reference table for joining agent metadata to communication records.
+
+## Cleaning Steps
+
+Nested JSON objects were parsed and converted into tabular structures. Communication records were unnested so that each message could be analysed independently while preserving links to its source round and context. Timestamps were standardised to support chronological ordering and time-based filtering. Agent names were standardised to reduce duplication caused by inconsistent labels. Communication channels were grouped into broader channel categories for comparison across message types. Response-chain relationships were also prepared so that message replies and related exchanges could be traced in the Shiny application.
+
+## Workflow
+
+```{mermaid}
+flowchart LR
+  A[Raw JSON] --> B[Parsed rounds]
+  B --> C[Communication table]
+  C --> D[Feature engineering]
+  D --> E[Shiny app]
+```
+
+This data preparation step created the structured foundation required for subsequent feature engineering and interactive visual analytics.

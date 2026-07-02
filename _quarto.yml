@@ -3,7 +3,7 @@ project:
   output-dir: _site
 
 website:
-  title: "Embargo Breach: Tracing TenantThread’s AI Crisis"
+  title: "Embargo Breach: Tracing TenantThread's AI Crisis"
   navbar:
     left:
       - href: index.qmd
@@ -12,14 +12,14 @@ website:
         text: Proposal
       - text: Methodology
         menu:
-          - href: data-prep.qmd
+          - href: methodology/data-preparation.qmd
             text: Data Preparation
             
-          - href: stats-analysis.qmd
-            text: Statistical Analysis
+          - href: methodology/feature-engineering.qmd
+            text: Feature Engineering
             
-          - href: visualisation.qmd
-            text: Data Visualisation
+          - href: methodology/visual-analytics-design.qmd
+            text: Visual Analytics Design
             
       - href: findings.qmd
         text: Findings
@@ -31,16 +31,32 @@ website:
         menu:
           - href: meeting-minutes/mom1.qmd
             text: Minute of Meeting 1
+          - href: meeting-minutes/mom2.qmd
+            text: Minute of Meeting 2
+          - href: meeting-minutes/mom3.qmd
+            text: Minute of Meeting 3
+          - href: meeting-minutes/mom4.qmd
+            text: Minute of Meeting 4
 
     right:
       - href: about.qmd
-        text: About Us
+        text: The Team
         
-      - href: shiny.qmd
-        text: Shiny App
+      - text: Shiny App
+        menu:
+          - href: user-guide.qmd
+            text: User Guide
+            
+          - href: https://visual-analytics-project-apr26.shinyapps.io/tenantthread-embargo-breach/
+            text: Launch Shiny App
         
-      - href: github.qmd
-        text: GitHub Repo
+      - text: GitHub
+        menu:
+          - href: https://github.com/belletandra/vaa_project
+            text: Project Website Repository
+            
+          - href: https://github.com/kellieklarks0n/shinyvaa
+            text: Shiny App Repository
         
 format:
   html:

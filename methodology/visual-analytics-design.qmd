@@ -1,0 +1,34 @@
+---
+title: "Visual Analytics Design"
+---
+
+The TenantThread Shiny application is designed as an investigation workflow. It guides users from case orientation to temporal reconstruction, communication network exploration, breach pathway tracing, and message-level evidence validation.
+
+## Visual Analytics Components
+
+The application combines several coordinated views:
+
+- **Landing Page / Overview**: introduces the case context and provides orientation for the investigation.
+- **Crisis Timeline**: reconstructs events over time and shows how communication activity changes across crisis phases.
+- **Agent Network**: visualises communication relationships between agents, allowing investigators to identify central actors, clusters, and unusual connections.
+- **Embargo Breach Pathway**: traces the movement of sensitive information across messages, agents, and channels.
+- **Evidence tables**: provide message-level records for validating patterns observed in the visual views.
+
+## Integrated Analytical Workflow
+
+The app combines timeline, network, pathway, and linked table views because no single chart can fully explain the embargo breach. The timeline shows when activity occurred, the network shows who was connected, the pathway view shows how sensitive information may have moved, and the evidence tables allow users to inspect the underlying messages. Together, these components support both exploratory analysis and defensible evidence review.
+
+## Interactivity
+
+Interactive controls allow investigators to refine the analysis without leaving the workflow:
+
+- **Filters** support focused analysis by crisis phase, channel, agent, and other derived attributes.
+- **Keyword search** helps locate messages containing embargo-sensitive or crisis-sensitive terms.
+- **Range slider** supports temporal narrowing within the crisis timeline.
+- **Focal agent selection** allows the network and pathway views to centre on selected participants.
+- **Channel risk selection** helps isolate communications that used higher-risk channels.
+- **Hide and show evidence tables** lets users move between visual exploration and detailed message validation as needed.
+
+## Design Rationale
+
+The design supports legal and compliance investigators by structuring the analysis from overview to detailed evidence. Users can begin with the case context, identify suspicious time periods or communication patterns, trace possible information pathways, and then validate findings using the underlying message records. This workflow helps assess whether the breach reflects deliberate leakage or a systemic breakdown in communication governance.

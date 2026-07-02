@@ -1,0 +1,72 @@
+---
+title: "ISSS608 Visual Analytics & Applications Group Project Meeting 3"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+editor: visual
+---
+
+# Meeting Minutes
+
+**Date:** June 24, 2026
+
+## Opening
+
+The third meeting was conducted on June 24, 2026. The meeting focused on finalising the visual analytics design, reviewing the Shiny application prototype, and confirming the role of each main tab in supporting the TenantThread embargo breach investigation.
+
+## Present
+
+Kelvin Andikko\
+Anabelle Eveleen T
+
+## Agenda for this meeting
+
+Finalisation of the main Shiny application tabs\
+Discussion on Landing Page and summary dashboard design\
+Review of Crisis Timeline visualisation\
+Review of Agent Network and causal chain design\
+Discussion on Embargo Breach Pathway visualisation\
+Delegation of work\
+Confirmation of agenda for the next meeting
+
+## Visual Analytics Design
+
+1.  The group finalised four main tabs for the Shiny application:
+    a.  Landing Page / Overview
+    b.  Crisis Timeline
+    c.  Agent Network
+    d.  Embargo Breach Pathway
+2.  The Landing Page / Overview tab was planned as a static summary dashboard. It should present total rounds, total communication records, number of agents, number of public posts, embargo-sensitive keyword mentions, and the identified breach window.
+3.  The Crisis Timeline tab was planned as an interactive view that shows how the crisis unfolded across rounds and how key events moved toward the public release of embargo-sensitive information.
+4.  The Agent Network tab was planned to include both a causal chain diagram and an agent communication network. The causal chain diagram should explain how the event unfolded toward the crisis, while the communication network should show relationships between agents.
+5.  The Embargo Breach Pathway tab was added as a new visualisation to trace how embargo-sensitive information moved toward public release and where controls weakened.
+6.  The group agreed that the four tabs should work together as an investigative sequence rather than as independent charts.
+
+## Shiny Prototype Development
+
+1.  The group discussed the RStudio Shiny user interface and the need for clear user inputs, dynamic outputs, and consistent visual styling across the application.
+2.  The group agreed that user inputs should help users explore the evidence without making the application difficult to navigate.
+3.  The prototype should allow users to move from summary metrics to detailed visual evidence, especially for the crisis timeline, agent relationships, and breach pathway.
+4.  The group noted that the application should be prepared for presentation screenshots, poster figures, and website integration.
+5.  The group also agreed that the wording in the application should remain concise and focused on the investigative findings.
+
+## Delegation of Work
+
+Anabelle will work on Prototype 2 and Prototype 3 visualisations and begin preparing the poster design. She will also refine the visual insights that should be highlighted in the final presentation.
+
+Kelvin will work on the website UI, Shiny interface, Landing Page, and Prototype 4 visualisation. He will also ensure that the Shiny application structure aligns with the Quarto website.
+
+## Agenda for Next Meeting
+
+The next meeting will focus on final refinement of the Shiny application, deployment preparation, poster completion, and updates to the Quarto website structure.
+
+## Adjournment
+
+The meeting was adjourned after finalising the four Shiny application tabs, confirming the prototype development direction, assigning responsibilities, and setting the agenda for the next meeting.
+
+**Minutes submitted by:**\
+Kelvin Andikko
+
+**Approved by:**\
+Anabelle Eveleen T
